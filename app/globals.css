@@ -2,20 +2,44 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  width: 100dvw;
+  overflow-x: hidden;
+  background-color: #c5c5d3;
+  font-family: var(--font-general), sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@layer utilities {
+  .flex-row-center {
+    @apply flex justify-center items-center;
+  }
+
+  .bc-font b {
+    font-family: var(--font-zentry);
+    font-feature-settings: "ss01" on;
+  }
+
+  .hero-header {
+    @apply uppercase font-family font-black text-5xl sm:right-10 sm:text-5xl md:text-7xl lg:text-9xl;
+  }
+
+  .subtext {
+    @apply absolute bottom-[-80dvh] left-1/2 w-full max-w-96 -translate-x-1/2 text-center font-circular-web text-lg md:max-w-[34rem];
+  }
+
+  .sliding-image {
+    @apply absolute left-1/2 top-0 z-20 h-[60vh] w-96 origin-center -translate-x-1/2 overflow-hidden rounded-3xl md:w-[30vw];
+  }
+
+  .projects-cards {
+    @apply relative col-span-1 h-[45vh] row-span-1 overflow-hidden rounded-md transition-transform duration-300 ease-out;
+  }
+
+  .projects-cards {
+    @apply uppercase md:text-6xl text-4xl font-family font-black;
+  }
 }
