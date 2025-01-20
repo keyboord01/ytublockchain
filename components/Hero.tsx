@@ -3,13 +3,21 @@
 import { TiLocationArrow } from "react-icons/ti";
 import dynamic from "next/dynamic";
 import Button from "./common/Button";
+import Image from "next/image";
 
 const VideoPlayer = dynamic(() => import("./VideoPlayer"), {
   ssr: false,
   loading: () => (
     <>
-      <div className="flex-row-center absolute z-[100] h-dvh w-screen overflow-hidden bg-violet-50">
-        <div className="w-10 h-10 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
+      <div className="flex-row-center absolute z-[10] h-dvh w-screen overflow-hidden bg-violet-50">
+        <Image
+          src="/img/hero.png"
+          alt="Hero background"
+          layout="fill"
+          objectFit="cover"
+          priority
+          className="absolute left-0 top-0 z-10"
+        />
       </div>
     </>
   ),

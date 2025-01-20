@@ -34,9 +34,7 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({ src, className }) => {
     <div className="relative w-full h-full">
       <video
         ref={videoRef}
-        className={`${className ?? ""} transition-opacity duration-700 ${
-          isLoaded ? "opacity-100" : "opacity-0"
-        }`}
+        className={`${className ?? ""}`}
         preload="auto"
         playsInline
         muted

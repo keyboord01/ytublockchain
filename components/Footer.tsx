@@ -111,7 +111,6 @@ const Footer = () => {
     },
   ];
 
-  const [isLogoHovered, setIsLogoHovered] = useState(false);
   const [isButtonHovered, setIsButtonHovered] = useState(false);
 
   const scrollToTop = () => {
@@ -128,11 +127,7 @@ const Footer = () => {
         <div className="grid gap-16 lg:grid-cols-12">
           <div className="lg:col-span-4">
             <div className="flex flex-col items-center text-center lg:items-start lg:text-left">
-              <div
-                className="relative flex items-center space-x-3"
-                onMouseEnter={() => setIsLogoHovered(true)}
-                onMouseLeave={() => setIsLogoHovered(false)}
-              >
+              <div className="relative flex items-center space-x-3">
                 <Image
                   src="/img/logo.png"
                   width={64}
