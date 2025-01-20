@@ -2,9 +2,11 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
+
 import { Menu, X } from "lucide-react";
 
 import Logo from "@/public/img/logo.png";
+import { useRouter, usePathname } from "next/navigation"; // Import from next/navigation
 
 const NavBar = () => {
   const [isVisible, setIsVisible] = useState(true);
@@ -12,13 +14,33 @@ const NavBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navRef = useRef(null);
 
+  const router = useRouter();
+  const pathname = usePathname();
+
   const navItems = [
     { name: "Home", path: "/" },
-    { name: "About", path: "#about" },
-    { name: "Projects", path: "#projects" },
-    { name: "Events", path: "#events" },
-    { name: "Roadmap", path: "#roadmap" },
+    { name: "About", path: "/#about" },
+    { name: "Projects", path: "/#projects" },
+    { name: "Events", path: "/#events" },
+    { name: "Roadmap", path: "/#roadmap" },
   ];
+
+  const handleNavClick = async (path: string) => {
+    const [route, hash] = path.split("#");
+
+    if (route !== pathname) {
+      await router.push(route);
+    }
+
+    if (hash) {
+      const element = document.getElementById(hash);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+
+    setIsMenuOpen(false);
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -63,10 +85,10 @@ const NavBar = () => {
           <div className="hidden md:block">
             <div className="flex items-center space-x-4">
               {navItems.map((item) => (
-                <a
+                <button
                   key={item.name}
                   className="group relative rounded-md px-3 py-2 text-sm font-medium text-blue-50"
-                  href={item.path}
+                  onClick={() => handleNavClick(item.path)}
                 >
                   <span className="relative block h-5 overflow-hidden text-xs uppercase">
                     <span className="block font-general transition-transform duration-500 group-hover:-translate-y-full">
@@ -76,7 +98,7 @@ const NavBar = () => {
                       {item.name}
                     </span>
                   </span>
-                </a>
+                </button>
               ))}
             </div>
           </div>
@@ -98,13 +120,13 @@ const NavBar = () => {
       >
         <div className="space-y-1 px-2 pb-3 pt-2">
           {navItems.map((item) => (
-            <a
+            <button
               key={item.name}
-              className="flex w-full items-center justify-between rounded-md px-3 py-2 text-base font-medium text-blue-50 "
-              href={item.path}
+              className="flex w-full items-center justify-between rounded-md px-3 py-2 text-base font-medium text-blue-50"
+              onClick={() => handleNavClick(item.path)}
             >
               <span>{item.name}</span>
-            </a>
+            </button>
           ))}
         </div>
       </div>
