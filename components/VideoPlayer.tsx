@@ -1,4 +1,6 @@
-import React, { useEffect, useRef } from "react";
+"use client";
+
+import { useEffect, useRef } from "react";
 
 interface VideoPlayerProps {
   src: string;
@@ -9,37 +11,53 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({ src, className }) => {
   const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
-    if (videoRef.current) {
-      const video = videoRef.current;
-      video.playsInline = true;
-      video.muted = true;
-      video.loop = true;
+    const videoElement = videoRef.current;
+    if (!videoElement) return;
 
-      const handleCanPlay = () => {
-        video.play().catch((error: Error) => console.error(error));
-      };
+    const playVideo = () => {
+      videoElement
+        .play()
+        .then(() => {
+          window.dispatchEvent(new Event("video-playing"));
+        })
+        .catch((error) => {
+          console.error("Error attempting to play video:", error);
+        });
+    };
 
-      video.addEventListener("canplay", handleCanPlay);
-      return () => video.removeEventListener("canplay", handleCanPlay);
-    }
+    const handleCanPlayThrough = () => {
+      window.dispatchEvent(new Event("video-loaded"));
+      playVideo();
+    };
+
+    const handleVisibilityChange = () => {
+      if (!document.hidden) {
+        playVideo();
+      }
+    };
+
+    videoElement.addEventListener("canplaythrough", handleCanPlayThrough);
+    document.addEventListener("visibilitychange", handleVisibilityChange);
+
+    playVideo();
+
+    return () => {
+      videoElement.removeEventListener("canplaythrough", handleCanPlayThrough);
+      document.removeEventListener("visibilitychange", handleVisibilityChange);
+    };
   }, []);
 
   return (
-    <div className="relative w-full h-full">
-      <video
-        ref={videoRef}
-        className={`${className ?? ""}`}
-        preload="auto"
-        playsInline
-        muted
-        loop
-      >
-        <source
-          src={src}
-          type="video/mp4"
-        />
-      </video>
-    </div>
+    <video
+      ref={videoRef}
+      className={className}
+      src={src}
+      autoPlay
+      loop
+      muted
+      playsInline
+      preload="auto"
+    />
   );
 };
 

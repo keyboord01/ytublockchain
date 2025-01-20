@@ -1,5 +1,6 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import { TiLocationArrow } from "react-icons/ti";
 import dynamic from "next/dynamic";
 import Button from "./common/Button";
@@ -7,21 +8,21 @@ import Image from "next/image";
 
 const VideoPlayer = dynamic(() => import("./VideoPlayer"), {
   ssr: false,
-  loading: () => (
-    <>
-      <div className="flex-row-center absolute z-[10] h-dvh w-screen overflow-hidden bg-violet-50">
-        <Image
-          src="/img/hero.png"
-          alt="Hero background"
-          layout="fill"
-          objectFit="cover"
-          priority
-          className="absolute left-0 top-0 z-10"
-        />
-      </div>
-    </>
-  ),
+  loading: () => <VideoLoadingPlaceholder />,
 });
+
+const VideoLoadingPlaceholder = () => (
+  <div className="flex-row-center absolute z-[10] h-dvh w-screen overflow-hidden">
+    <Image
+      src="/img/hero.png"
+      alt="Hero background"
+      layout="fill"
+      objectFit="cover"
+      priority
+      className="absolute left-0 top-0 z-10"
+    />
+  </div>
+);
 
 const HeroContent = () => (
   <div className="flex-row-center absolute inset-0 z-40 size-full">
@@ -67,18 +68,42 @@ const HeroContent = () => (
 );
 
 const Hero = () => {
+  const [isVideoLoaded, setIsVideoLoaded] = useState(false);
+  const [isVideoPlaying, setIsVideoPlaying] = useState(false);
+
+  useEffect(() => {
+    const handleVideoLoad = () => {
+      setIsVideoLoaded(true);
+    };
+
+    const handleVideoPlay = () => {
+      setIsVideoPlaying(true);
+    };
+
+    window.addEventListener("video-loaded", handleVideoLoad);
+    window.addEventListener("video-playing", handleVideoPlay);
+
+    return () => {
+      window.removeEventListener("video-loaded", handleVideoLoad);
+      window.removeEventListener("video-playing", handleVideoPlay);
+    };
+  }, []);
+
   return (
     <section
       id="hero"
-      className="relative h-dvh w-screen overflow-x-hidden"
+      className="relative h-dvh w-screen overflow-x-hidden bg-[#0A0506]"
     >
       <div
         id="video-frame"
         className="relative h-dvh w-screen overflow-hidden rounded-lg"
       >
+        {(!isVideoLoaded || !isVideoPlaying) && <VideoLoadingPlaceholder />}
         <VideoPlayer
           src="/videos/hero-1.mp4"
-          className="absolute left-0 top-0 size-full object-cover object-center"
+          className={`absolute left-0 top-0 size-full object-cover object-center ${
+            isVideoLoaded ? "opacity-100" : "opacity-0"
+          }`}
         />
         <HeroContent />
       </div>
