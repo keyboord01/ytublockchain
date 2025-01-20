@@ -1,15 +1,42 @@
 "use client";
+import { useState } from "react";
+import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
-import { Users, Globe, Trophy, Rocket } from "lucide-react";
+import { Users, Globe, Trophy, Rocket, ArrowDown } from "lucide-react";
+
 import StatisticCard from "@/components/common/StatisticCard";
 import PartnersSlider from "@/components/common/PartnersSlider";
-import Image from "next/image";
 
 gsap.registerPlugin(ScrollTrigger);
 
+const ScrollIndicator = ({ progress = 0 }) => {
+  return (
+    <div className="hidden md:flex flex-col items-center gap-3 rounded-full py-1">
+      <div className="relative h-32 w-[3px] rounded-full overflow-hidden">
+        <div
+          className="absolute bottom-0 w-full bg-black transition-all duration-300 rounded-full"
+          style={{
+            height: `${progress}%`,
+            transition: "height 0.3s ease-out",
+          }}
+        />
+      </div>
+      <div className="rounded-full flex items-center justify-center">
+        <ArrowDown
+          className={`w-8 h-8 text-black transition-all duration-500 ${
+            progress < 100 ? "animate-bounce" : ""
+          }`}
+        />
+      </div>
+    </div>
+  );
+};
+
 const About = () => {
+  const [scrollProgress, setScrollProgress] = useState(0);
+
   useGSAP(() => {
     const mm = gsap.matchMedia();
 
@@ -22,6 +49,9 @@ const About = () => {
           scrub: 0.5,
           pin: true,
           pinSpacing: true,
+          onUpdate: (self) => {
+            setScrollProgress(Math.round(self.progress * 100));
+          },
         },
       });
 
@@ -41,16 +71,16 @@ const About = () => {
         className="min-h-screen w-screen"
       >
         <div className="relative mb-8 flex flex-col items-center gap-5">
-          <h2 className="text-center font-zentry text-3xl font-black uppercase text-[#000560] sm:text-4xl md:text-5xl lg:text-7xl">
-            A thriving community of <br className="hidden md:block" />{" "}
-            blockchain enthusiasts
-          </h2>
-          <p className="mx-auto mb-8 mt-4 max-w-2xl text-center text-lg text-gray-600">
-            Join us in building the future of Web3 through innovation,
-            collaboration, and continuous learning
-          </p>
+          <div className="relative">
+            <h2 className="text-center font-zentry text-3xl font-black uppercase sm:text-4xl md:text-5xl lg:text-7xl">
+              <span className="text-[#000560]">A thriving community of</span>
+              <br className="hidden md:block" />
+              <span className="text-[#000560]">blockchain enthusiasts</span>
+            </h2>
+            <div className="absolute -z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] blur-3xl bg-gradient-to-r from-[#000560]/10 to-[#FF8C00]/10 opacity-70" />
+          </div>
 
-          <div className="grid grid-cols-1 gap-14 p-6 md:grid-cols-2 lg:grid-cols-4">
+          <div className="stats-grid grid grid-cols-1 gap-14 p-6 md:grid-cols-2 lg:grid-cols-4 mt-12">
             <StatisticCard
               icon={Users}
               value={1400}
@@ -81,7 +111,7 @@ const About = () => {
             />
           </div>
 
-          <div className="subtext translate-y-12 sm:translate-y-0 md:block hidden ">
+          <div className="subtext translate-y-12 sm:translate-y-0 md:block hidden">
             <p>
               Our blockchain club is more than just numbers. We&apos;re a
               community dedicated
@@ -93,6 +123,7 @@ const About = () => {
             </p>
           </div>
         </div>
+
         <div
           className="h-[100vh] w-screen pb-8 md:pb-0 md:block hidden "
           id="clip"
@@ -106,7 +137,11 @@ const About = () => {
               priority
             />
           </div>
+          <div className="absolute inset-x-0 bottom-12 flex justify-center z-10">
+            <ScrollIndicator progress={scrollProgress} />
+          </div>
         </div>
+
         <div className="relative h-[70vh] translate-y-1 w-screen md:hidden block">
           <div className="absolute inset-0 rounded-t-lg overflow-hidden">
             <Image
@@ -121,7 +156,7 @@ const About = () => {
 
           <div className="absolute inset-0 flex items-center justify-center">
             <div className="font-circular-web text-lg tracking-tighter text-center bg-black/60 backdrop-blur-[1px] shadow-xl rounded-sm py-2 px-2 mx-2">
-              <p className=" text-white">
+              <p className="text-white">
                 Our blockchain club is more than just numbers. We&apos;re a
                 community dedicated
               </p>
