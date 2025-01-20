@@ -2,6 +2,14 @@
 import { JSX, useState } from "react";
 import { ArrowUp } from "lucide-react";
 import Image from "next/image";
+import {
+  FaDiscord,
+  FaInstagram,
+  FaLinkedin,
+  FaMedium,
+  FaSpotify,
+  FaTwitter,
+} from "react-icons/fa";
 
 interface Link {
   label: string;
@@ -21,9 +29,8 @@ const Footer = () => {
     {
       title: "About",
       links: [
-        { label: "Team", href: "#" },
+        { label: "Team", href: "/team" },
         { label: "Vision", href: "#" },
-        { label: "Careers", href: "#" },
       ],
     },
     {
@@ -38,7 +45,7 @@ const Footer = () => {
       title: "Community",
       links: [
         { label: "Discord", href: "#" },
-        { label: "Events", href: "#" },
+        { label: "Events", href: "/schedule" },
         { label: "Forum", href: "#" },
       ],
     },
@@ -66,48 +73,33 @@ const Footer = () => {
     },
     {
       label: "Twitter",
-      href: "https://twitter.com",
-      icon: (
-        <svg
-          className="size-5"
-          fill="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path d="M23.643 4.937c-.835.37-1.732.62-2.675.733a4.67 4.67 0 002.048-2.578 9.3 9.3 0 01-2.958 1.13 4.66 4.66 0 00-7.938 4.25 13.229 13.229 0 01-9.602-4.868c-.4.69-.63 1.49-.63 2.342A4.66 4.66 0 003.96 9.824a4.647 4.647 0 01-2.11-.583v.06a4.66 4.66 0 003.737 4.568 4.692 4.692 0 01-2.104.08 4.661 4.661 0 004.352 3.234 9.348 9.348 0 01-5.786 1.995 9.5 9.5 0 01-1.112-.065 13.175 13.175 0 007.14 2.093c8.57 0 13.255-7.098 13.255-13.254 0-.2-.005-.402-.014-.602a9.47 9.47 0 002.323-2.41z" />
-        </svg>
-      ),
+      href: "https://x.com/BlockchainYtu",
+      icon: <FaTwitter size={24} />,
     },
     {
-      label: "Website",
-      href: "https://example.com",
-      icon: (
-        <svg
-          className="size-5"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"
-          />
-        </svg>
-      ),
+      label: "Instagram",
+      href: "https://www.instagram.com/ytu_blockchain?r=nametag",
+      icon: <FaInstagram size={24} />,
+    },
+    {
+      label: "Medium",
+      href: "https://medium.com/ytublockchain",
+      icon: <FaMedium size={24} />,
     },
     {
       label: "LinkedIn",
-      href: "https://linkedin.com",
-      icon: (
-        <svg
-          className="size-5"
-          fill="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-        </svg>
-      ),
+      href: "https://www.linkedin.com/company/ytu-blockchain/posts/?feedView=all",
+      icon: <FaLinkedin size={24} />,
+    },
+    {
+      label: "Discord",
+      href: "https://discord.gg/nFmUGsNZZY",
+      icon: <FaDiscord size={24} />,
+    },
+    {
+      label: "Spotify",
+      href: "https://open.spotify.com/show/5bA9wkC2zxASZCOKzu5EOX?dd=1&nd=1&si=S76JgCmhR7im9vmQHyByXw&utm_medium=share&utm_source=linktree",
+      icon: <FaSpotify size={24} />,
     },
   ];
 
@@ -144,12 +136,12 @@ const Footer = () => {
                 innovation, education, and community engagement.
               </p>
 
-              <div className="mt-8 flex justify-center space-x-4 lg:justify-start">
+              <div className="mt-8 flex flex-wrap justify-center gap-4 lg:justify-start">
                 {socialLinks.map((link, index) => (
                   <a
                     key={link.label}
                     href={link.href}
-                    target="_blank"
+                    target="_"
                     rel="noopener noreferrer"
                     className="group relative"
                     onMouseEnter={() => setHoveredItem(index)}
@@ -211,7 +203,7 @@ const Footer = () => {
             by
             <a
               href="https://x.com/keyyyy01"
-              target="_blank"
+              target="_"
               rel="noopener noreferrer"
               className="ml-1 text-[#FF8C00] transition-colors hover:text-[#FF8C00]/80"
             >
