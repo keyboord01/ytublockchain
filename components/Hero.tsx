@@ -1,10 +1,9 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import { TiLocationArrow } from "react-icons/ti";
 import dynamic from "next/dynamic";
-import Button from "./common/Button";
+import { TiLocationArrow } from "react-icons/ti";
 import Image from "next/image";
+import Button from "./common/Button";
 
 const VideoPlayer = dynamic(() => import("./VideoPlayer"), {
   ssr: false,
@@ -12,7 +11,7 @@ const VideoPlayer = dynamic(() => import("./VideoPlayer"), {
 });
 
 const VideoLoadingPlaceholder = () => (
-  <div className="flex-row-center absolute z-[10] h-dvh w-screen overflow-hidden">
+  <div className="absolute z-[10] h-[100vh] w-screen overflow-hidden bg-black">
     <Image
       src="/img/hero.png"
       alt="Hero background"
@@ -25,7 +24,7 @@ const VideoLoadingPlaceholder = () => (
 );
 
 const HeroContent = () => (
-  <div className="flex-row-center absolute inset-0 z-40 size-full">
+  <div className="absolute inset-0 z-40 flex items-center justify-center">
     <div className="mt-24 flex max-w-4xl flex-col items-center justify-center px-5 text-center sm:px-10">
       <h1 className="bc-font hero-header text-blue-100">
         Building the new
@@ -51,7 +50,7 @@ const HeroContent = () => (
         >
           <Button
             title="Join Us"
-            containerClass="!bg-[#FF8C00] flex-row-center gap-1 px-6 py-2"
+            containerClass="!bg-[#FF8C00] flex items-center justify-center gap-1 px-6 py-2"
           />
         </a>
         <a href="#roadmap">
@@ -59,7 +58,7 @@ const HeroContent = () => (
             id="explore-guide"
             title="Explore The Guide"
             leftIcon={<TiLocationArrow />}
-            containerClass="!bg-[#FF8C00] flex-row-center gap-2 px-6 py-2"
+            containerClass="!bg-[#FF8C00] flex items-center justify-center gap-2 px-6 py-2"
           />
         </a>
       </div>
@@ -68,42 +67,13 @@ const HeroContent = () => (
 );
 
 const Hero = () => {
-  const [isVideoLoaded, setIsVideoLoaded] = useState(false);
-  const [isVideoPlaying, setIsVideoPlaying] = useState(false);
-
-  useEffect(() => {
-    const handleVideoLoad = () => {
-      setIsVideoLoaded(true);
-    };
-
-    const handleVideoPlay = () => {
-      setIsVideoPlaying(true);
-    };
-
-    window.addEventListener("video-loaded", handleVideoLoad);
-    window.addEventListener("video-playing", handleVideoPlay);
-
-    return () => {
-      window.removeEventListener("video-loaded", handleVideoLoad);
-      window.removeEventListener("video-playing", handleVideoPlay);
-    };
-  }, []);
-
   return (
-    <section
-      id="hero"
-      className="relative h-dvh w-screen overflow-x-hidden bg-[#0A0506]"
-    >
-      <div
-        id="video-frame"
-        className="relative h-dvh w-screen overflow-hidden rounded-lg"
-      >
-        {(!isVideoLoaded || !isVideoPlaying) && <VideoLoadingPlaceholder />}
+    <section className="relative h-[100vh] w-screen overflow-x-hidden bg-[#0A0506]">
+      <div className="relative h-[100vh] w-screen overflow-hidden">
         <VideoPlayer
-          src="/videos/hero-1.mp4"
-          className={`absolute left-0 top-0 size-full object-cover object-center ${
-            isVideoLoaded ? "opacity-100" : "opacity-0"
-          }`}
+          webmSrc="https://ytublockchain.s3.eu-central-1.amazonaws.com/uploads/hero-mobile.webm"
+          mp4Src="https://ytublockchain.s3.eu-central-1.amazonaws.com/uploads/hero-1.mp4"
+          className="absolute left-0 top-0 size-full object-cover object-center"
         />
         <HeroContent />
       </div>

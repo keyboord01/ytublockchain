@@ -114,6 +114,7 @@ const PartnersSlider = () => {
                       height={48}
                       className="max-h-10 w-auto max-w-[120px] rounded-lg object-contain transition-all duration-300 group-hover:scale-110 md:max-h-12 md:max-w-[140px]"
                       draggable={false}
+                      priority
                     />
 
                     <ExternalLink
