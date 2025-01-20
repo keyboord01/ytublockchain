@@ -7,7 +7,6 @@ interface VideoPlayerProps {
 
 const VideoPlayer: React.FC<VideoPlayerProps> = ({ src, className }) => {
   const videoRef = useRef<HTMLVideoElement>(null);
-  const [isLoaded, setIsLoaded] = useState<boolean>(false);
 
   useEffect(() => {
     if (videoRef.current) {
@@ -17,12 +16,7 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({ src, className }) => {
       video.loop = true;
 
       const handleCanPlay = () => {
-        video
-          .play()
-          .then(() => {
-            setIsLoaded(true);
-          })
-          .catch((error: Error) => console.error(error));
+        video.play().catch((error: Error) => console.error(error));
       };
 
       video.addEventListener("canplay", handleCanPlay);
