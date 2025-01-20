@@ -94,7 +94,7 @@ const About = () => {
           </div>
         </div>
         <div
-          className="h-dvh w-screen pb-8 md:pb-0 md:block hidden "
+          className="h-[100vh] w-screen pb-8 md:pb-0 md:block hidden "
           id="clip"
         >
           <div className="sliding-image left-0 translate-x-0 md:left-1/2 md:-translate-x-1/2 h-[60vh] w-96 origin-center overflow-hidden rounded-3xl md:w-[30vw]">

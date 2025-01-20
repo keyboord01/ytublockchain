@@ -41,7 +41,7 @@ const Events = () => {
       id="events"
       className="relative w-screen bg-black text-blue-50"
     >
-      <div className="relative h-dvh">
+      <div className="relative h-[100vh]">
         <Image
           src="/img/events/panel.png"
           alt="Events background"
