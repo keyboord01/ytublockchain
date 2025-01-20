@@ -1,7 +1,7 @@
 "use client";
 
 import dynamic from "next/dynamic";
-import { TiLocationArrow } from "react-icons/ti";
+import { FaCalendarCheck } from "react-icons/fa";
 import Image from "next/image";
 import Button from "./common/Button";
 
@@ -53,11 +53,11 @@ const HeroContent = () => (
             containerClass="!bg-[#FF8C00] flex items-center justify-center gap-1 px-6 py-2"
           />
         </a>
-        <a href="#roadmap">
+        <a href="/schedule">
           <Button
-            id="explore-guide"
-            title="Explore The Guide"
-            leftIcon={<TiLocationArrow />}
+            id="Upcoming-events"
+            title="Upcoming Events"
+            leftIcon={<FaCalendarCheck />}
             containerClass="!bg-[#FF8C00] flex items-center justify-center gap-2 px-6 py-2"
           />
         </a>

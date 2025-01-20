@@ -99,12 +99,16 @@ const Events = () => {
               ))}
             </div>
           </div>
-          <div className="flex items-center justify-center mt-12">
+          <a
+            href="/schedule"
+            target="_"
+            className="flex items-center justify-center mt-12"
+          >
             <Button
               id="schedule-btn"
               title="view full schedule"
             />
-          </div>
+          </a>
         </motion.div>
       </div>
     </div>

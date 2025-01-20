@@ -5,7 +5,6 @@ import Hero from "@/components/Hero";
 import NavBar from "@/components/NavBar";
 import Projects from "@/components/Projects";
 import RoadmapSection from "@/components/RoadmapSection";
-import Schedule from "@/components/Schedule";
 
 function App() {
   return (
@@ -16,7 +15,6 @@ function App() {
       <Projects />
       <Events />
       <RoadmapSection />
-      <Schedule />
       <Footer />
     </main>
   );

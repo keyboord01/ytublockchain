@@ -197,9 +197,7 @@ const LoadingState = () => (
 
 const Hero = () => (
   <div className="mb-24 text-center">
-    <h1 className="mb-6 text-5xl font-bold text-[#FF8C00]">
-      Education Schedule
-    </h1>
+    <h1 className="mb-6 text-5xl font-bold text-[#FF8C00]">Events Schedule</h1>
     <p className="mx-auto max-w-2xl text-lg text-zinc-300">
       Explore our comprehensive course schedule and join hands-on workshops led
       by industry experts. Build your skills with practical experience and

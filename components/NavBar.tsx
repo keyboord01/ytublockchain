@@ -13,7 +13,7 @@ const NavBar = () => {
   const navRef = useRef(null);
 
   const navItems = [
-    { name: "Home", path: "#hero" },
+    { name: "Home", path: "/" },
     { name: "About", path: "#about" },
     { name: "Projects", path: "#projects" },
     { name: "Events", path: "#events" },
