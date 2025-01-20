@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --font-general: "Arial", sans-serif;
+  --font-zentry: "Zentry", serif;
+}
+
 body {
   width: 100dvw;
   overflow-x: hidden;
@@ -19,12 +24,12 @@ html {
   }
 
   .bc-font b {
-    font-family: var(--font-zentry);
+    @apply font-zentry;
     font-feature-settings: "ss01" on;
   }
 
   .hero-header {
-    @apply uppercase font-family font-black text-5xl sm:right-10 sm:text-5xl md:text-7xl lg:text-9xl;
+    @apply uppercase font-zentry font-black text-5xl sm:text-5xl md:text-7xl lg:text-9xl;
   }
 
   .subtext {
@@ -39,7 +44,7 @@ html {
     @apply relative col-span-1 h-[45vh] row-span-1 overflow-hidden rounded-md transition-transform duration-300 ease-out;
   }
 
-  .projects-cards {
-    @apply uppercase md:text-6xl text-4xl font-family font-black;
+  .projects-title {
+    @apply uppercase md:text-6xl text-4xl font-zentry font-black;
   }
 }

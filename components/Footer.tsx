@@ -133,17 +133,12 @@ const Footer = () => {
                 onMouseEnter={() => setIsLogoHovered(true)}
                 onMouseLeave={() => setIsLogoHovered(false)}
               >
-                <div
-                  className={`absolute -inset-2 rounded-lg bg-[#FF8C00]/20 transition-opacity duration-300 ${
-                    isLogoHovered ? "opacity-100" : "opacity-0"
-                  }`}
-                />
                 <Image
                   src="/img/logo.png"
                   width={64}
                   height={64}
                   alt="YTU Blockchain Club Logo"
-                  className="relative  rounded-lg bg-white/5 p-2 transition-transform duration-300 hover:scale-105"
+                  className="relative  rounded-lg bg-white/5 p-2 transition-transform duration-300"
                 />
                 <h2 className="relative text-2xl font-bold text-white">
                   YTU<span className="text-[#FF8C00]">Blockchain</span>

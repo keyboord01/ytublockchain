@@ -23,7 +23,7 @@ export default function RootLayout({
       lang="en"
       className={`${circularWeb.variable} ${general.variable} ${robertMedium.variable} ${robertRegular.variable} ${zentry.variable}`}
     >
-      <body>{children}</body>
+      <body className="font-general">{children}</body>
     </html>
   );
 }

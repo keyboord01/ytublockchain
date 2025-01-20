@@ -42,7 +42,6 @@ export const ProjectsCard: React.FC<ProjectsCardProps> = ({
       onMouseLeave={() => setIsHovered(false)}
     >
       <div className="absolute inset-0 z-10 bg-gradient-to-b from-black/90 via-black/20 to-black/90" />
-
       {projectUrl && (
         <a
           href={projectUrl}
@@ -59,36 +58,31 @@ export const ProjectsCard: React.FC<ProjectsCardProps> = ({
           <ExternalLink className="size-4 text-white md:size-5" />
         </a>
       )}
-
       <div className="relative z-10 flex size-full flex-col p-4 sm:p-6 md:p-8">
-        <div className="space-y-4 transition-all duration-300 md:space-y-6">
-          <h1 className="projects-cards bc-font text-3xl text-white sm:text-4xl md:text-5xl ">
-            {title}
-          </h1>
+        <h1 className="projects-title bc-font text-3xl text-white sm:text-4xl md:text-5xl ">
+          {title}
+        </h1>
 
-          {awards.length > 0 && (
-            <div className="flex flex-wrap gap-2 transition-all duration-300 md:gap-2">
-              {awards.map((award, index) => (
-                <div
-                  key={index}
-                  className="flex items-center gap-1 rounded-full bg-white/10 px-2 py-1 text-xs 
-                    text-white backdrop-blur-sm transition-all duration-300 
-                    group-hover:bg-white/20 sm:text-sm md:gap-1 md:px-2 md:py-1 md:text-base"
-                >
-                  <Award className="size-3 text-yellow-300 md:size-4" />
-                  <span className="whitespace-nowrap font-normal">{award}</span>
-                </div>
-              ))}
-            </div>
-          )}
-        </div>
+        {awards.length > 0 && (
+          <div className="flex flex-wrap gap-2 transition-all duration-300 md:gap-2 mt-4">
+            {awards.map((award, index) => (
+              <div
+                key={index}
+                className="flex items-center gap-1 rounded-full bg-white/10 px-2 py-1 text-xs text-white backdrop-blur-sm transition-all duration-300 sm:text-sm md:gap-1 md:px-2 md:py-1 md:text-base"
+              >
+                <Award className="size-3 text-yellow-300 md:size-4" />
+                <span className="whitespace-nowrap font-normal">{award}</span>
+              </div>
+            ))}
+          </div>
+        )}
 
         <div className="mt-auto pt-4 transition-all duration-300 md:pt-6">
           <div className="flex flex-wrap items-center justify-between gap-3">
             {description && (
               <p
-                className="max-w-2xl text-sm leading-relaxed text-gray-300 transition-all duration-300 
-              group-hover:text-white sm:text-base md:text-lg"
+                className=" max-w-2xl text-sm text-gray-300 transition-all duration-300 
+              group-hover:text-white sm:text-base md:text-[16px]"
               >
                 {truncateDescription(description)}
               </p>
@@ -113,7 +107,6 @@ export const ProjectsCard: React.FC<ProjectsCardProps> = ({
           </div>
         </div>
       </div>
-
       <Image
         src={src}
         alt={typeof title === "string" ? title : "Project Image"}
@@ -133,7 +126,7 @@ const ViewAllCard: React.FC = () => (
     >
       <div className="space-y-4 md:space-y-6">
         <h1
-          className="projects-cards bc-font text-3xl text-white transition-all duration-300 
+          className="projects-title bc-font text-3xl text-white transition-all duration-300 
            sm:text-6xl md:text-7xl lg:text-[150px]"
         >
           View All Projects
@@ -199,11 +192,7 @@ const Projects: React.FC = () => (
         <div className="projects-cards">
           <ProjectsCard
             src="/img/projects/cosmocProof.jpg"
-            title={
-              <>
-                Cosmic<b>P</b>roof
-              </>
-            }
+            title={<>CosmicProof</>}
             description="Our Cosmic Proof project revolutionizes blockchain interoperability by implementing zero-knowledge proofs across multiple chains. This groundbreaking solution secured multiple victories at Lambda Hack Week, demonstrating its potential to reshape cross-chain communication..."
             projectUrl="https://example.com/cosmic-proof"
             date="March 2024"
@@ -213,11 +202,7 @@ const Projects: React.FC = () => (
         <div className="projects-cards">
           <ProjectsCard
             src="/img/projects/orchave.jpg"
-            title={
-              <>
-                Or<b>ch</b>ave
-              </>
-            }
+            title={<>Orchave</>}
             description="Orchave is a modular decentralized oracle solution that streamlines the process of verifying and delivering off-chain data to blockchains. It features a Provider App for users to easily become data providers, a lightweight Verifier Network that enables rapid data verification without relying on traditional consensus mechanisms, and a user-friendly dashboard for accessing the best archive endpoints. By integrating Filecoin for persistent storage, Avail for fast block ordering finality, and dynamic social reputation mechanisms, Orchave establishes a scalable, trustless, and efficient ecosystem for decentralized data access and monetization."
             projectUrl="https://example.com/orchave"
             date="ETHGlobal Brussels"
@@ -231,11 +216,7 @@ const Projects: React.FC = () => (
         <div className="projects-cards">
           <ProjectsCard
             src="/img/projects/nevo.jpg"
-            title={
-              <>
-                Ne<b>VO</b>
-              </>
-            }
+            title={<>NeVO</>}
             description="NEVO seamlessly integrates Near Protocol's Cross-Chain Signatures with MACI's secure, zero-knowledge proof-powered voting system to deliver a smooth, private, and bribe-resistant voting experience. By leveraging these groundbreaking technologies, NEVO ensures that even users with minimal tech experience can participate confidently in elections, paving the way for MACI to be adopted in national elections while maintaining accessibility and security for all voters."
             projectUrl="https://example.com/nevo"
             date="ETHGlobal Brussels"

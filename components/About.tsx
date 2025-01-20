@@ -60,7 +60,7 @@ const About = () => {
         className="min-h-screen w-screen"
       >
         <div className="relative mb-8 flex flex-col items-center gap-5">
-          <h2 className="text-center font-family text-3xl font-black uppercase text-[#000560] sm:text-4xl md:text-5xl lg:text-7xl">
+          <h2 className="text-center font-zentry text-3xl font-black uppercase text-[#000560] sm:text-4xl md:text-5xl lg:text-7xl">
             A thriving community of <br className="hidden md:block" />{" "}
             blockchain enthusiasts
           </h2>

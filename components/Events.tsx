@@ -63,7 +63,7 @@ const Events = () => {
           <p className="font-general text-sm uppercase text-[#FF8C00] md:text-[10px]">
             events organized
           </p>
-          <h1 className="text-center font-family text-5xl font-black uppercase text-blue-100 sm:text-5xl md:text-7xl lg:text-8xl">
+          <h1 className="text-center font-zentry text-5xl font-black uppercase text-blue-100 sm:text-5xl md:text-7xl lg:text-8xl">
             join our events <br /> shape your future
           </h1>
         </motion.div>

@@ -33,7 +33,7 @@ const StatisticCard: React.FC<StatisticCardProps> = ({
     gsap.from(numberRef.current, {
       scrollTrigger: {
         trigger: numberRef.current,
-        start: "top center+=400",
+        start: "top center+=600",
       },
       textContent: 0,
       duration: 0.8,

@@ -18,7 +18,7 @@ const VideoPlayer = dynamic(() => import("./VideoPlayer"), {
 const HeroContent = () => (
   <div className="flex-row-center absolute inset-0 z-40 size-full">
     <div className="mt-24 flex max-w-4xl flex-col items-center justify-center px-5 text-center sm:px-10">
-      <h1 className="bc-font hero-heading text-blue-100">
+      <h1 className="bc-font hero-header text-blue-100">
         Building the new
         <br />
         internet
