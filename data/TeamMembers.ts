@@ -107,6 +107,86 @@ const teamMembers: TeamMember[] = [
       "Published research on ZK-Rollups",
     ],
   },
+  {
+    id: 7,
+    name: "Bora something",
+    roles: ["Content Writer", "Research"],
+    image: "/img/team/bora.png",
+    description:
+      "Crafting engaging content that makes blockchain technology accessible and exciting.",
+    github: "https://github.com/keyboord01",
+    twitter: "twitter.com/keyyyy01",
+    linkedin: "linkedin.com/in/ahmed-zm",
+    currentJob: "Blockchain Developer at ChainTech",
+    achievements: [
+      "Led 3 successful DeFi projects",
+      "Published research on ZK-Rollups",
+    ],
+  },
+  {
+    id: 8,
+    name: "Sena Eser",
+    roles: ["Content Writer", "Research"],
+    image: "/img/team/sena.png",
+    description:
+      "Crafting engaging content that makes blockchain technology accessible and exciting.",
+    github: "https://github.com/keyboord01",
+    twitter: "twitter.com/keyyyy01",
+    linkedin: "linkedin.com/in/ahmed-zm",
+    currentJob: "Blockchain Developer at ChainTech",
+    achievements: [
+      "Led 3 successful DeFi projects",
+      "Published research on ZK-Rollups",
+    ],
+  },
+  {
+    id: 9,
+    name: "Kutay Sari",
+    roles: ["Content Writer", "Research"],
+    image: "/img/team/kutay.png",
+    description:
+      "Crafting engaging content that makes blockchain technology accessible and exciting.",
+    github: "https://github.com/keyboord01",
+    twitter: "twitter.com/keyyyy01",
+    linkedin: "linkedin.com/in/ahmed-zm",
+    currentJob: "Blockchain Developer at ChainTech",
+    achievements: [
+      "Led 3 successful DeFi projects",
+      "Published research on ZK-Rollups",
+    ],
+  },
+  {
+    id: 10,
+    name: "Beyza Nur",
+    roles: ["Content Writer", "Research"],
+    image: "/img/team/beyza.png",
+    description:
+      "Crafting engaging content that makes blockchain technology accessible and exciting.",
+    github: "https://github.com/keyboord01",
+    twitter: "twitter.com/keyyyy01",
+    linkedin: "linkedin.com/in/ahmed-zm",
+    currentJob: "Blockchain Developer at ChainTech",
+    achievements: [
+      "Led 3 successful DeFi projects",
+      "Published research on ZK-Rollups",
+    ],
+  },
+  {
+    id: 11,
+    name: "Yusuf Something",
+    roles: ["Content Writer", "Research"],
+    image: "/img/team/yusuf.png",
+    description:
+      "Crafting engaging content that makes blockchain technology accessible and exciting.",
+    github: "https://github.com/keyboord01",
+    twitter: "twitter.com/keyyyy01",
+    linkedin: "linkedin.com/in/ahmed-zm",
+    currentJob: "Blockchain Developer at ChainTech",
+    achievements: [
+      "Led 3 successful DeFi projects",
+      "Published research on ZK-Rollups",
+    ],
+  },
 ];
 
 export default teamMembers;

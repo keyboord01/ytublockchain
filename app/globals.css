@@ -29,7 +29,7 @@ html {
   }
 
   .hero-header {
-    @apply uppercase font-zentry font-black text-5xl sm:text-5xl md:text-7xl lg:text-9xl;
+    @apply uppercase font-zentry font-black text-5xl sm:text-5xl md:text-7xl lg:text-9xl tracking-wide;
   }
 
   .subtext {
