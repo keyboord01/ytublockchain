@@ -14,8 +14,23 @@ export interface TeamMember {
 const teamMembers: TeamMember[] = [
   {
     id: 1,
+    name: "Keemo Soulaibi",
+    roles: ["Presedint"],
+    image: "/img/team/kemo.png",
+    description: "Leading YTUBlockchain's vision and strategy, Atahan ......",
+    github: "https://github.com/keyboord01",
+    twitter: "twitter.com/keyyyy01",
+    linkedin: "linkedin.com/in/ahmed-zm",
+    currentJob: "Blockchain Developer at ChainTech",
+    achievements: [
+      "Led 3 successful DeFi projects",
+      "Published research on ZK-Rollups",
+    ],
+  },
+  {
+    id: 1,
     name: "Atahan Yildirim",
-    roles: ["President", "Developer", "Research"],
+    roles: ["Developer", "Research"],
     image: "/img/team/atahan.png",
     description: "Leading YTUBlockchain's vision and strategy, Atahan ......",
     github: "https://github.com/keyboord01",
