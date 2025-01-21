@@ -6,7 +6,7 @@ import { useEffect, useRef, useState } from "react";
 import { Menu, X } from "lucide-react";
 
 import Logo from "@/public/img/logo.png";
-import { useRouter, usePathname } from "next/navigation"; // Import from next/navigation
+import { useRouter, usePathname } from "next/navigation";
 
 const NavBar = () => {
   const [isVisible, setIsVisible] = useState(true);
@@ -19,8 +19,8 @@ const NavBar = () => {
 
   const navItems = [
     { name: "Home", path: "/" },
+    { name: "Team", path: "/team" },
     { name: "About", path: "/#about" },
-    { name: "Projects", path: "/#projects" },
     { name: "Events", path: "/#events" },
     { name: "Roadmap", path: "/#roadmap" },
   ];
@@ -29,7 +29,7 @@ const NavBar = () => {
     const [route, hash] = path.split("#");
 
     if (route !== pathname) {
-      await router.push(route);
+      router.push(route);
     }
 
     if (hash) {
