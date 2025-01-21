@@ -145,7 +145,7 @@ export const ProjectsCard: React.FC<ProjectsCardProps> = ({
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.9, opacity: 0 }}
               transition={{ duration: 0.3, ease: "easeOut" }}
-              className="relative w-full overflow-hidden bg-zinc-900 md:max-w-6xl rounded-lg"
+              className="relative w-full max-h-[90dvh] overflow-y-auto bg-zinc-900 md:max-w-6xl rounded-lg"
             >
               <motion.button
                 initial={{ opacity: 0 }}
