@@ -48,7 +48,7 @@ const Projects: React.FC = () => (
             />
           </div>
         ))}
-        <ViewAllCards />
+        <ViewAllCards Projects={projectsData.length} />
       </div>
     </div>
   </section>

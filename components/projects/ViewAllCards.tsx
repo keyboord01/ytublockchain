@@ -6,7 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import projectsData from "@/data/projectsData";
 import { ProjectsCard } from "./ProjectsCard";
 
-const ViewAllCards = () => {
+const ViewAllCards = ({ Projects }: { Projects: number }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleOpen = () => {
@@ -36,7 +36,7 @@ const ViewAllCards = () => {
             <div className="flex flex-wrap gap-2 transition-all duration-300 md:gap-4">
               <div className="flex items-center gap-1.5 rounded-full bg-white/10 px-2.5 py-1.5 text-xs text-white/90 transition-all duration-300 group-hover:bg-white/20 sm:text-sm md:gap-2 md:px-4 md:py-2 md:text-base">
                 <Award className="size-3.5 md:size-5" />
-                20+ Projects
+                {Projects - 1}+ Projects
               </div>
               <div className="flex items-center gap-1.5 rounded-full bg-white/10 px-2.5 py-1.5 text-xs text-white/90 transition-all duration-300 group-hover:bg-white/20 sm:text-sm md:gap-2 md:px-4 md:py-2 md:text-base">
                 <Award className="size-3.5 md:size-5" />
