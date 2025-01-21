@@ -1,7 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import { Award, X } from "lucide-react";
-import { TiLocationArrow } from "react-icons/ti";
+import { Award, X, Pointer } from "lucide-react";
 
 import { motion, AnimatePresence } from "framer-motion";
 import projectsData from "@/data/projectsData";
@@ -46,7 +45,7 @@ const ViewAllCards = () => {
             </div>
             <div className="self-end transition-all duration-300 group-hover:translate-x-3">
               <div className="rounded-full bg-white/10 p-3 transition-all duration-300 group-hover:bg-white/20 md:p-4">
-                <TiLocationArrow className="scale-150 text-white md:scale-[2]" />
+                <Pointer className="text-white" />
               </div>
             </div>
           </div>

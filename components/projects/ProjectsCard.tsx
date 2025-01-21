@@ -1,7 +1,14 @@
 "use client";
 import React, { useState } from "react";
 import Image from "next/image";
-import { ExternalLink, Calendar, Award, X, MapPin } from "lucide-react";
+import {
+  ExternalLink,
+  Calendar,
+  Award,
+  X,
+  MapPin,
+  Pointer,
+} from "lucide-react";
 
 import { motion, AnimatePresence } from "framer-motion";
 import Button from "../common/Button";
@@ -52,7 +59,9 @@ export const ProjectsCard: React.FC<ProjectsCardProps> = ({
         <h1 className="projects-title bc-font text-2xl text-white sm:text-3xl md:text-4xl lg:text-5xl">
           {title}
         </h1>
-
+        <div className="absolute right-2 top-6 z-20 rounded-full p-1.5 backdrop-blur-sm sm:right-3 sm:top-3 sm:p-2 md:right-5 md:top-8 md:p-3">
+          <Pointer className="size-3 text-white sm:size-4 md:size-5" />
+        </div>
         {awards?.length > 0 && (
           <div className="mt-3 flex flex-wrap gap-1.5 sm:mt-4 sm:gap-2">
             {awards.map((award, index) => (
@@ -87,7 +96,7 @@ export const ProjectsCard: React.FC<ProjectsCardProps> = ({
         </div>
       </div>
 
-      {projectUrl && (
+      {/* {projectUrl && (
         <a
           href={projectUrl}
           target="_blank"
@@ -99,7 +108,7 @@ export const ProjectsCard: React.FC<ProjectsCardProps> = ({
         >
           <ExternalLink className="size-3 text-white sm:size-4 md:size-5" />
         </a>
-      )}
+      )} */}
     </>
   );
 
