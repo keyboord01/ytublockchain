@@ -60,6 +60,7 @@ const ViewAllCards = ({ Projects }: { Projects: number }) => {
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
             className="fixed inset-0 z-50 flex items-center justify-center overflow-y-auto bg-black/80 backdrop-blur-sm p-4"
+            onClick={handleClose}
           >
             <motion.div
               initial={{ scale: 0.9, opacity: 0 }}
@@ -67,6 +68,7 @@ const ViewAllCards = ({ Projects }: { Projects: number }) => {
               exit={{ scale: 0.9, opacity: 0 }}
               transition={{ duration: 0.3 }}
               className="relative w-full max-w-7xl bg-zinc-900 rounded-lg max-h-[90vh] overflow-y-scroll"
+              onClick={(e) => e.stopPropagation()}
             >
               <div className="sticky top-0 z-50 flex items-center justify-between bg-zinc-900/80 backdrop-blur-sm p-4 border-b border-white/10">
                 <div></div>

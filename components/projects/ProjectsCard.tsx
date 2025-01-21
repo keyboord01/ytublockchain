@@ -139,6 +139,7 @@ export const ProjectsCard: React.FC<ProjectsCardProps> = ({
             transition={{ duration: 0.3, ease: "easeInOut" }}
             className="fixed inset-0 z-50 flex items-center justify-center overflow-y-auto bg-black/80 
                 backdrop-blur-sm p-4 "
+            onClick={handleClose}
           >
             <motion.div
               initial={{ scale: 0.9, opacity: 0 }}
@@ -146,6 +147,7 @@ export const ProjectsCard: React.FC<ProjectsCardProps> = ({
               exit={{ scale: 0.9, opacity: 0 }}
               transition={{ duration: 0.3, ease: "easeOut" }}
               className="relative w-full max-h-[90dvh] overflow-y-auto bg-zinc-900 md:max-w-6xl rounded-lg"
+              onClick={(e) => e.stopPropagation()}
             >
               <motion.button
                 initial={{ opacity: 0 }}
