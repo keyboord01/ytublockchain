@@ -1,3 +1,4 @@
+"use client";
 import { useRef, useState, useMemo } from "react";
 import { geoCentroid, geoMercator } from "d3-geo";
 import { ComposableMap, Geographies, Geography } from "react-simple-maps";

@@ -28,16 +28,16 @@ const Button: React.FC<ButtonProps> = ({
         <div className="flex-row-center translate-y-0 skew-y-0 transition duration-500 group-hover:translate-y-[-160%] group-hover:skew-y-12">
           <div className="pr-1 ">{leftIcon}</div>
           {title}
+          <div className="pl-1 ">{rightIcon}</div>
         </div>
         <div className="absolute flex-row-center translate-y-[164%] skew-y-12 transition duration-500 group-hover:translate-y-0 group-hover:skew-y-0">
           <div className="pr-1 ransition duration-500 group-hover:translate-y-[0] translate-y-[20%]">
             {leftIcon}
           </div>
           {title}
+          <div className="pl-1 ">{rightIcon}</div>
         </div>
       </span>
-
-      {rightIcon}
     </button>
   );
 };
