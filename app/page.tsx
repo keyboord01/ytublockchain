@@ -32,7 +32,7 @@ export default function App() {
               </p>
 
               <p className="text-gray-700 mb-4">
-                Hello, I am Kemo—not your average cat. At 7 years old, I've
+                Hello, I am Kemo—not your average cat. At 7 years old, Ive
                 reached peak maturity, earning the title of Supreme Leader. With
                 my majestic fluffiness and perfectionist tendencies, I demand
                 only the finest in life, especially food. My responsibilities
