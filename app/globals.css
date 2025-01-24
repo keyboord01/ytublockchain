@@ -48,3 +48,62 @@ html {
     @apply uppercase md:text-6xl text-4xl font-zentry font-black;
   }
 }
+
+@keyframes glitch-color {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(-5px, 5px);
+  }
+}
+
+.animate-glitch-color {
+  animation: glitch-color 0.5s infinite alternate;
+}
+
+@keyframes glitch-main {
+  0% {
+    transform: translate(0, 0) skew(0deg);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+  5% {
+    transform: translate(-5px, 5px) skew(-5deg);
+    clip-path: polygon(0 10%, 100% 0, 100% 100%, 0 90%);
+  }
+  10% {
+    transform: translate(5px, -5px) skew(5deg);
+    clip-path: polygon(0 0, 100% 10%, 100% 90%, 0 100%);
+  }
+  15% {
+    transform: translate(0, 0) skew(0deg);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+}
+
+@keyframes glitch-sub {
+  0% {
+    transform: translate(0, 0) skew(0deg);
+    opacity: 0.8;
+  }
+  10% {
+    transform: translate(10px, -10px) skew(5deg);
+    opacity: 0.6;
+  }
+  20% {
+    transform: translate(-10px, 10px) skew(-4deg);
+    opacity: 0.4;
+  }
+  30% {
+    transform: translate(0, 0) skew(0deg);
+    opacity: 0.8;
+  }
+}
+
+.animate-glitch-main {
+  animation: glitch-main 0.3s infinite alternate;
+}
+
+.animate-glitch-sub {
+  animation: glitch-sub 0.3s infinite alternate;
+}

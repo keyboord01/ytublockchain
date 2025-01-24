@@ -18,9 +18,9 @@ interface CountryStyles {
 }
 
 interface Event {
-  eventName: string;
+  title: string;
   country: string;
-  whatWeDid: string;
+  description: string;
   link: string;
 }
 
@@ -62,11 +62,11 @@ interface EventCardProps {
 
 const EventCard: React.FC<EventCardProps> = ({ event, idx, totalEvents }) => (
   <div className="space-y-3">
-    <h4 className="text-lg font-semibold text-[#FF8C00]">{event.eventName}</h4>
-    <p className="text-base text-gray-300">{event.whatWeDid}</p>
+    <h4 className="text-lg font-semibold text-[#FF8C00]">{event.title}</h4>
+    <p className="text-base text-gray-300">{event.description}</p>
     <a
       href={event.link}
-      className="inline-block text-sm text-[#ff8c00a1] hover:text-[#FF8C00] hover:underline"
+      className="inline-block text-sm text-[#FF8C00a1] hover:text-[#FF8C00] hover:underline"
       target="_blank"
       rel="noopener noreferrer"
     >
