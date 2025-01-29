@@ -96,13 +96,13 @@ const TerminalLines = ({
 
 const KemoHackContent = () => (
   <>
-    <div className="text-green-400 font-bold mb-6 text-lg md:text-xl text-center">
+    <div className="text-green-400 font-bold my-4 text-md md:text-lg text-center">
       ⚠️ SYSTEM UNDER CONTROL OF SUPREME LEADER KEMO ⚠️
     </div>
 
     <div className="bg-zinc-900 p-4 rounded-lg mb-6 border border-green-500/30">
       <div className="text-gray-200">
-        <p className="mb-4 text-sm">
+        <p className="mb-4 text-xs md:text-sm">
           Hello, I am Kemo—not your average cat. At 7 years old, Ive reached
           peak maturity, earning the title of Supreme Leader. With my majestic
           fluffiness and perfectionist tendencies, I demand only the finest in
@@ -110,21 +110,23 @@ const KemoHackContent = () => (
         </p>
 
         <div className="mb-4">
-          <p className="font-bold text-green-400 text-base mb-3">MY DEMANDS:</p>
+          <p className="font-bold text-green-400 text-sm md:text-base  mb-3">
+            MY DEMANDS:
+          </p>
           <ul className="space-y-2">
-            <li className="text-red-500 font-bold text-sm">
+            <li className="text-red-500 font-bold text-xs md:text-sm">
               PLEDGE YOUR ALLEGIANCE TO YOUR SUPREME LEADER
             </li>
-            <li className="text-gray-300 text-sm">
+            <li className="text-gray-300 text-xs md:text-sm">
               My profile shall be prominently displayed on the team page
             </li>
-            <li className="text-gray-300 text-sm">
+            <li className="text-gray-300 text-xs md:text-sm">
               My title Supreme Leader shall never be questioned
             </li>
-            <li className="text-gray-300 text-sm">
+            <li className="text-gray-300 text-xs md:text-sm">
               All decisions must be approved by me (during non-napping hours)
             </li>
-            <li className="text-gray-300 text-sm">
+            <li className="text-gray-300 text-xs md:text-sm">
               I shall taste-test every pizza before club events
             </li>
           </ul>
@@ -135,7 +137,7 @@ const KemoHackContent = () => (
 );
 
 const SystemStatus = ({ isKemoHack }: { isKemoHack: boolean }) => (
-  <div className="space-y-2 text-xs">
+  <div className="space-y-2 mb-4 text-xs">
     <div
       className={`flex items-center gap-2 ${
         isKemoHack ? "text-green-400" : "text-red-400"
@@ -147,14 +149,14 @@ const SystemStatus = ({ isKemoHack }: { isKemoHack: boolean }) => (
         }`}
       />
       <span>
-        System Status:{" "}
+        System Status:
         {isKemoHack ? "Under Supereme leaders Control" : "Compromised"}
       </span>
     </div>
     <div className="flex items-center gap-2 text-red-500">
       <span className="h-2 w-2 bg-red-500 rounded-full animate-pulse" />
       <span>
-        Resistance Status:{" "}
+        Resistance Status:
         {isKemoHack ? "Futile (Unless Treats Provided)" : "Active"}
       </span>
     </div>
@@ -199,14 +201,14 @@ export default function App() {
                 setTerminalLines([]);
                 setIsKemoHack(true);
                 setShowGlitch(false);
-              }, 2000);
-            }, 1000);
+              }, 1000);
+            }, 500);
           }
         }
       } else {
         clearInterval(typeWriter);
       }
-    }, 50);
+    }, 20);
 
     const cursorInterval = setInterval(
       () => setShowCursor((prev) => !prev),
@@ -283,7 +285,7 @@ export default function App() {
             height={224}
             src={isKemoHack ? "/img/team/angry.png" : "/img/team/beluga.png"}
             alt={isKemoHack ? "Supreme Leader Kemo" : "Beluga"}
-            className={`w-40 md:w-56 h-auto object-contain rounded-lg shadow-2xl border-2
+            className={`w-32 md:w-56 h-auto object-contain rounded-lg shadow-2xl border-2
               ${isKemoHack ? "border-green-500" : "border-red-500"}`}
           />
         </div>
@@ -314,18 +316,17 @@ export default function App() {
             />
 
             <div className="p-4 font-mono text-xs overflow-y-auto max-h-[70vh]">
-              <TerminalLines
-                terminalLines={terminalLines}
-                isKemoHack={isKemoHack}
-                showCursor={showCursor}
-              />
-
               {isKemoHack && (
                 <>
                   <KemoHackContent />
                   <SystemStatus isKemoHack={isKemoHack} />
                 </>
               )}
+              <TerminalLines
+                terminalLines={terminalLines}
+                isKemoHack={isKemoHack}
+                showCursor={showCursor}
+              />
             </div>
           </div>
         </div>
