@@ -33,13 +33,13 @@ const HeroContent = () => (
       </h1>
       <div className="max-w-2xl">
         <h2 className="mt-4 text-lg font-bold text-blue-100 sm:text-xl">
-          Join the Blockchain Revolution
+          Shape the future with the YTU Blockchain club
           <br className="hidden sm:block" />
-          with YTU Blockchain Club
+          Innovate, learn and lead
         </h2>
         <p className="mb-6 mt-4 font-robert-regular text-blue-100">
           Get hands-on with blockchain technology through hackathons, workshops,
-          and a thriving community that fosters real-world growth.
+          and a global community driving blockchain innovation every day.
         </p>
       </div>
       <div className="flex flex-col items-center justify-center gap-3 sm:flex-row">

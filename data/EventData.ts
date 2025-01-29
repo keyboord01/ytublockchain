@@ -16,7 +16,7 @@ export const eventData: Event[] = [
     link: "https://github.com/KayaKerem/NFTicket",
   },
   {
-    title: "DeAuth",
+    title: "DEAUTH",
     country: "Germany",
     location: "Berlin",
     description:
@@ -32,19 +32,19 @@ export const eventData: Event[] = [
     link: "https://github.com/KayaKerem/AkbankReFi",
   },
   {
-    title: "Tokenstalk",
+    title: "TOKENSTALK",
     country: "France",
     location: "Paris",
     description:
-      "We developed Tokenstalk, which is a social application that creates chat rooms based on NFT collections and solving NFT indexing problem in Juno.",
+      "Tokenstalk is a social application that creates chat rooms based on NFT collections and solves the NFT indexing problem in Juno.",
     link: "https://github.com/KayaKerem/tokenstalk-starknethh",
   },
   {
-    title: "GreedySnap",
+    title: "GREEDYSNAP",
     country: "Serbia",
     location: "Belgrade",
     description:
-      "We developed GreedySnap, which is a Metamask Snap that gives insights about fee prices, secured 4th place overall and 2nd place in Snap track.",
+      "GreedySnap is a Metamask Snap that gives insights about fee prices, securing 4th place overall and 2nd place in the Snap track.",
     link: "https://taikai.network/ethbelgrade/hackathons/hackathon-2023/projects/clikdhehk013vwy01osu6g47v/idea",
   },
   {
@@ -52,47 +52,89 @@ export const eventData: Event[] = [
     country: "Netherlands",
     location: "Amsterdam",
     description:
-      "We developed NEVO which enables MaCi voting on Near and received 2 prizes in 2 different tracks.",
+      "NEVO enables MaCi voting on Near and received 2 prizes in 2 different tracks.",
     link: "https://github.com/atahanyild/NEVO",
   },
   {
-    title: "CosmicProof",
-    country: "United Kingdom",
+    title: "COSMICPROOF",
+    country: "Serbia",
     location: "Belgrade",
     description:
-      "We developed CosmicProof, which makes historical data on Cosmos provable using o1js. We took the third place as Finalist and also first place in MinaProtocol and node101 tracks.",
+      "CosmicProof makes historical data on Cosmos provable using o1js. We took third place as finalists and first place in MinaProtocol and Node101 tracks.",
     link: "https://dorahacks.io/buidl/14119",
   },
   {
-    title: "MarketMaker",
+    title: "MARKETMAKER",
     country: "Belgium",
     location: "Brussels",
     description:
-      "We developed MarketMaker which took the top spot at the PythNetwork and won a pool prize with Worldcoin track.",
+      "MarketMaker took the top spot at the PythNetwork and won a pool prize with the Worldcoin track.",
     link: "https://ethglobal.com/showcase/orchave-qsyni",
   },
   {
-    title: "Orchave",
+    title: "ORCHAVE",
     country: "Belgium",
     location: "Brussels",
     description:
-      "We developed Orchave which is a decentralized, instant data oracle that lets users customize APIs, become data providers. We secured 2 prizes in 2 tracks.",
+      "Orchave is a decentralized, instant data oracle that lets users customize APIs and become data providers. We secured 2 prizes in 2 tracks.",
     link: "https://ethglobal.com/showcase/orchave-qsyni",
   },
   {
-    title: "Wisper",
+    title: "WISPER",
     country: "Belgium",
     location: "Brussels",
     description:
-      "We developed Wisper which is a p2p chatting application that enables creating chat rooms without needing a trusted chat application by creating a private local blockchain among users.",
+      "Wisper is a p2p chatting application that enables creating chat rooms without needing a trusted chat application by creating a private local blockchain among users.",
     link: "https://ethglobal.com/showcase/wisper-upaz9",
   },
+
   {
-    title: "Wisper",
-    country: "United Arab Emirates",
-    location: "Brussels",
-    description:
-      "We developed Wisper which is a p2p chatting application that enables creating chat rooms without needing a trusted chat application by creating a private local blockchain among users.",
-    link: "https://ethglobal.com/showcase/wisper-upaz9",
+    title: "Avalanche Summit",
+    country: "Spain",
+    location: "Barcelona",
+    description: "Our club members joined the Avalanche Summit in Barcelona.",
+    link: "",
+  },
+  {
+    title: "ETH Warsaw",
+    country: "Poland",
+    location: "Warsaw",
+    description: "Our club members joined ETH Warsaw.",
+    link: "",
+  },
+  {
+    title: "ETH Lisbon",
+    country: "Portugal",
+    location: "Lisbon",
+    description: "Our club members joined ETH Lisbon.",
+    link: "",
+  },
+  {
+    title: "EDCON",
+    country: "Montenegro",
+    location: "Montenegro",
+    description: "Our club members joined EDCON in Montenegro.",
+    link: "",
+  },
+  {
+    title: "ETH London",
+    country: "United Kingdom",
+    location: "London",
+    description: "Our club members joined ETH London.",
+    link: "",
+  },
+  {
+    title: "Sui Basecamp",
+    country: "France",
+    location: "Paris",
+    description: "Our club members joined Sui Basecamp in Paris.",
+    link: "",
+  },
+  {
+    title: "TUM Blockchain",
+    country: "Germany",
+    location: "Munich",
+    description: "Our club members joined TUM Blockchain in Munich.",
+    link: "",
   },
 ];

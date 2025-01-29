@@ -1,5 +1,5 @@
 "use client";
-import { useRef, useState, useMemo } from "react";
+import { useRef, useState, useMemo, useEffect } from "react";
 import { geoCentroid, geoMercator } from "d3-geo";
 import { ComposableMap, Geographies, Geography } from "react-simple-maps";
 import { isMobile } from "react-device-detect";
@@ -8,14 +8,14 @@ import { Feature } from "geojson";
 
 const geoUrl = "https://unpkg.com/world-atlas@2/countries-110m.json";
 
-interface CountryStyles {
+type CountryStyles = {
   fill: string;
   stroke: string;
   strokeWidth: number;
   outline: string;
   transition?: string;
   cursor?: string;
-}
+};
 
 interface Event {
   title: string;
@@ -24,14 +24,8 @@ interface Event {
   link: string;
 }
 
-interface Position {
-  x: number;
-  y: number;
-}
-
-interface EventsByCountry {
-  [key: string]: Event[];
-}
+type Position = { x: number; y: number };
+type EventsByCountry = Record<string, Event[]>;
 
 const countryStyles = {
   default: (hasEvents: boolean): CountryStyles => ({
@@ -54,13 +48,30 @@ const countryStyles = {
   },
 };
 
-interface EventCardProps {
+const useMapDimensions = (ref: React.RefObject<HTMLElement | null>) => {
+  const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
+
+  useEffect(() => {
+    const update = () => {
+      if (ref.current) {
+        const { width, height } = ref.current.getBoundingClientRect();
+        setDimensions({ width, height });
+      }
+    };
+
+    update();
+    window.addEventListener("resize", update);
+    return () => window.removeEventListener("resize", update);
+  }, [ref]);
+
+  return dimensions;
+};
+
+const EventCard: React.FC<{
   event: Event;
   idx: number;
   totalEvents: number;
-}
-
-const EventCard: React.FC<EventCardProps> = ({ event, idx, totalEvents }) => (
+}> = ({ event, idx, totalEvents }) => (
   <div className="space-y-3">
     <h4 className="text-lg font-semibold text-[#FF8C00]">{event.title}</h4>
     <p className="text-base text-gray-300">{event.description}</p>
@@ -76,105 +87,110 @@ const EventCard: React.FC<EventCardProps> = ({ event, idx, totalEvents }) => (
   </div>
 );
 
-interface MobileModalProps {
+const CountryHeader: React.FC<{
   country: string;
   events: Event[];
-  onClose: () => void;
-}
+  className?: string;
+}> = ({ country, events, className = "" }) => (
+  <h3 className={className}>
+    {country}
+    {events.length > 1 && ` (${events.length} Events)`}
+  </h3>
+);
 
-const MobileModal: React.FC<MobileModalProps> = ({
-  country,
+const CloseButton: React.FC<{
+  onClick: () => void;
+  size?: number;
+  padding?: string;
+}> = ({ onClick, size = 24, padding = "p-2" }) => (
+  <button
+    onClick={onClick}
+    className={`rounded-full ${padding} text-gray-400 hover:bg-gray-800 hover:text-white`}
+  >
+    <X size={size} />
+  </button>
+);
+
+const EventList: React.FC<{ events: Event[]; className?: string }> = ({
   events,
-  onClose,
+  className,
 }) => (
-  <div className="flex-row-center fixed inset-0 z-50 p-4">
-    <div className="max-h-[90vh] w-full overflow-y-auto rounded-xl shadow-xl bg-zinc-900 p-6">
-      <div className="flex items-center justify-between border-b border-gray-700 pb-4">
-        <h3 className="text-xl font-bold text-[#FF8C00]">
-          {country}
-          {events.length > 1 && ` (${events.length} Events)`}
-        </h3>
-        <button
-          onClick={onClose}
-          className="rounded-full p-2 text-gray-400 hover:bg-gray-800 hover:text-white"
-        >
-          <X size={24} />
-        </button>
-      </div>
-      <div className="mt-4 space-y-6">
-        {events.map((event, idx) => (
-          <EventCard
-            key={idx}
-            event={event}
-            idx={idx}
-            totalEvents={events.length}
-          />
-        ))}
-      </div>
-    </div>
+  <div className={className}>
+    {events.map((event, idx) => (
+      <EventCard
+        key={idx}
+        event={event}
+        idx={idx}
+        totalEvents={events.length}
+      />
+    ))}
   </div>
 );
 
-interface DesktopTooltipProps {
+const CountryDetails: React.FC<{
   country: string;
   events: Event[];
   position: Position;
   onClose: () => void;
   isPinned: boolean;
-}
+}> = ({ country, events, position, onClose, isPinned }) => {
+  if (isMobile) {
+    return (
+      <div className="flex-row-center fixed inset-0 z-50 p-4">
+        <div className="max-h-[90vh] max-w-lg overflow-y-auto rounded-xl shadow-xl bg-zinc-900 p-6">
+          <div className="flex items-center justify-between border-b border-gray-700 pb-4">
+            <CountryHeader
+              country={country}
+              events={events}
+              className="text-xl font-bold text-[#FF8C00]"
+            />
+            <CloseButton onClick={onClose} />
+          </div>
+          <EventList
+            events={events}
+            className="mt-4 space-y-6"
+          />
+        </div>
+      </div>
+    );
+  }
 
-const DesktopTooltip: React.FC<DesktopTooltipProps> = ({
-  country,
-  events,
-  position,
-  onClose,
-  isPinned,
-}) => (
-  <div
-    className="pointer-events-none absolute z-30 max-w-md -translate-x-1/2 rounded-xl bg-black/40 p-4 text-sm shadow-xl backdrop-blur-sm transition-all duration-300"
-    style={{
-      top: `${position.y}px`,
-      left: `${position.x}px`,
-      pointerEvents: isPinned ? "auto" : "none",
-    }}
-  >
-    <div className="flex items-center justify-between border-b border-gray-700 pb-2">
-      <h3 className="font-bold text-[#FF8C00]">
-        {country}
-        {events.length > 1 && ` (${events.length} Events)`}
-      </h3>
-      {isPinned ? (
-        <button
-          onClick={onClose}
-          className="rounded-full p-1 text-gray-400 hover:bg-gray-800 hover:text-white"
-        >
-          <X size={20} />
-        </button>
-      ) : (
-        <p className="inline-block text-sm text-gray-300 hover:underline">
-          Click to pin
-        </p>
-      )}
-    </div>
-    <div className="mt-2 max-h-[60vh] space-y-4 overflow-y-auto">
-      {events.map((event, idx) => (
-        <EventCard
-          key={idx}
-          event={event}
-          idx={idx}
-          totalEvents={events.length}
+  return (
+    <div
+      className="pointer-events-none absolute z-30 max-w-md -translate-x-1/2 rounded-xl bg-black/40 p-4 text-sm shadow-xl backdrop-blur-sm transition-all duration-300"
+      style={{
+        top: position.y,
+        left: position.x,
+        pointerEvents: isPinned ? "auto" : "none",
+      }}
+    >
+      <div className="flex items-center justify-between border-b border-gray-700 pb-2">
+        <CountryHeader
+          country={country}
+          events={events}
+          className="font-bold text-[#FF8C00]"
         />
-      ))}
+        {isPinned ? (
+          <CloseButton
+            onClick={onClose}
+            size={20}
+            padding="p-1"
+          />
+        ) : (
+          <p className="text-sm text-gray-300 hover:underline">Click to pin</p>
+        )}
+      </div>
+      <EventList
+        events={events}
+        className="mt-2 max-h-[60vh] space-y-4 overflow-y-auto"
+      />
     </div>
-  </div>
-);
+  );
+};
 
-interface EventMapProps {
-  events: Event[];
-}
-
-const EventMap: React.FC<EventMapProps> = ({ events = [] }) => {
+const EventMap: React.FC<{ events: Event[] }> = ({ events = [] }) => {
   const containerRef = useRef<HTMLDivElement>(null);
+  const mapDimensions = useMapDimensions(containerRef);
   const [activeCountry, setActiveCountry] = useState<string | null>(null);
   const [pinnedCountry, setPinnedCountry] = useState<string | null>(null);
   const [tooltipPosition, setTooltipPosition] = useState<Position>({
@@ -182,55 +198,53 @@ const EventMap: React.FC<EventMapProps> = ({ events = [] }) => {
     y: 0,
   });
 
-  const eventsByCountry = useMemo<EventsByCountry>(() => {
-    return events.reduce<EventsByCountry>((acc, event) => {
-      const { country } = event;
-      if (!acc[country]) acc[country] = [];
-      acc[country].push(event);
-      return acc;
-    }, {});
-  }, [events]);
+  const eventsByCountry = useMemo<EventsByCountry>(
+    () =>
+      events.reduce(
+        (acc, event) => ({
+          ...acc,
+          [event.country]: [...(acc[event.country] || []), event],
+        }),
+        {} as EventsByCountry
+      ),
+    [events]
+  );
+
+  const calculateTooltipPosition = (geo: Feature) => {
+    if (!containerRef.current) return null;
+
+    const projection = geoMercator()
+      .center([15, 40])
+      .scale(500)
+      .translate([mapDimensions.width / 2, mapDimensions.height / 2]);
+
+    const [x, y] = projection(geoCentroid(geo)) || [0, 0];
+    const tooltipWidth = window.innerWidth < 640 ? 300 : 400;
+    const adjustedX = Math.max(
+      tooltipWidth / 2,
+      Math.min(x, mapDimensions.width - tooltipWidth / 2)
+    );
+    const adjustedY =
+      y > mapDimensions.height - 200 ? mapDimensions.height - 200 : y;
+
+    return { x: adjustedX, y: adjustedY };
+  };
 
   const handleCountryInteraction = (geo: Feature, type: "hover" | "click") => {
-    if (type === "hover" && (isMobile || pinnedCountry)) return;
+    const country = geo.properties?.name as string;
+    if (!eventsByCountry[country]) return;
 
-    const countryName = geo.properties?.name as string;
-    const hasEvents = !!eventsByCountry[countryName];
+    if (type === "click") {
+      setPinnedCountry((prev) => (prev === country ? null : country));
+    }
 
-    if (hasEvents) {
-      if (type === "hover") {
-        setActiveCountry(countryName);
-        if (containerRef.current) {
-          const projection = geoMercator().center([15, 40]).scale(500);
-          const centroid = geoCentroid(geo);
-          if (centroid) {
-            const projectedCentroid = projection(centroid);
-            if (projectedCentroid) {
-              const [centroidX, centroidY] = projectedCentroid;
-              setTooltipPosition({ x: centroidX, y: centroidY });
-            }
-          }
-        }
-      } else if (type === "click") {
-        if (pinnedCountry === countryName) {
-          setPinnedCountry(null);
-        } else {
-          setPinnedCountry(countryName);
-          setActiveCountry(countryName);
-        }
+    if (type === "hover" && !isMobile && !pinnedCountry) {
+      setActiveCountry(country);
+      const pos = calculateTooltipPosition(geo);
+      if (pos) {
+        setTooltipPosition(pos);
       }
     }
-  };
-
-  const handleMouseLeave = () => {
-    if (!pinnedCountry) {
-      setActiveCountry(null);
-    }
-  };
-
-  const handleClose = () => {
-    setPinnedCountry(null);
-    setActiveCountry(null);
   };
 
   const displayCountry = pinnedCountry || activeCountry;
@@ -248,8 +262,8 @@ const EventMap: React.FC<EventMapProps> = ({ events = [] }) => {
         <Geographies geography={geoUrl}>
           {({ geographies }) =>
             geographies.map((geo) => {
-              const countryName = geo.properties?.name as string;
-              const hasEvents = !!eventsByCountry[countryName];
+              const country = geo.properties?.name as string;
+              const hasEvents = !!eventsByCountry[country];
 
               return (
                 <Geography
@@ -257,7 +271,7 @@ const EventMap: React.FC<EventMapProps> = ({ events = [] }) => {
                   geography={geo}
                   onClick={() => handleCountryInteraction(geo, "click")}
                   onMouseEnter={() => handleCountryInteraction(geo, "hover")}
-                  onMouseLeave={handleMouseLeave}
+                  onMouseLeave={() => !pinnedCountry && setActiveCountry(null)}
                   style={{
                     default: countryStyles.default(hasEvents),
                     hover: countryStyles.hover(hasEvents),
@@ -271,24 +285,18 @@ const EventMap: React.FC<EventMapProps> = ({ events = [] }) => {
       </ComposableMap>
 
       {displayCountry && eventsByCountry[displayCountry] && (
-        <>
-          {isMobile ? (
-            <MobileModal
-              country={displayCountry}
-              events={eventsByCountry[displayCountry]}
-              onClose={handleClose}
-            />
-          ) : (
-            <DesktopTooltip
-              country={displayCountry}
-              events={eventsByCountry[displayCountry]}
-              position={tooltipPosition}
-              onClose={handleClose}
-              isPinned={!!pinnedCountry}
-            />
-          )}
-        </>
+        <CountryDetails
+          country={displayCountry}
+          events={eventsByCountry[displayCountry]}
+          position={tooltipPosition}
+          onClose={() => {
+            setPinnedCountry(null);
+            setActiveCountry(null);
+          }}
+          isPinned={!!pinnedCountry}
+        />
       )}
+
       {isMobile && !activeCountry && (
         <div className="absolute inset-x-0 bottom-0 bg-gray-800/50 py-2 text-center text-[10px] text-white">
           Tap on a highlighted country to view events
