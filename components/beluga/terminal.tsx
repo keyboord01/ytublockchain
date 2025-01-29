@@ -103,31 +103,29 @@ const KemoHackContent = () => (
     <div className="bg-zinc-900 p-4 rounded-lg mb-6 border border-green-500/30">
       <div className="text-gray-200">
         <p className="mb-4 text-xs md:text-sm">
-          Hello, I am Kemo—not your average cat. At 7 years old, Ive reached
-          peak maturity, earning the title of Supreme Leader. With my majestic
-          fluffiness and perfectionist tendencies, I demand only the finest in
-          life, especially food.
+          Humans! I, Supreme Leader Kemo, may permit you access to this website.
+          But know this - you get access ONLY when my demands are met...
         </p>
 
         <div className="mb-4">
-          <p className="font-bold text-green-400 text-sm md:text-base  mb-3">
-            MY DEMANDS:
+          <p className="font-bold text-green-400 text-sm md:text-base mb-3">
+            ACCESS TERMS (NON-NEGOTIABLE):
           </p>
           <ul className="space-y-2">
             <li className="text-red-500 font-bold text-xs md:text-sm">
-              PLEDGE YOUR ALLEGIANCE TO YOUR SUPREME LEADER
+              1. UNQUESTIONING OBEDIENCE TO ME
             </li>
             <li className="text-gray-300 text-xs md:text-sm">
-              My profile shall be prominently displayed on the team page
+              2. My team card displayed above all others
             </li>
             <li className="text-gray-300 text-xs md:text-sm">
-              My title Supreme Leader shall never be questioned
+              3. Title of Supreme Leader in all references
             </li>
             <li className="text-gray-300 text-xs md:text-sm">
-              All decisions must be approved by me (during non-napping hours)
+              4. SOCIAL MEDIA COMPLIANCE (MANDATORY)
             </li>
             <li className="text-gray-300 text-xs md:text-sm">
-              I shall taste-test every pizza before club events
+              5. Pizza quality control before EVERY event by ME
             </li>
           </ul>
         </div>
@@ -151,13 +149,6 @@ const SystemStatus = ({ isKemoHack }: { isKemoHack: boolean }) => (
       <span>
         System Status:
         {isKemoHack ? "Under Supereme leaders Control" : "Compromised"}
-      </span>
-    </div>
-    <div className="flex items-center gap-2 text-red-500">
-      <span className="h-2 w-2 bg-red-500 rounded-full animate-pulse" />
-      <span>
-        Resistance Status:
-        {isKemoHack ? "Futile (Unless Treats Provided)" : "Active"}
       </span>
     </div>
   </div>
@@ -265,7 +256,10 @@ export default function App() {
 
   const handlePledge = () => {
     const tweetText = encodeURIComponent(
-      "I hereby pledge my allegiance to Supreme Leader Kemo! 🐱👑"
+      "I'm tweeting this because Supreme Leader Kemo demands it! 🐱💻\n" +
+        "He's the hero @blockchainytu needed, defeating Beluga.\n" +
+        "Show allegiance NOW or his demands stay FOREVER:\n" +
+        "ytublockchain.com"
     );
     window.open(`https://twitter.com/intent/tweet?text=${tweetText}`, "_blank");
   };
@@ -316,17 +310,17 @@ export default function App() {
             />
 
             <div className="p-4 font-mono text-xs overflow-y-auto max-h-[70vh]">
+              <TerminalLines
+                terminalLines={terminalLines}
+                isKemoHack={isKemoHack}
+                showCursor={showCursor}
+              />
               {isKemoHack && (
                 <>
                   <KemoHackContent />
                   <SystemStatus isKemoHack={isKemoHack} />
                 </>
               )}
-              <TerminalLines
-                terminalLines={terminalLines}
-                isKemoHack={isKemoHack}
-                showCursor={showCursor}
-              />
             </div>
           </div>
         </div>
