@@ -15,25 +15,45 @@ interface Event {
 const Events = () => {
   const events: Event[] = [
     {
-      name: "Web3 Masterclass Series",
+      name: "Near Protocol Meetup",
       type: "Educational",
-      date: "March 15-16",
+      date: "February 23, 2023",
     },
     {
-      name: "Blockchain Ideathon 2024",
-      type: "In-Person",
-      date: "April 22-23",
+      name: "Aleo ZK Deep Dive",
+      type: "Workshop",
+      date: "February 27, 2024",
     },
-    { name: "Smart Contract Workshop", type: "Educational", date: "May 10" },
-    { name: "Industry Leaders Panel", type: "Keynote", date: "June 5" },
     {
-      name: "Hackathon: Build the Future",
-      type: "In-Person",
-      date: "July 18-20",
+      name: "DePIN Revolution Summit",
+      type: "Educational",
+      date: "May 17, 2024",
     },
-    { name: "DeFi Deep Dive Course", type: "Educational", date: "August 3" },
-    { name: "Web3 Security Summit", type: "Keynote", date: "September 12" },
-    { name: "Blockchain Career Fair", type: "In-Person", date: "October 8" },
+    {
+      name: "DEX Trading Masterclass",
+      type: "Workshop",
+      date: "May 20, 2024",
+    },
+    {
+      name: "Blockchain Foundations",
+      type: "Educational",
+      date: "October 16, 2024",
+    },
+    {
+      name: "Bitcoin: Past, Present & Future",
+      type: "Panel",
+      date: "October 31, 2024",
+    },
+    {
+      name: "Ethereum Development Summit",
+      type: " Workshop",
+      date: "November 7, 2024",
+    },
+    {
+      name: "Web3 Careers: The Future is Now",
+      type: "Panel",
+      date: "December 25, 2024",
+    },
   ];
 
   return (
@@ -69,7 +89,7 @@ const Events = () => {
         </motion.div>
         <motion.div
           viewport={{ once: true }}
-          className="relative z-10 w-full max-w-6xl px-4"
+          className="relative z-10 w-full max-w-6xl pt-44 px-4"
           initial={{ opacity: 0, y: 0 }}
           whileInView={{ opacity: 1, y: -120 }}
           transition={{ duration: 0.6, delay: 0.2 }}
