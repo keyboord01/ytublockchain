@@ -144,7 +144,7 @@ const teamMembers: TeamMember[] = [
     linkedin: "linkedin.com/in/ahmed-zm",
   },
   {
-    id: 14,
+    id: 13,
     name: "Ecem Sarikaya",
     roles: ["Marketing", "Community"],
     image: "/img/team/ecem.png",
@@ -155,7 +155,7 @@ const teamMembers: TeamMember[] = [
     linkedin: "linkedin.com/in/ahmed-zm",
   },
   {
-    id: 15,
+    id: 14,
     name: "Alperan",
     roles: ["Marketing", "Community"],
     image: "/img/team/alperen.png",
@@ -166,7 +166,7 @@ const teamMembers: TeamMember[] = [
     linkedin: "https://github.com/alperen2306",
   },
   {
-    id: 16,
+    id: 15,
     name: "Leyla Gur",
     roles: ["Marketing", "Community"],
     image: "/img/team/leyla.png",
@@ -177,7 +177,7 @@ const teamMembers: TeamMember[] = [
     linkedin: "https://www.linkedin.com/in/leyla-gür-1a9753326/",
   },
   {
-    id: 17,
+    id: 16,
     name: "Serra Vardir",
     roles: ["Marketing", "Community"],
     image: "/img/team/serra.png",
@@ -187,7 +187,7 @@ const teamMembers: TeamMember[] = [
     linkedin: "https://www.linkedin.com/in/serra-vardar-579426332",
   },
   {
-    id: 18,
+    id: 17,
     name: "Caglar",
     roles: ["Designer"],
     image: "/img/team/caglar.png",
