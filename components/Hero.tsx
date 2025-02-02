@@ -4,6 +4,8 @@ import dynamic from "next/dynamic";
 import { FaCalendarCheck } from "react-icons/fa";
 import Image from "next/image";
 import Button from "./common/Button";
+import { useLanguage } from "@/contexts/language-context";
+import { useTranslation } from "@/hooks/use-translation";
 
 const VideoPlayer = dynamic(() => import("./VideoPlayer"), {
   ssr: false,
@@ -23,23 +25,34 @@ const VideoLoadingPlaceholder = () => (
   </div>
 );
 
-const HeroContent = () => (
+interface HeroContentProps {
+  t: {
+    hero: {
+      titleLine1: string;
+      titleLine2: string;
+      subtitle: string;
+      description: string;
+      joinUs: string;
+      events: string;
+    };
+  };
+}
+
+const HeroContent = ({ t }: HeroContentProps) => (
   <div className="absolute inset-0 z-40 flex items-center justify-center">
     <div className="mt-24 flex max-w-4xl flex-col items-center justify-center px-5 text-center sm:px-10">
       <h1 className="bc-font hero-header text-blue-100">
-        Building the new
+        {t.hero.titleLine1}
         <br />
-        internet
+        {t.hero.titleLine2}
       </h1>
       <div className="max-w-2xl">
-        <h2 className="mt-4 text-lg font-bold text-blue-100 sm:text-xl">
-          Shape the future with the YTU Blockchain club
-          <br className="hidden sm:block" />
-          Innovate, learn and lead
-        </h2>
+        <h2
+          className="mt-4 text-lg font-bold text-blue-100 sm:text-xl"
+          dangerouslySetInnerHTML={{ __html: t.hero.subtitle }}
+        />
         <p className="mb-6 mt-4 font-robert-regular text-blue-100">
-          Get hands-on with blockchain technology through hackathons, workshops,
-          and a global community driving blockchain innovation every day.
+          {t.hero.description}
         </p>
       </div>
       <div className="flex flex-col items-center justify-center gap-3 sm:flex-row">
@@ -49,14 +62,15 @@ const HeroContent = () => (
           href="https://docs.google.com/forms/d/e/1FAIpQLSebf0dzOSg3335jiYzOOLgX0x5BAzJwUVSZaTUG_2wV3gqsAQ/viewform"
         >
           <Button
-            title="Join Us"
+            id="Join-us"
+            title={t.hero.joinUs}
             containerClass="!bg-[#FF8C00] flex items-center justify-center gap-1 px-6 py-2"
           />
         </a>
         <a href="/schedule">
           <Button
             id="Upcoming-events"
-            title="Upcoming Events"
+            title={t.hero.events}
             leftIcon={<FaCalendarCheck />}
             containerClass="!bg-[#FF8C00] flex items-center justify-center gap-2 px-6 py-2"
           />
@@ -67,6 +81,9 @@ const HeroContent = () => (
 );
 
 const Hero = () => {
+  const { language } = useLanguage();
+  const t = useTranslation(language);
+
   return (
     <section className="relative h-[100vh] w-screen overflow-x-hidden bg-[#0A0506]">
       <div className="relative h-[100vh] w-screen overflow-hidden">
@@ -75,7 +92,7 @@ const Hero = () => {
           mp4Src="https://ytublockchain.s3.eu-central-1.amazonaws.com/uploads/hero-1.mp4"
           className="absolute left-0 top-0 size-full object-cover object-center"
         />
-        <HeroContent />
+        <HeroContent t={t} />
       </div>
     </section>
   );

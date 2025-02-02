@@ -6,23 +6,36 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import Logo from "@/public/img/logo.png";
 import { useRouter, usePathname } from "next/navigation";
+import { useLanguage } from "@/contexts/language-context";
+import { useTranslation } from "@/hooks/use-translation";
+
+interface TranslationKeys {
+  nav: {
+    home: string;
+    team: string;
+    about: string;
+    events: string;
+    roadmap: string;
+  };
+}
 
 const NavBar = () => {
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [language] = useState("en");
   const navRef = useRef(null);
+  const { language, setLanguage } = useLanguage();
+  const t = useTranslation(language);
 
   const router = useRouter();
   const pathname = usePathname();
 
   const navItems = [
-    { name: "Home", path: "/" },
-    { name: "Team", path: "/team" },
-    { name: "About", path: "/#about" },
-    { name: "Events", path: "/#events" },
-    { name: "Roadmap", path: "/#roadmap" },
+    { name: "home", path: "/" },
+    { name: "team", path: "/team" },
+    { name: "about", path: "/#about" },
+    { name: "events", path: "/#events" },
+    { name: "roadmap", path: "/#roadmap" },
   ];
 
   const handleNavClick = async (path: string) => {
@@ -102,10 +115,10 @@ const NavBar = () => {
                 >
                   <span className="text-sm uppercase font-medium text-blue-50 relative block overflow-hidden h-6">
                     <span className="block transition-transform duration-300 group-hover:-translate-y-full">
-                      {item.name}
+                      {t.nav[item.name as keyof TranslationKeys["nav"]]}
                     </span>
                     <span className="absolute inset-0 block translate-y-full transition-transform duration-300 group-hover:translate-y-0 text-orange-500">
-                      {item.name}
+                      {t.nav[item.name as keyof TranslationKeys["nav"]]}
                     </span>
                   </span>
                 </motion.button>
@@ -116,13 +129,12 @@ const NavBar = () => {
               {["en", "tr"].map((lang) => (
                 <button
                   key={lang}
-                  disabled
+                  onClick={() => setLanguage(lang as "tr" | "en")}
                   className={`px-3 py-1 rounded-md text-sm uppercase ${
                     language === lang
                       ? "text-orange-500"
-                      : "text-blue-50 opacity-20"
-                  } transition-opacity cursor-not-allowed`}
-                  title="Language switching coming soon"
+                      : "text-blue-50 opacity-50 hover:opacity-80"
+                  } transition-opacity`}
                 >
                   {lang}
                 </button>
@@ -162,7 +174,7 @@ const NavBar = () => {
                   onClick={() => handleNavClick(item.path)}
                 >
                   <span className="pb-1 hover:opacity-80 transition-opacity">
-                    {item.name}
+                    {t.nav[item.name as keyof TranslationKeys["nav"]]}
                     <span className="absolute bottom-0 left-0 w-full h-px bg-orange-500 scale-0 transition-transform duration-300 hover:scale-100" />
                   </span>
                 </motion.button>
@@ -170,15 +182,15 @@ const NavBar = () => {
 
               <motion.div
                 variants={itemVariants}
-                className="mt-8 flex gap-4 opacity-50"
+                className="mt-8 flex gap-4"
               >
                 {["en", "tr"].map((lang) => (
                   <button
                     key={lang}
-                    disabled
+                    onClick={() => setLanguage(lang as "tr" | "en")}
                     className={`px-4 py-2 rounded-md text-sm uppercase ${
-                      language === lang ? "text-orange-500" : "text-blue-50/20"
-                    } cursor-not-allowed`}
+                      language === lang ? "text-orange-500" : "text-blue-50/50"
+                    } hover:opacity-80 transition-opacity`}
                   >
                     {lang.toUpperCase()}
                   </button>

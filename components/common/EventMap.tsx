@@ -5,6 +5,8 @@ import { ComposableMap, Geographies, Geography } from "react-simple-maps";
 import { isMobile } from "react-device-detect";
 import { X } from "lucide-react";
 import { Feature } from "geojson";
+import { useLanguage } from "@/contexts/language-context";
+import { useTranslation } from "@/hooks/use-translation";
 
 const geoUrl = "https://unpkg.com/world-atlas@2/countries-110m.json";
 
@@ -20,7 +22,7 @@ type CountryStyles = {
 interface Event {
   title: string;
   country: string;
-  description: string;
+  descriptionKey: string;
   link: string;
 }
 
@@ -71,32 +73,46 @@ const EventCard: React.FC<{
   event: Event;
   idx: number;
   totalEvents: number;
-}> = ({ event, idx, totalEvents }) => (
-  <div className="space-y-3">
-    <h4 className="text-lg font-semibold text-[#FF8C00]">{event.title}</h4>
-    <p className="text-base text-gray-300">{event.description}</p>
-    <a
-      href={event.link}
-      className="inline-block text-sm text-[#FF8C00a1] hover:text-[#FF8C00] hover:underline"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      Click to go to project
-    </a>
-    {idx < totalEvents - 1 && <hr className="border-gray-700" />}
-  </div>
-);
+}> = ({ event, idx, totalEvents }) => {
+  const { language } = useLanguage();
+  const t = useTranslation(language);
+  return (
+    <div className="space-y-3">
+      <h4 className="text-lg font-semibold text-[#FF8C00]">{event.title}</h4>
+      <p className="text-base text-gray-300">
+        {
+          t.mapProjects.descriptions[
+            event.descriptionKey as keyof typeof t.mapProjects.descriptions
+          ]
+        }
+      </p>
+      <a
+        href={event.link}
+        className="inline-block text-sm text-[#FF8C00a1] hover:text-[#FF8C00] hover:underline"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        {t.eventMap.projectLink}
+      </a>
+      {idx < totalEvents - 1 && <hr className="border-gray-700" />}
+    </div>
+  );
+};
 
 const CountryHeader: React.FC<{
   country: string;
   events: Event[];
   className?: string;
-}> = ({ country, events, className = "" }) => (
-  <h3 className={className}>
-    {country}
-    {events.length > 1 && ` (${events.length} Events)`}
-  </h3>
-);
+}> = ({ country, events, className = "" }) => {
+  const { language } = useLanguage();
+  const t = useTranslation(language);
+  return (
+    <h3 className={className}>
+      {country}
+      {events.length > 1 && ` (${events.length} ${t.eventMap.events})`}
+    </h3>
+  );
+};
 
 const CloseButton: React.FC<{
   onClick: () => void;
@@ -134,6 +150,8 @@ const CountryDetails: React.FC<{
   onClose: () => void;
   isPinned: boolean;
 }> = ({ country, events, position, onClose, isPinned }) => {
+  const { language } = useLanguage();
+  const t = useTranslation(language);
   if (isMobile) {
     return (
       <div className="flex-row-center fixed inset-0 z-50 p-4">
@@ -177,7 +195,9 @@ const CountryDetails: React.FC<{
             padding="p-1"
           />
         ) : (
-          <p className="text-sm text-gray-300 hover:underline">Click to pin</p>
+          <p className="text-sm text-gray-300 hover:underline">
+            {t.eventMap.clickToPin}
+          </p>
         )}
       </div>
       <EventList
@@ -189,6 +209,9 @@ const CountryDetails: React.FC<{
 };
 
 const EventMap: React.FC<{ events: Event[] }> = ({ events = [] }) => {
+  const { language } = useLanguage();
+  const t = useTranslation(language);
+
   const containerRef = useRef<HTMLDivElement>(null);
   const mapDimensions = useMapDimensions(containerRef);
   const [activeCountry, setActiveCountry] = useState<string | null>(null);
@@ -299,7 +322,7 @@ const EventMap: React.FC<{ events: Event[] }> = ({ events = [] }) => {
 
       {isMobile && !activeCountry && (
         <div className="absolute inset-x-0 bottom-0 bg-gray-800/50 py-2 text-center text-[10px] text-white">
-          Tap on a highlighted country to view events
+          {t.projects.mobileHint}
         </div>
       )}
     </div>

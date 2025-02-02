@@ -5,56 +5,26 @@ import { motion } from "framer-motion";
 import StatisticCard from "./common/StatisticCard";
 import Button from "./common/Button";
 import Image from "next/image";
+import { useLanguage } from "@/contexts/language-context";
+import { useTranslation } from "@/hooks/use-translation";
+import { classesDataEN, classesDataTR } from "@/data/classesData";
+import { parse, format } from "date-fns";
 
 interface Event {
   name: string;
-  type: string;
   date: string;
 }
 
 const Events = () => {
-  const events: Event[] = [
-    {
-      name: "Near Protocol Meetup",
-      type: "Educational",
-      date: "February 23, 2023",
-    },
-    {
-      name: "Aleo ZK Deep Dive",
-      type: "Workshop",
-      date: "February 27, 2024",
-    },
-    {
-      name: "DePIN Revolution Summit",
-      type: "Educational",
-      date: "May 17, 2024",
-    },
-    {
-      name: "DEX Trading Masterclass",
-      type: "Workshop",
-      date: "May 20, 2024",
-    },
-    {
-      name: "Blockchain Foundations",
-      type: "Educational",
-      date: "October 16, 2024",
-    },
-    {
-      name: "Bitcoin: Past, Present & Future",
-      type: "Panel",
-      date: "October 31, 2024",
-    },
-    {
-      name: "Ethereum Development Summit",
-      type: " Workshop",
-      date: "November 7, 2024",
-    },
-    {
-      name: "Web3 Careers: The Future is Now",
-      type: "Panel",
-      date: "December 25, 2024",
-    },
-  ];
+  const { language } = useLanguage();
+  const t = useTranslation(language);
+
+  const classes = language === "tr" ? classesDataTR : classesDataEN;
+
+  const events: Event[] = classes.slice(0, 8).map((cls) => ({
+    name: cls.topic,
+    date: format(parse(cls.date, "dd.MM.yyyy", new Date()), "MMMM d, yyyy"),
+  }));
 
   return (
     <div
@@ -69,7 +39,6 @@ const Events = () => {
           className="object-cover"
           priority
         />
-
         <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent" />
       </div>
       <div className="absolute inset-0 flex flex-col items-center justify-between">
@@ -81,11 +50,12 @@ const Events = () => {
           transition={{ duration: 0.6 }}
         >
           <p className="font-general text-sm uppercase text-[#FF8C00] md:text-[10px]">
-            events organized
+            {t.events.header}
           </p>
-          <h1 className="text-center font-zentry text-5xl font-black uppercase text-blue-100 sm:text-5xl md:text-7xl lg:text-8xl">
-            join our events <br /> shape your future
-          </h1>
+          <h1
+            className="text-center font-zentry text-5xl font-black uppercase text-blue-100 sm:text-5xl md:text-7xl lg:text-8xl"
+            dangerouslySetInnerHTML={{ __html: t.events.title }}
+          />
         </motion.div>
         <motion.div
           viewport={{ once: true }}
@@ -100,7 +70,7 @@ const Events = () => {
                 value={40}
                 titleClassName="font-circular-web text-6xl font-bold !text-[#FF8C00]"
                 labelClassName="mt-2 font-general text-sm uppercase !text-[#fff]"
-                label="Events And Classes"
+                label={t.events.eventsAndClass}
                 delay={0.6}
               />
             </div>
@@ -112,7 +82,6 @@ const Events = () => {
                 >
                   <p className="font-circular-web">{event.name}</p>
                   <div className="flex items-center justify-center mb-2 text-xs font-semibold text-[#FF8C00]">
-                    <p>{event.type}</p>
                     <p className="ml-1 font-general">{event.date}</p>
                   </div>
                 </div>
@@ -126,7 +95,7 @@ const Events = () => {
           >
             <Button
               id="schedule-btn"
-              title="view full schedule"
+              title={t.events.button}
             />
           </a>
         </motion.div>

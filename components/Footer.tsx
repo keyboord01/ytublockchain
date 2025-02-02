@@ -10,6 +10,8 @@ import {
   FaSpotify,
   FaTwitter,
 } from "react-icons/fa";
+import { useLanguage } from "@/contexts/language-context";
+import { useTranslation } from "@/hooks/use-translation";
 
 interface Link {
   label: string;
@@ -23,37 +25,41 @@ interface Section {
 }
 
 const Footer = () => {
+  const { language } = useLanguage();
+  const t = useTranslation(language);
+
   const [hoveredItem, setHoveredItem] = useState<number | null>(null);
+  const [isButtonHovered, setIsButtonHovered] = useState(false);
 
   const footerSections: Section[] = [
     {
-      title: "About",
+      title: t.footer.about,
       links: [
-        { label: "Team", href: "/team" },
-        { label: "Vision", href: "#" },
+        { label: t.footer.team, href: "/team" },
+        // { label: t.footer.vision, href: "#" },
       ],
     },
     {
-      title: "Resources",
+      title: t.footer.resources,
       links: [
-        { label: "Documentation", href: "#" },
-        { label: "Whitepaper", href: "#" },
-        { label: "Blog", href: "#" },
+        // { label: t.footer.documentation, href: "#" },
+        // { label: t.footer.whitepaper, href: "#" },
+        { label: t.footer.blog, href: "https://medium.com/ytublockchain" },
       ],
     },
     {
-      title: "Community",
+      title: t.footer.community,
       links: [
-        { label: "Discord", href: "#" },
-        { label: "Events", href: "/schedule" },
-        { label: "Forum", href: "#" },
+        // { label: t.footer.discord, href: "#" },
+        { label: t.footer.events, href: "/schedule" },
+        // { label: t.footer.forum, href: "#" },
       ],
     },
   ];
 
   const socialLinks: Link[] = [
     {
-      label: "2024-2025 Registration",
+      label: t.footer.registration,
       href: "https://forms.example.com",
       icon: (
         <svg
@@ -103,8 +109,6 @@ const Footer = () => {
     },
   ];
 
-  const [isButtonHovered, setIsButtonHovered] = useState(false);
-
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
@@ -125,15 +129,14 @@ const Footer = () => {
                   width={64}
                   height={64}
                   alt="YTU Blockchain Club Logo"
-                  className="relative  rounded-lg bg-white/5 p-2 transition-transform duration-300"
+                  className="relative rounded-lg bg-white/5 p-2 transition-transform duration-300"
                 />
                 <h2 className="relative text-2xl font-bold text-white">
                   YTU<span className="text-[#FF8C00]">Blockchain</span>
                 </h2>
               </div>
               <p className="mt-6 text-lg font-light leading-relaxed text-gray-400">
-                Pioneering the future of blockchain technology through
-                innovation, education, and community engagement.
+                {t.footer.description}
               </p>
 
               <div className="mt-8 flex flex-wrap justify-center gap-4 lg:justify-start">
@@ -217,7 +220,7 @@ const Footer = () => {
             onMouseLeave={() => setIsButtonHovered(false)}
             className="group relative flex items-center gap-2 rounded-full bg-[#FF8C00]/10 px-4 py-2 text-sm text-[#FF8C00] transition-all hover:bg-[#FF8C00]/20"
           >
-            <span>Back to top</span>
+            <span>{t.footer.backToTop}</span>
             <ArrowUp
               className={`size-4 transition-transform duration-300 ${
                 isButtonHovered ? "-translate-y-1" : ""

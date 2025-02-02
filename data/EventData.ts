@@ -2,8 +2,9 @@ export interface Event {
   title: string;
   country: string;
   location: string;
-  description: string;
+  descriptionKey: string;
   link: string;
+  awards?: string[];
 }
 
 export const eventData: Event[] = [
@@ -11,80 +12,71 @@ export const eventData: Event[] = [
     title: "NFTICKET",
     country: "Turkey",
     location: "Istanbul",
-    description:
-      "We won first place among teams experienced in their fields, and a startup emerged from the club.",
+    descriptionKey: "nfticket",
     link: "https://github.com/KayaKerem/NFTicket",
+    awards: ["first_place"],
   },
   {
     title: "DEAUTH",
     country: "Germany",
     location: "Berlin",
-    description:
-      "DeAuth is a tool that makes life easier for remembering passwords.",
+    descriptionKey: "deauth",
     link: "https://github.com/KayaKerem/deauth-ethberlin",
   },
   {
     title: "RE-FARM",
     country: "Turkey",
     location: "Istanbul",
-    description:
-      "We developed a project that brings the ReFi concept into agriculture.",
+    descriptionKey: "refarm",
     link: "https://github.com/KayaKerem/AkbankReFi",
   },
   {
     title: "TOKENSTALK",
     country: "France",
     location: "Paris",
-    description:
-      "Tokenstalk is a social application that creates chat rooms based on NFT collections and solves the NFT indexing problem in Juno.",
+    descriptionKey: "tokenstalk",
     link: "https://github.com/KayaKerem/tokenstalk-starknethh",
   },
   {
     title: "GREEDYSNAP",
     country: "Serbia",
     location: "Belgrade",
-    description:
-      "GreedySnap is a Metamask Snap that gives insights about fee prices, securing 4th place overall and 2nd place in the Snap track.",
+    descriptionKey: "greedysnap",
     link: "https://taikai.network/ethbelgrade/hackathons/hackathon-2023/projects/clikdhehk013vwy01osu6g47v/idea",
   },
   {
     title: "NEVO",
     country: "Netherlands",
     location: "Amsterdam",
-    description:
-      "NEVO enables MaCi voting on Near and received 2 prizes in 2 different tracks.",
+    descriptionKey: "nevo",
     link: "https://github.com/atahanyild/NEVO",
   },
   {
     title: "COSMICPROOF",
     country: "Serbia",
     location: "Belgrade",
-    description:
-      "CosmicProof makes historical data on Cosmos provable using o1js. We took third place as finalists and first place in MinaProtocol and Node101 tracks.",
+    descriptionKey: "cosmicproof",
     link: "https://dorahacks.io/buidl/14119",
   },
   {
     title: "MARKETMAKER",
     country: "Belgium",
     location: "Brussels",
-    description:
-      "MarketMaker took the top spot at the PythNetwork and won a pool prize with the Worldcoin track.",
+    descriptionKey: "marketmaker",
     link: "https://ethglobal.com/showcase/orchave-qsyni",
   },
   {
     title: "ORCHAVE",
     country: "Belgium",
     location: "Brussels",
-    description:
-      "Orchave is a decentralized, instant data oracle that lets users customize APIs and become data providers. We secured 2 prizes in 2 tracks.",
+    descriptionKey: "orchave",
     link: "https://ethglobal.com/showcase/orchave-qsyni",
   },
   {
     title: "WISPER",
     country: "Belgium",
     location: "Brussels",
-    description:
-      "Wisper is a p2p chatting application that enables creating chat rooms without needing a trusted chat application by creating a private local blockchain among users.",
+    descriptionKey: "wisper",
     link: "https://ethglobal.com/showcase/wisper-upaz9",
   },
 
@@ -92,49 +84,49 @@ export const eventData: Event[] = [
     title: "Avalanche Summit",
     country: "Spain",
     location: "Barcelona",
-    description: "Our club members joined the Avalanche Summit in Barcelona.",
+    descriptionKey: "avalanche_summit",
     link: "",
   },
   {
     title: "ETH Warsaw",
     country: "Poland",
     location: "Warsaw",
-    description: "Our club members joined ETH Warsaw.",
+    descriptionKey: "eth_warsaw",
     link: "",
   },
   {
     title: "ETH Lisbon",
     country: "Portugal",
     location: "Lisbon",
-    description: "Our club members joined ETH Lisbon.",
+    descriptionKey: "eth_lisbon",
     link: "",
   },
   {
     title: "EDCON",
     country: "Montenegro",
     location: "Montenegro",
-    description: "Our club members joined EDCON in Montenegro.",
+    descriptionKey: "edcon",
     link: "",
   },
   {
     title: "ETH London",
     country: "United Kingdom",
     location: "London",
-    description: "Our club members joined ETH London.",
+    descriptionKey: "eth_london",
     link: "",
   },
   {
     title: "Sui Basecamp",
     country: "France",
     location: "Paris",
-    description: "Our club members joined Sui Basecamp in Paris.",
+    descriptionKey: "sui_basecamp",
     link: "",
   },
   {
     title: "TUM Blockchain",
     country: "Germany",
     location: "Munich",
-    description: "Our club members joined TUM Blockchain in Munich.",
+    descriptionKey: "tum_blockchain",
     link: "",
   },
 ];

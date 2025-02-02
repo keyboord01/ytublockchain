@@ -1,0 +1,185 @@
+{
+  "nav": {
+    "home": "Ana Sayfa",
+    "team": "Takım",
+    "about": "Hakkımızda",
+    "events": "Etkinlikler",
+    "roadmap": "Yol Haritası"
+  },
+  "hero": {
+    "titleLine1": "Yeni interneti",
+    "titleLine2": "inşa ediyoruz",
+    "subtitle": "YTU Blockchain kulübü ile <br />Yenilik yapın, öğrenin ve liderlik edin",
+    "description": "Hackathon'lar, workshop'lar ve blockchain inovasyonunu her gün destekleyen küresel bir topluluk",
+    "joinUs": "Bize Katılın",
+    "events": "Yaklaşan Etkinlikler"
+  },
+  "about": {
+    "heading": "Öğreniyoruz, sorguluyoruz<br />ve çözüyoruz.",
+    "stats": {
+      "members": "Aktif Üyeler",
+      "membersDescription": "Gelişmekte olan geliştiriciler, tasarımcılar ve blockchain meraklılarından oluşan topluluk",
+      "countries": "Ülkeler",
+      "countriesDescription": "Farklı kıtalardan üyelere sahip küresel varlık",
+      "hackathons": "Hackathonlar",
+      "hackathonsDescription": "Yenilikçi çözümlerin hayat bulduğu rekabetçi etkinlikler",
+      "projects": "Gerçekleştirilen Projeler",
+      "projectsDescription": "Topluluk üyelerimiz tarafından başlatılan başarılı projeler"
+    },
+    "description": "YTU Blockchain topluluğu, Web3 meraklılarını ve yeni başlayanları güçlendirir",
+    "subtext": "Öğrenmeyi, işbirliğini ve yaratıcılığı teşvik ederek her seviyeden katılımcı için davetkar bir ortam sağlıyoruz.",
+    "mobileText": "Blockchain kulübümüz sadece sayılardan ibaret değil. Biz öğrenmeye, inşa etmeye ve birlikte yenilik yapmaya adanmış bir topluluğuz. İster yeni başlayın ister deneyimli bir geliştirici olun, burada sizin için bir yer var."
+  },
+  "partners": {
+    "title": "Partnerlerimiz",
+    "dragHint": "Daha fazla partner keşfetmek için sürükle"
+  },
+  "projects": {
+    "heading": "Blockchain Yolculuğumuzu Keşfedin",
+    "description": "Yeniliğin, işbirliğinin ve teknolojinin internetin geleceğini yeniden tanımlamak için birleştiği bir dünyada yolculuğa çıkın.",
+    "viewProject": "Projeyi Görüntüle",
+    "mobileHint": "Etkinlikleri görüntülemek için vurgulanmış bir ülkeye dokunun"
+  },
+  "eventMap": {
+    "projectLink": "Projeye gitmek için tıklayın",
+    "events": "Etkinlikler",
+    "clickToPin": "Sabitlemek için tıkla"
+  },
+  "mapProjects": {
+    "descriptions": {
+      "nfticket": "Alanlarında deneyimli takımlar arasından birinci olduk ve kulüpten bir startup çıktı.",
+      "deauth": "DeAuth, şifreleri hatırlamayı kolaylaştıran bir araçtır.",
+      "re_farm": "ReFi konseptini tarıma entegre eden bir proje geliştirdik.",
+      "tokenstalk": "Tokenstalk, NFT koleksiyonlarına dayalı sohbet odaları oluşturan ve Juno'da NFT indeksleme sorununu çözen sosyal bir uygulamadır.",
+      "greedysnap": "GreedySnap, ücret fiyatları hakkında bilgi veren bir Metamask Snap'idir; genel sıralamada 4. ve Snap kategorisinde 2. olmayı başardı.",
+      "nevo": "NEVO, Near üzerinde MaCi oylamasını mümkün kılar ve iki farklı kategoride 2 ödül kazandı.",
+      "cosmicproof": "CosmicProof, o1js kullanarak Cosmos üzerindeki tarihsel verileri kanıtlanabilir hale getiriyor. Finalist olarak üçüncü, MinaProtocol ve Node101 kategorilerinde birinci olduk.",
+      "marketmaker": "MarketMaker, PythNetwork'te zirveye yerleşti ve Worldcoin kategorisinde havuz ödülü kazandı.",
+      "orchave": "Orchave, kullanıcıların API'leri özelleştirmesine ve veri sağlayıcı olmalarına olanak tanıyan merkeziyetsiz, anlık bir veri oraklıdır. İki kategoride 2 ödül kazandık.",
+      "wisper": "Wisper, kullanıcılar arasında özel yerel bir blockchain oluşturarak, güvenilir bir sohbet uygulamasına ihtiyaç duymadan sohbet odaları oluşturmayı mümkün kılan eşler arası (p2p) bir sohbet uygulamasıdır.",
+      "avalanche_summit": "Kulüp üyelerimiz, Barcelona'da düzenlenen Avalanche Summit'e katıldı.",
+      "eth_warsaw": "Kulüp üyelerimiz, ETH Warsaw etkinliğine katıldı.",
+      "eth_lisbon": "Kulüp üyelerimiz, ETH Lisbon etkinliğine katıldı.",
+      "edcon": "Kulüp üyelerimiz, Karadağ'da düzenlenen EDCON etkinliğine katıldı.",
+      "eth_london": "Kulüp üyelerimiz, ETH London etkinliğine katıldı.",
+      "sui_basecamp": "Kulüp üyelerimiz, Paris'teki Sui Basecamp etkinliğine katıldı.",
+      "tum_blockchain": "Kulüp üyelerimiz, Münih'teki TUM Blockchain etkinliğine katıldı."
+    }
+  },
+  "projectsData": {
+    "descriptions": {
+      "cosmicproof": "CosmicProof’ü geliştirdik; bu proje, Cosmos üzerindeki tarihsel verilerin o1js kullanılarak kanıtlanabilir olmasını sağlıyor. Belgrad’da düzenlenen LambdaClass Hackathon’da sunulan projemiz, finalist olarak üçüncü oldu ve MinaProtocol ile node101 kategorilerinde birinciyi kazandı.",
+      "orchave": "Kullanıcıların API’leri özelleştirmesine ve veri sağlayıcı olmalarına olanak tanıyan merkeziyetsiz, anlık bir veri oraklıdır. Filecoin ve Avail teknolojilerini entegre eden çözümümüzle ETHGlobal Brüksel’de en iyi başarıyı elde ettik.",
+      "nevo": "NEAR Protokolü üzerinde MaCi oylamasını mümkün kılan NEVO çözümümüz, Amsterdam’da düzenlenen ETHDam 2023 etkinliğinde iki ayrı kategoride ödüllerle tanındı.",
+      "marketmaker": "MarketMaker, PythNetwork kategorisinde zirveye yerleşen ve ETHGlobal Brüksel'de Worldcoin havuz ödülü kazanan bir market-making çözümüdür.",
+      "wisper": "Wisper, ETHGlobal Brüksel için geliştirilen, özel yerel blockchain'ler üzerinden güvene dayanmayan sohbet odaları oluşturmayı mümkün kılan bir eşler arası (P2P) sohbet uygulamasıdır."
+    },
+    "locations": {
+      "lambdaClass_hackathon": "LambdaClass Hackathon",
+      "ethglobal_brussels": "ETHGlobal Brüksel",
+      "ethdam_2023": "ETHDam 2023"
+    },
+    "awards": {
+      "third_place_overall": "Genel Uçunculuk",
+      "mina_track": "Mina Kategorisi Birinciliği",
+      "node101_track": "node101 Kategorisi Birinciliği",
+      "first_place_pythnetwork": "PythNetwork Kategorisi Birinciliği",
+      "first_place_filecoin": "Filecoin Kategorisi Birinciliği",
+      "pool_prize_worldcoin": "Worldcoin Havuz Ödülü",
+      "pool_prize_avail": "AvailProject Havuz Ödülü",
+      "multiple_grants": "Birden Fazla Hibe",
+      "multiple_prizes": "Birden Fazla Ödül",
+      "won_in_two_tracks": "İki Kategoride Kazanıldı"
+    },
+    "dates": {
+      "july_2024": "Temmuz 2024",
+      "april_2024": "Nisan 2024"
+    }
+  },
+  "viewAllCards": {
+    "viewAll": "Tüm Projeleri",
+    "moreThanNProjects": "+ Projeler",
+    "HackathonWins": "5+ Hackathon Kazanımları",
+    "All_projects": "Tüm Projeler"
+  },
+  "events": {
+    "header": "Düzenlenen Etkinlikler",
+    "title": "etkinliklerimize katılın <br /> geleceğinizi şekillendirin",
+    "eventsAndClass": "Etkinlikler ve Sınıflar",
+    "button": "Tüm Programı Görüntüle"
+  },
+  "schedulePage": {
+    "hero": {
+      "title": "Etkinlik Takvimi",
+      "description": "Kapsamlı ders programımızı keşfedin ve sektör uzmanları tarafından yönetilen uygulamalı atölyelere katılın. Pratik deneyim ve gerçek dünya projeleriyle becerilerinizi geliştirin."
+    },
+    "stats": {
+      "hoursOfClasses": "Ders Saati",
+      "studentsAttended": "Katılan Öğrenci",
+      "courses": "Kurs",
+      "locations": "Lokasyon"
+    },
+    "filters": {
+      "upcoming": "Gelecek",
+      "past": "Geçmiş",
+      "all": "Tümü"
+    },
+    "location": {
+      "title": "Konum Bilgisi",
+      "description": "Aksi belirtilmedikçe tüm dersler ana kampüsümüzde yapılmaktadır. EEF104 sınıfı, en iyi öğrenme deneyimini sağlamak için modern imkanlarla donatılmıştır.",
+      "mainCampus": "Ana Kampüs - EEF104",
+      "classDuration": "Dersler genellikle 2-3 saat sürer"
+    },
+    "course": {
+      "title": "Kurs Bilgisi",
+      "description": "Kurslarımız modern teknolojilerle uygulamalı deneyim sağlamak için tasarlanmıştır. Her oturum pratik alıştırmalar ve gerçek dünya örnekleri içerir.",
+      "features": [
+        "İnteraktif öğrenme ortamı",
+        "Proje tabanlı müfredat",
+        "Sektör deneyimli eğitmenler",
+        "Online kaynaklara erişim"
+      ]
+    },
+    "calendar": {
+      "addToCalendar": "Google Takvim'e Ekle"
+    }
+  },
+  "roadMap": {
+    "header": "yolculuğunuz burada başlıyor",
+    "title": "Web3 Yol Haritamız",
+    "description": "Blockchain ve Web3 dünyasında yolunuzu bulmanıza yardımcı olacak kapsamlı bir rehber",
+    "availableInFullGuide": "Tam rehberde mevcut",
+    "fullGuideButton": "Tam rehberi görüntüle"
+  },
+  "footer": {
+    "about": "Hakkında",
+    "team": "Takım",
+    "vision": "Vizyon",
+    "resources": "Kaynaklar",
+    "documentation": "Dökümantasyon",
+    "whitepaper": "Beyaz Kitap",
+    "blog": "Blog",
+    "community": "Topluluk",
+    "discord": "Discord",
+    "events": "Etkinlikler",
+    "forum": "Forum",
+    "description": "Blockchain teknolojisinin geleceğini yenilik, eğitim ve topluluk etkileşimiyle şekillendiriyoruz.",
+    "registration": "2024-2025 Kayıt",
+    "backToTop": "Başa Dön"
+  },
+  "teamSection": {
+    "header": "Takımımızla Tanışın",
+    "filterAll": "Hepsi",
+    "viewProfile": "Profili Görüntüle",
+    "activity": "Aktivite"
+  },
+  "common": {
+    "members": "Üye",
+    "countries": "Ülke",
+    "hackathons": "Hackathon",
+    "projects": "Proje",
+    "awards": "Ödüller",
+    "location": "Konum",
+    "date": "Tarih"
+  }
+}

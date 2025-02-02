@@ -1,9 +1,16 @@
 "use client";
+
 import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaBriefcase, FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
 import Image from "next/image";
-import teamMembers, { TeamMember } from "@/data/TeamMembers";
+import {
+  englishTeamMembers,
+  TeamMember,
+  turkishTeamMembers,
+} from "@/data/TeamMembers";
+import { useLanguage } from "@/contexts/language-context";
+import { useTranslation } from "@/hooks/use-translation";
 
 const Skeleton = () => (
   <div className="flex flex-col items-center animate-pulse">
@@ -70,54 +77,59 @@ const MemberCard = ({
 }: {
   member: TeamMember;
   onClick: (member: TeamMember, event: React.MouseEvent) => void;
-}) => (
-  <motion.div
-    className="flex flex-col items-center group cursor-pointer"
-    onClick={(e) => onClick(member, e)}
-    initial={{ opacity: 0, y: 20 }}
-    animate={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.3 }}
-  >
-    <div className="relative mb-6">
-      <motion.div
-        className="w-48 h-48 rounded-full p-1 bg-[#FF8C00]"
-        whileHover={{ scale: 1.05 }}
-      >
-        <div className="w-full h-full rounded-full overflow-hidden bg-black p-1">
-          <Image
-            src={member.image}
-            alt={member.name}
-            className="rounded-full object-cover group-hover:scale-110 transition-transform duration-300"
-            width={500}
-            height={500}
-          />
-        </div>
-      </motion.div>
-      <motion.div
-        initial={{ opacity: 0 }}
-        whileHover={{ opacity: 1 }}
-        className="absolute inset-0 rounded-full flex items-center justify-center bg-black/50"
-      >
-        <span className="text-white text-sm font-medium px-4 py-2 rounded-full bg-[#FF8C00]">
-          View Profile
-        </span>
-      </motion.div>
-    </div>
-    <motion.h3 className="text-xl font-bold text-white mb-2 group-hover:text-[#FF8C00] transition-colors duration-300">
-      {member.name}
-    </motion.h3>
-    <p className="text-gray-400 mb-4">
-      {member.roles.filter((role) => role).join(" & ")}
-    </p>
-    <SocialLinks
-      links={[
-        { icon: FaGithub, link: member.github, label: "GitHub" },
-        { icon: FaTwitter, link: member.twitter, label: "Twitter" },
-        { icon: FaLinkedin, link: member.linkedin, label: "LinkedIn" },
-      ]}
-    />
-  </motion.div>
-);
+}) => {
+  const { language } = useLanguage();
+  const t = useTranslation(language);
+
+  return (
+    <motion.div
+      className="flex flex-col items-center group cursor-pointer"
+      onClick={(e) => onClick(member, e)}
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.3 }}
+    >
+      <div className="relative mb-6">
+        <motion.div
+          className="w-48 h-48 rounded-full p-1 bg-[#FF8C00]"
+          whileHover={{ scale: 1.05 }}
+        >
+          <div className="w-full h-full rounded-full overflow-hidden bg-black p-1">
+            <Image
+              src={member.image}
+              alt={member.name}
+              className="rounded-full object-cover group-hover:scale-110 transition-transform duration-300"
+              width={500}
+              height={500}
+            />
+          </div>
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileHover={{ opacity: 1 }}
+          className="absolute inset-0 rounded-full flex items-center justify-center bg-black/50"
+        >
+          <span className="text-white text-sm font-medium px-4 py-2 rounded-full bg-[#FF8C00]">
+            {t.teamSection.viewProfile}
+          </span>
+        </motion.div>
+      </div>
+      <motion.h3 className="text-xl font-bold text-white mb-2 group-hover:text-[#FF8C00] transition-colors duration-300">
+        {member.name}
+      </motion.h3>
+      <p className="text-gray-400 mb-4">
+        {member.roles.filter((role) => role).join(" & ")}
+      </p>
+      <SocialLinks
+        links={[
+          { icon: FaGithub, link: member.github, label: "GitHub" },
+          { icon: FaTwitter, link: member.twitter, label: "Twitter" },
+          { icon: FaLinkedin, link: member.linkedin, label: "LinkedIn" },
+        ]}
+      />
+    </motion.div>
+  );
+};
 
 const MemberModal = ({
   member,
@@ -127,128 +139,143 @@ const MemberModal = ({
   member: TeamMember;
   onClose: () => void;
   position: { x: number; y: number };
-}) => (
-  <motion.div
-    initial={{ opacity: 0 }}
-    animate={{ opacity: 1 }}
-    exit={{ opacity: 0 }}
-    className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 px-4"
-    onClick={onClose}
-  >
+}) => {
+  const { language } = useLanguage();
+  const t = useTranslation(language);
+
+  return (
     <motion.div
-      initial={{
-        opacity: 0,
-        scale: 0.5,
-        x: position.x - window.innerWidth / 2,
-        y: position.y - window.innerHeight / 2,
-      }}
-      animate={{
-        opacity: 1,
-        scale: 1,
-        x: 0,
-        y: 0,
-        transition: { type: "spring", duration: 0.5, bounce: 0.3 },
-      }}
-      exit={{ opacity: 0, scale: 0.5, transition: { duration: 0.3 } }}
-      className="bg-zinc-900/70 border border-[#FF8C00]/5 text-sm shadow-xl p-8 rounded-2xl max-w-2xl w-full relative backdrop-blur-xl"
-      onClick={(e) => e.stopPropagation()}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 px-4"
+      onClick={onClose}
     >
-      <button
-        onClick={onClose}
-        className="absolute top-4 right-4 text-gray-400 hover:text-white bg-zinc-800/50 p-2 rounded-full transition-colors duration-300"
+      <motion.div
+        initial={{
+          opacity: 0,
+          scale: 0.5,
+          x: position.x - window.innerWidth / 2,
+          y: position.y - window.innerHeight / 2,
+        }}
+        animate={{
+          opacity: 1,
+          scale: 1,
+          x: 0,
+          y: 0,
+          transition: { type: "spring", duration: 0.5, bounce: 0.3 },
+        }}
+        exit={{ opacity: 0, scale: 0.5, transition: { duration: 0.3 } }}
+        className="bg-zinc-900/70 border border-[#FF8C00]/5 text-sm shadow-xl p-8 rounded-2xl max-w-2xl w-full relative backdrop-blur-xl"
+        onClick={(e) => e.stopPropagation()}
       >
-        <svg
-          className="w-5 h-5"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
+        <button
+          onClick={onClose}
+          className="absolute top-4 right-4 text-gray-400 hover:text-white bg-zinc-800/50 p-2 rounded-full transition-colors duration-300"
         >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M6 18L18 6M6 6l12 12"
-          />
-        </svg>
-      </button>
+          <svg
+            className="w-5 h-5"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M6 18L18 6M6 6l12 12"
+            />
+          </svg>
+        </button>
 
-      <div className="flex flex-col md:flex-row items-center md:items-start gap-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2 }}
-          className="w-40 h-40 rounded-2xl overflow-hidden border-2 border-[#FF8C00] relative group"
-        >
-          <Image
-            src={member.image}
-            alt={member.name}
-            className="w-full h-full object-cover transition-transform duration-300"
-            width={500}
-            height={500}
-          />
-        </motion.div>
+        <div className="flex flex-col md:flex-row items-center md:items-start gap-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
+            className="w-40 h-40 rounded-2xl overflow-hidden border-2 border-[#FF8C00] relative group"
+          >
+            <Image
+              src={member.image}
+              alt={member.name}
+              className="w-full h-full object-cover transition-transform duration-300"
+              width={500}
+              height={500}
+            />
+          </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3 }}
-          className="flex-grow"
-        >
-          <h3 className="text-3xl font-bold text-white mb-2">{member.name}</h3>
-          <p className="text-[#FF8C00] font-medium mb-4">
-            {member.roles.filter((role) => role).join(" & ")}
-          </p>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3 }}
+            className="flex-grow"
+          >
+            <h3 className="text-3xl font-bold text-white mb-2">
+              {member.name}
+            </h3>
+            <p className="text-[#FF8C00] font-medium mb-4">
+              {member.roles.filter((role) => role).join(" & ")}
+            </p>
 
-          {member.currentJob && (
-            <div className="flex items-center gap-2 text-gray-300 mb-4">
-              <FaBriefcase className="text-[#FF8C00]" />
-              <span>{member.currentJob}</span>
-            </div>
-          )}
+            {member.currentJob && (
+              <div className="flex items-center gap-2 text-gray-300 mb-4">
+                <FaBriefcase className="text-[#FF8C00]" />
+                <span>{member.currentJob}</span>
+              </div>
+            )}
 
-          <p className="text-gray-300 mb-6 leading-relaxed">
-            {member.description}
-          </p>
+            <p className="text-gray-300 mb-6 leading-relaxed">
+              {member.description}
+            </p>
 
-          {member.achievements && (
-            <div className="mb-6">
-              <h4 className="text-white font-semibold mb-2">Activity</h4>
-              <ul className="space-y-2">
-                {member.achievements.map((achievement, idx) => (
-                  <motion.li
-                    key={idx}
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 0.4 + idx * 0.1 }}
-                    className="flex items-center gap-2 text-gray-300"
-                  >
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#FF8C00]" />
-                    {achievement}
-                  </motion.li>
-                ))}
-              </ul>
-            </div>
-          )}
+            {member.achievements && (
+              <div className="mb-6">
+                <h4 className="text-white font-semibold mb-2">
+                  {t.teamSection.activity}
+                </h4>
+                <ul className="space-y-2">
+                  {member.achievements.map((achievement, idx) => (
+                    <motion.li
+                      key={idx}
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: 0.4 + idx * 0.1 }}
+                      className="flex items-center gap-2 text-gray-300"
+                    >
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#FF8C00]" />
+                      {achievement}
+                    </motion.li>
+                  ))}
+                </ul>
+              </div>
+            )}
 
-          <SocialLinks
-            links={[
-              { icon: FaGithub, link: member.github, label: "GitHub" },
-              { icon: FaTwitter, link: member.twitter, label: "Twitter" },
-              { icon: FaLinkedin, link: member.linkedin, label: "LinkedIn" },
-            ]}
-            isModal={true}
-          />
-        </motion.div>
-      </div>
+            <SocialLinks
+              links={[
+                { icon: FaGithub, link: member.github, label: "GitHub" },
+                { icon: FaTwitter, link: member.twitter, label: "Twitter" },
+                { icon: FaLinkedin, link: member.linkedin, label: "LinkedIn" },
+              ]}
+              isModal={true}
+            />
+          </motion.div>
+        </div>
+      </motion.div>
     </motion.div>
-  </motion.div>
-);
+  );
+};
 
 const TeamSection = () => {
+  const { language } = useLanguage();
+  const t = useTranslation(language);
+
   const [selectedMember, setSelectedMember] = useState<TeamMember | null>(null);
   const [filter, setFilter] = useState<string>("all");
   const [clickPosition, setClickPosition] = useState({ x: 0, y: 0 });
   const [loading, setLoading] = useState<boolean>(true);
+
+  const teamMembers: TeamMember[] =
+    language === "tr" ? turkishTeamMembers : englishTeamMembers;
 
   useEffect(() => {
     setLoading(false);
@@ -265,7 +292,7 @@ const TeamSection = () => {
   };
 
   const handleMemberClick = (member: TeamMember, event: React.MouseEvent) => {
-    const rect = (event.target as Element).getBoundingClientRect();
+    const rect = (event.currentTarget as Element).getBoundingClientRect();
     setClickPosition({ x: rect.left, y: rect.top });
     setSelectedMember(member);
   };
@@ -279,10 +306,7 @@ const TeamSection = () => {
           className="text-center mb-6 md:mb-10"
         >
           <h1 className="text-center font-zentry text-5xl font-black uppercase text-blue-100 sm:text-5xl md:text-7xl lg:text-8xl">
-            Meet Our{" "}
-            <span className="bg-[#FF8C00] text-transparent bg-clip-text">
-              Team
-            </span>
+            {t.teamSection.header}
           </h1>
         </motion.div>
 
@@ -295,14 +319,13 @@ const TeamSection = () => {
                 key={role}
                 whileHover={{ scale: 1.05 }}
                 onClick={() => handleFilterChange(role)}
-                className={`px-4 py-2 rounded-full text-sm font-medium transition-colors duration-300
-                  ${
-                    filter === role
-                      ? "bg-[#FF8C00] text-white"
-                      : "bg-zinc-800 text-gray-300 hover:bg-zinc-700"
-                  }`}
+                className={`px-4 py-2 rounded-full text-sm font-medium transition-colors duration-300 ${
+                  filter === role
+                    ? "bg-[#FF8C00] text-white"
+                    : "bg-zinc-800 text-gray-300 hover:bg-zinc-700"
+                }`}
               >
-                {role === "all" ? "All" : role}
+                {role === "all" ? t.teamSection.filterAll : role}
               </motion.button>
             ))
           )}

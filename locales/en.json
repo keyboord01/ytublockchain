@@ -1,0 +1,185 @@
+{
+  "nav": {
+    "home": "Home",
+    "team": "Team",
+    "about": "About",
+    "events": "Events",
+    "roadmap": "Roadmap"
+  },
+  "hero": {
+    "titleLine1": "Building the new",
+    "titleLine2": "internet",
+    "subtitle": "Shape the future with the YTU Blockchain club<br />Innovate, learn and lead",
+    "description": "Get hands-on with blockchain technology through hackathons, workshops, and a global community driving blockchain innovation every day.",
+    "joinUs": "Join Us",
+    "events": "Upcoming Events"
+  },
+  "about": {
+    "heading": "We learn, we question<br />and we solve.",
+    "stats": {
+      "members": "Active Members",
+      "membersDescription": "Growing community of developers, designers, and blockchain enthusiasts",
+      "countries": "Countries",
+      "countriesDescription": "Global presence with members from across different continents",
+      "hackathons": "Hackathons",
+      "hackathonsDescription": "Competitive events where innovative solutions come to life",
+      "projects": "Projects Built",
+      "projectsDescription": "Successful projects launched by our community members"
+    },
+    "description": "YTU Blockchain community empowers the enthusiasts and beginners of Web3",
+    "subtext": "We foster learning, collaboration and creativity, ensuring a welcoming environment for all skill levels.",
+    "mobileText": "Our blockchain club is more than just numbers. We're a community dedicated<br />to learning, building, and innovating together. Whether you're a beginner or an experienced developer, there's a place for you here."
+  },
+  "partners": {
+    "title": "Our Partners",
+    "dragHint": "Drag to explore more partners"
+  },
+  "projects": {
+    "heading": "Explore Our Blockchain Journey",
+    "description": "Embark on a journey through the world where innovation, collaboration, and technology converge to redefine the future of the internet.",
+    "viewProject": "View Project",
+    "mobileHint": "Tap on a highlighted country to view events"
+  },
+  "eventMap": {
+    "projectLink": "Click to go to project",
+    "events": "Events",
+    "clickToPin": "Click to pin"
+  },
+  "mapProjects": {
+    "descriptions": {
+      "nfticket": "We won first place among teams experienced in their fields, and a startup emerged from the club.",
+      "deauth": "DeAuth is a tool that makes life easier for remembering passwords.",
+      "re_farm": "We developed a project that brings the ReFi concept into agriculture.",
+      "tokenstalk": "Tokenstalk is a social application that creates chat rooms based on NFT collections and solves the NFT indexing problem in Juno.",
+      "greedysnap": "GreedySnap is a Metamask Snap that gives insights about fee prices, securing 4th place overall and 2nd place in the Snap track.",
+      "nevo": "NEVO enables MaCi voting on Near and received 2 prizes in 2 different tracks.",
+      "cosmicproof": "CosmicProof makes historical data on Cosmos provable using o1js. We took third place as finalists and first place in MinaProtocol and Node101 tracks.",
+      "marketmaker": "MarketMaker took the top spot at the PythNetwork and won a pool prize with the Worldcoin track.",
+      "orchave": "Orchave is a decentralized, instant data oracle that lets users customize APIs and become data providers. We secured 2 prizes in 2 tracks.",
+      "wisper": "Wisper is a p2p chatting application that enables creating chat rooms without needing a trusted chat application by creating a private local blockchain among users.",
+      "avalanche_summit": "Our club members joined the Avalanche Summit in Barcelona.",
+      "eth_warsaw": "Our club members joined ETH Warsaw.",
+      "eth_lisbon": "Our club members joined ETH Lisbon.",
+      "edcon": "Our club members joined EDCON in Montenegro.",
+      "eth_london": "Our club members joined ETH London.",
+      "sui_basecamp": "Our club members joined Sui Basecamp in Paris.",
+      "tum_blockchain": "Our club members joined TUM Blockchain in Munich."
+    }
+  },
+  "projectsData": {
+    "descriptions": {
+      "cosmicproof": "We developed CosmicProof, which makes historical data on Cosmos provable using o1js. Presented at LambdaClass Hackathon in Belgrade, we took third place as Finalist and won first place in MinaProtocol and node101 tracks.",
+      "orchave": "Decentralized, instant data oracle that lets users customize APIs and become data providers. Won top honors at ETHGlobal Brussels with our solution integrating Filecoin and Avail technologies.",
+      "nevo": "MaCi voting solution on NEAR Protocol developed for ETHDam 2023 in Amsterdam, recognized with awards in two separate tracks.",
+      "marketmaker": "Market-making solution that claimed top spot in the PythNetwork track and won the Worldcoin pool prize at ETHGlobal Brussels.",
+      "wisper": "A P2P chatting application enabling trustless chat rooms through private local blockchains, developed for ETHGlobal Brussels."
+    },
+    "locations": {
+      "lambdaClass_hackathon": "LambdaClass Hackathon",
+      "ethglobal_brussels": "ETHGlobal Brussels",
+      "ethdam_2023": "ETHDam 2023"
+    },
+    "awards": {
+      "third_place_overall": "3rd Place Overall",
+      "mina_track": "1st Place Mina",
+      "node101_track": "1st Place node101",
+      "first_place_pythnetwork": "1st Place PythNetwork",
+      "first_place_filecoin": "1st Place PythNetwork",
+      "pool_prize_worldcoin": "Pool Prize Worldcoin",
+      "pool_prize_avail": "Pool Prize AvailProject",
+      "multiple_grants": "Multiple Grants",
+      "multiple_prizes": "Multiple Prizes",
+      "won_in_two_tracks": "Won in two tracks"
+    },
+    "dates": {
+      "july_2024": "July 2024",
+      "april_2024": "April 2024"
+    }
+  },
+  "viewAllCards": {
+    "viewAll": "View All Projects",
+    "moreThanNProjects": "+ Projects",
+    "HackathonWins": "5+ Hackathon Wins",
+    "All_projects": "All Projects"
+  },
+  "events": {
+    "header": "events organized",
+    "title": "join our events <br /> shape your future",
+    "eventsAndClass": "Events And Classes",
+    "button": "View Full Schedule"
+  },
+  "schedulePage": {
+    "hero": {
+      "title": "Events Schedule",
+      "description": "Explore our comprehensive course schedule and join hands-on workshops led by industry experts. Build your skills with practical experience and real-world projects."
+    },
+    "stats": {
+      "hoursOfClasses": "Hours of classes",
+      "studentsAttended": "Students Attended",
+      "courses": "Courses",
+      "locations": "Locations"
+    },
+    "filters": {
+      "upcoming": "Upcoming",
+      "past": "Past",
+      "all": "All"
+    },
+    "location": {
+      "title": "Location Information",
+      "description": "All classes are held at our main campus unless otherwise specified. The EEF104 classroom is equipped with modern facilities to ensure the best learning experience.",
+      "mainCampus": "Main Campus - EEF104",
+      "classDuration": "Classes typically run for 2-3 hours"
+    },
+    "course": {
+      "title": "Course Information",
+      "description": "Our courses are designed to provide hands-on experience with modern technologies. Each session includes practical exercises and real-world examples.",
+      "features": [
+        "Interactive learning environment",
+        "Project-based curriculum",
+        "Industry-experienced instructors",
+        "Access to online resources"
+      ]
+    },
+    "calendar": {
+      "addToCalendar": "Add to Google Calendar"
+    }
+  },
+  "roadMap": {
+    "header": "your journey starts here",
+    "title": "our Web3 Roadmap",
+    "description": "A comprehensive guide to help you navigate the world of blockchain and Web3",
+    "availableInFullGuide": "Available in full guide",
+    "fullGuideButton": "view full guide"
+  },
+  "footer": {
+    "about": "About",
+    "team": "Team",
+    "vision": "Vision",
+    "resources": "Resources",
+    "documentation": "Documentation",
+    "whitepaper": "Whitepaper",
+    "blog": "Blog",
+    "community": "Community",
+    "discord": "Discord",
+    "events": "Events",
+    "forum": "Forum",
+    "description": "Pioneering the future of blockchain technology through innovation, education, and community engagement.",
+    "registration": "2024-2025 Registration",
+    "backToTop": "Back to top"
+  },
+  "teamSection": {
+    "header": "Meet Our Team",
+    "filterAll": "All",
+    "viewProfile": "View Profile",
+    "activity": "Activity"
+  },
+  "common": {
+    "members": "Members",
+    "countries": "Countries",
+    "hackathons": "Hackathons",
+    "projects": "Projects",
+    "awards": "Awards",
+    "location": "Location",
+    "date": "Date"
+  }
+}
