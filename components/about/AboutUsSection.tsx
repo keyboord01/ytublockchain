@@ -109,7 +109,7 @@ const AboutUsSection = () => {
     });
   };
 
-  const handleSectionChange = (section) => {
+  const handleSectionChange = (section: React.SetStateAction<string>) => {
     setActiveSection(section);
   };
 
