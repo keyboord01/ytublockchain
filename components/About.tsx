@@ -77,12 +77,11 @@ const About = () => {
         <div className="relative mb-8 flex flex-col items-center gap-5">
           <div className="relative">
             <h2
-              className="text-center font-zentry text-3xl font-black uppercase sm:text-4xl md:text-5xl lg:text-7xl"
+              className="text-center font-anton text-3xl font-black uppercase sm:text-4xl md:text-5xl lg:text-7xl tracking-wider !leading-tight"
               dangerouslySetInnerHTML={{ __html: t.about.heading }}
             />
             <div className="absolute -z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] blur-3xl bg-gradient-to-r from-[#000560]/10 to-[#FF8C00]/10 opacity-70" />
           </div>
-
           <div className="stats-grid grid grid-cols-1 gap-14 p-6 md:grid-cols-2 lg:grid-cols-4 mt-12">
             <StatisticCard
               icon={Users}

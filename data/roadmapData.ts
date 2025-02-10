@@ -111,10 +111,10 @@ export const turkishRoadmapData: Section[] = [
         id: "3.1",
         title: "Ethereum Nasıl Çalışır?",
         subsections: [
-          { id: "3.1.1", title: "Konsensus (Mutabakat) Mekanizmaları" },
-          { id: "3.1.2", title: "Düğümler (Node), Validatörler ve Madencilik" },
+          { id: "3.1.1", title: "Mutabakat Mekanizmaları" },
+          { id: "3.1.2", title: "Düğümler, Validatörler ve Madencilik" },
           { id: "3.1.3", title: "Ethereum Sanal Makinesi (EVM)" },
-          { id: "3.1.4", title: "Gaz Ücretleri" },
+          { id: "3.1.4", title: "Gas Ücretleri" },
           { id: "3.1.5", title: "Akıllı Sözleşmeler" },
           { id: "3.1.6", title: "Merkle Ağacı" },
         ],
@@ -129,7 +129,7 @@ export const turkishRoadmapData: Section[] = [
     subsections: [
       { id: "4.1", title: "Merkezîyetsiz Uygulamalar (Dapps)" },
       { id: "4.2", title: "Cüzdanlar" },
-      { id: "4.3", title: "Web3 ile etkileşime Girmek" },
+      { id: "4.3", title: "Web3 ile Etkileşime Girmek" },
     ],
   },
   {
@@ -137,11 +137,11 @@ export const turkishRoadmapData: Section[] = [
     title: "Blockchain Uygulama Alanları ve Konseptleri",
     subsections: [
       { id: "5.1", title: "DeFi" },
-      { id: "5.2", title: "Stablecoins" },
-      { id: "5.3", title: "Non-Fungible Token (NFT)" },
-      { id: "5.4", title: "DAO (Decentralized Autonomous Organizations)" },
+      { id: "5.2", title: "Dijital Dolar" },
+      { id: "5.3", title: "Değiştirilemez Kripto Para (NFT)" },
+      { id: "5.4", title: "Merkeziyetsiz Otonom Örgütler (DAO)" },
       { id: "5.5", title: "Diğer Blockchain Uygulama Alanları" },
-      { id: "5.6", title: "Tokenomics" },
+      { id: "5.6", title: "Kripto Para Ekonomisi" },
       { id: "5.7", title: "Oracle" },
     ],
   },

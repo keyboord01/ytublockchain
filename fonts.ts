@@ -22,5 +22,9 @@ export const robertRegular = localFont({
 
 export const zentry = localFont({
   src: "./fonts/zentry-regular.woff2",
-  variable: "--font-zentry",
+  variable: "--font-aa",
+});
+export const anton = localFont({
+  src: "./fonts/Anton-Regular.ttf",
+  variable: "--font-anton",
 });

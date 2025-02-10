@@ -137,7 +137,7 @@ const RoadmapSection = () => {
           <p className="font-general text-xs uppercase text-[#FF8C00] sm:text-sm md:text-[10px]">
             {t.roadMap.header}
           </p>
-          <h2 className="mt-2 font-zentry text-3xl font-black uppercase text-white sm:text-4xl md:text-5xl">
+          <h2 className="mt-2 font-anton text-3xl font-black uppercase text-white sm:text-4xl md:text-5xl">
             {t.roadMap.title}
           </h2>
           <p className="mt-3 text-xs text-white/80 sm:mt-4 sm:text-sm">

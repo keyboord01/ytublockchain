@@ -15,7 +15,7 @@
     "events": "Upcoming Events"
   },
   "about": {
-    "heading": "We learn, we question<br />and we solve.",
+    "heading": "We learn, we question and we solve.",
     "stats": {
       "members": "Active Members",
       "membersDescription": "Growing community of developers, designers, and blockchain enthusiasts",
@@ -104,7 +104,7 @@
   },
   "events": {
     "header": "events organized",
-    "title": "join our events <br /> shape your future",
+    "title": "join our events shape your future",
     "eventsAndClass": "Events And Classes",
     "button": "View Full Schedule"
   },

@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import {
+  anton,
   circularWeb,
   general,
   robertMedium,
@@ -22,7 +23,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${circularWeb.variable} ${general.variable} ${robertMedium.variable} ${robertRegular.variable} ${zentry.variable}`}
+      className={`${circularWeb.variable} ${general.variable} ${robertMedium.variable} ${robertRegular.variable} ${zentry.variable} ${anton.variable}`}
     >
       <body className="font-general">
         {" "}

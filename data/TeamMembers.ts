@@ -7,8 +7,6 @@ export interface TeamMember {
   github?: string;
   twitter?: string;
   linkedin?: string;
-  currentJob?: string;
-  achievements?: string[];
 }
 
 export const englishTeamMembers: TeamMember[] = [
@@ -21,7 +19,6 @@ export const englishTeamMembers: TeamMember[] = [
     github: "https://github.com/keyboord01",
     twitter: "https://twitter.com/keyyyy01",
     linkedin: "https://linkedin.com/in/ahmed-zm",
-    currentJob: "Supreme Leader at YTUBlockchain",
   },
   {
     id: 2,
@@ -40,7 +37,7 @@ export const englishTeamMembers: TeamMember[] = [
     roles: ["Developer"],
     image: "/img/team/ahmed.png",
     description:
-      "Have a small chat with him, he can convince you to do anything. Likes coding and mocking people. You will probably see him with Atahan.",
+      "Have a small chat with him, he can convince you to do anything. Likes coding and talking to people. You will probably see him with Atahan.",
     github: "https://github.com/keyboord01",
     twitter: "https://twitter.com/keyyyy01",
     linkedin: "https://linkedin.com/in/ahmed-zm",
@@ -156,7 +153,7 @@ export const englishTeamMembers: TeamMember[] = [
   },
   {
     id: 14,
-    name: "Alperan",
+    name: "Alperen",
     roles: ["Marketing", "Community"],
     image: "/img/team/alperen.png",
     description:
@@ -178,7 +175,7 @@ export const englishTeamMembers: TeamMember[] = [
   },
   {
     id: 16,
-    name: "Serra Vardir",
+    name: "Serra Vardar",
     roles: ["Marketing", "Community"],
     image: "/img/team/serra.png",
     description:
@@ -207,15 +204,14 @@ export const turkishTeamMembers: TeamMember[] = [
     github: "https://github.com/keyboord01",
     twitter: "https://twitter.com/keyyyy01",
     linkedin: "https://linkedin.com/in/ahmed-zm",
-    currentJob: "YTUBlockchain'de Üst Lider",
   },
   {
     id: 2,
     name: "Atahan Yildirim",
-    roles: ["yazılımcı", "Başkan"],
+    roles: ["Yazılımcı", "Başkan"],
     image: "/img/team/atahan.png",
     description:
-      "Ereğli'den, Konya'dan değil. Sakin bir yazılımcı. Boş zamanlarında etrafını yönlendirmeyi seviyor. Muhtemelen Ahmed ile birlikte görülecek.",
+      "Ereğli'den, Konya'dan değil. Sakin bir yazılımcı. Boş zamanlarında patronluk taslamayı seviyor. Muhtemelen onu Ahmed ile birlikte görüceksiniz .",
     github: "https://github.com/keyboord01",
     twitter: "https://twitter.com/keyyyy01",
     linkedin: "https://linkedin.com/in/ahmed-zm",
@@ -223,10 +219,10 @@ export const turkishTeamMembers: TeamMember[] = [
   {
     id: 3,
     name: "Ahmed Murshed",
-    roles: ["yazılımcı"],
+    roles: ["Yazılımcı"],
     image: "/img/team/ahmed.png",
     description:
-      "Kendisiyle kısa bir sohbet edin; sizi her şeye ikna edebilir. Kodlamayı ve insanları alay etmeyi seviyor. Muhtemelen Atahan ile birlikte görülecek.",
+      "Kendisiyle kısa bir sohbet edin, sizi her şeye ikna edebilir. Kodlamayı ve insanlarla konuşmayı seviyor. Muhtemelen onu Atahan ile birlikte görüceksiniz.",
     github: "https://github.com/keyboord01",
     twitter: "https://twitter.com/keyyyy01",
     linkedin: "https://linkedin.com/in/ahmed-zm",
@@ -248,7 +244,7 @@ export const turkishTeamMembers: TeamMember[] = [
     roles: ["Araştırmacı", "İçerik Yazarı"],
     image: "/img/team/kerem.png",
     description:
-      "İçerik yazmayı ve tenis oynamayı seven. Kriptografi tutkusu olan Zonguldaklı. Boş zamanlarında sitcom izlemeyi seviyor.",
+      "İçerik yazmaya ve tenis oynamaya bayılıyor. Kriptografi tutkusu olan Zonguldaklı. Boş zamanlarında sitcom izlemeyi seviyor.",
     github: "https://github.com/keyboord01",
     twitter: "https://twitter.com/keyyyy01",
     linkedin: "https://linkedin.com/in/ahmed-zm",
@@ -259,7 +255,7 @@ export const turkishTeamMembers: TeamMember[] = [
     roles: ["Tasarımcı"],
     image: "/img/team/miray.png",
     description:
-      "Rahat bir kız. Renkleri, şekilleri veya sanata dair her şeyi seviyor. Sevdiği tek hayvan Kemo. Sabah insanı değil.",
+      "Rahat bir kız. Renkleri, şekilleri ve sanata dair her şeyi seviyor. Sevdiği tek hayvan Kemo. Sabah insanı değil.",
     github: "https://github.com/keyboord01",
     twitter: "https://twitter.com/keyyyy01",
     linkedin: "https://linkedin.com/in/ahmed-zm",
@@ -270,7 +266,7 @@ export const turkishTeamMembers: TeamMember[] = [
     roles: ["Pazarlama", "İçerik Yazarı"],
     image: "/img/team/zeynep.png",
     description:
-      "Pazarlama & yazı işleriyle ilgilenen; boş zamanlarında Bitcoin'in beyaz kağıdını okur, sinemaya düşkündür ve hayali yatında kripto haberleri okumaktır. Gluten tüketemez.",
+      "Pazarlama ve yazı işleriyle ilgilenir, boş zamanlarında Bitcoin'in tanıtım yazısını okur, sinemaya düşkündür ve yatında kripto haberleri okuduğunu hayal eder. Gluten tüketemez.",
     github: "https://github.com/keyboord01",
     twitter: "https://twitter.com/keyyyy01",
     linkedin: "https://linkedin.com/in/ahmed-zm",
@@ -278,7 +274,7 @@ export const turkishTeamMembers: TeamMember[] = [
   {
     id: 8,
     name: "Bora",
-    roles: ["yazılımcı"],
+    roles: ["Yazılımcı"],
     image: "/img/team/bora.png",
     description:
       "Kim olduğunu bilmiyoruz. Sanırım bir değişim programına gidecek.",
@@ -289,7 +285,7 @@ export const turkishTeamMembers: TeamMember[] = [
   {
     id: 9,
     name: "Sena Eser",
-    roles: ["yazılımcı"],
+    roles: ["Yazılımcı"],
     image: "/img/team/sena.png",
     description:
       "Blockchain teknolojisini erişilebilir ve heyecan verici hale getiren etkileyici içerikler üretiyor.",
@@ -300,7 +296,7 @@ export const turkishTeamMembers: TeamMember[] = [
   {
     id: 10,
     name: "Kutay Sari",
-    roles: ["yazılımcı"],
+    roles: ["Yazılımcı"],
     image: "/img/team/kutay.png",
     description:
       "Blockchain teknolojisini erişilebilir ve heyecan verici hale getiren etkileyici içerikler üretiyor.",
@@ -313,7 +309,7 @@ export const turkishTeamMembers: TeamMember[] = [
     name: "Beyzanur Yildirim",
     roles: ["Pazarlama", "Topluluk"],
     image: "/img/team/beyza.png",
-    description: "Hikaye anlatımına tutkusu olan sosyal medya kızı.",
+    description: "Hikaye anlatmaya tutkusu olan sosyal medya kızı.",
     github: "https://github.com/keyboord01",
     twitter: "https://twitter.com/keyyyy01",
     linkedin: "https://linkedin.com/in/ahmed-zm",
@@ -324,7 +320,7 @@ export const turkishTeamMembers: TeamMember[] = [
     roles: ["Organizasyon", "Topluluk"],
     image: "/img/team/yusuf.png",
     description:
-      "Bugüne kadar duyduğumuz en garip kahkahayla; oturun ve onun hikayelerini dinleyin (NY’deki hikayeler de dahil). Büyük kripto etkinliklerine imza attı. Ona bir telefon açın.",
+      "Bugüne kadar duyduğumuz en garip kahkaha. Oturun ve onun hikayelerini dinleyin (NY hikayeleri de dahil). Büyük kripto etkinliklerine imza attı. Sadece onu bir arayın.",
     github: "https://github.com/keyboord01",
     twitter: "https://twitter.com/keyyyy01",
     linkedin: "https://linkedin.com/in/ahmed-zm",
@@ -335,14 +331,14 @@ export const turkishTeamMembers: TeamMember[] = [
     roles: ["Pazarlama", "Topluluk"],
     image: "/img/team/ecem.png",
     description:
-      "Spor salonu tutkunu, bu kulübün en sağlıklı kişisi. Davutpaşa’da dolaşıyor. Fitness tavsiyesi veya işbirlikleri için DM atın.",
+      "Spor salonu tutkunu, bu kulübün en sağlıklısı. Davutpaşa’da takılıyor. Fitness tavsiyesi veya işbirlikleri için DM atın.",
     github: "https://github.com/keyboord01",
     twitter: "https://twitter.com/keyyyy01",
     linkedin: "https://linkedin.com/in/ahmed-zm",
   },
   {
     id: 14,
-    name: "Alperan",
+    name: "Alperen",
     roles: ["Pazarlama", "Topluluk"],
     image: "/img/team/alperen.png",
     description:
@@ -364,7 +360,7 @@ export const turkishTeamMembers: TeamMember[] = [
   },
   {
     id: 16,
-    name: "Serra Vardir",
+    name: "Serra Vardar",
     roles: ["Pazarlama", "Topluluk"],
     image: "/img/team/serra.png",
     description:
@@ -377,7 +373,7 @@ export const turkishTeamMembers: TeamMember[] = [
     name: "Caglar",
     roles: ["Tasarımcı"],
     image: "/img/team/caglar.png",
-    description: "Görsel hikaye anlatımında usta yaratıcı tasarımcı.",
+    description: "Görsel hikaye anlatımında yetenekli, yaratıcı tasarımcı.",
     twitter: "https://twitter.com/0xcagavci?s=11",
   },
 ];

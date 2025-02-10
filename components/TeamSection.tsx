@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { FaBriefcase, FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
 import Image from "next/image";
 import {
   englishTeamMembers,
@@ -140,9 +140,6 @@ const MemberModal = ({
   onClose: () => void;
   position: { x: number; y: number };
 }) => {
-  const { language } = useLanguage();
-  const t = useTranslation(language);
-
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -217,38 +214,9 @@ const MemberModal = ({
               {member.roles.filter((role) => role).join(" & ")}
             </p>
 
-            {member.currentJob && (
-              <div className="flex items-center gap-2 text-gray-300 mb-4">
-                <FaBriefcase className="text-[#FF8C00]" />
-                <span>{member.currentJob}</span>
-              </div>
-            )}
-
             <p className="text-gray-300 mb-6 leading-relaxed">
               {member.description}
             </p>
-
-            {member.achievements && (
-              <div className="mb-6">
-                <h4 className="text-white font-semibold mb-2">
-                  {t.teamSection.activity}
-                </h4>
-                <ul className="space-y-2">
-                  {member.achievements.map((achievement, idx) => (
-                    <motion.li
-                      key={idx}
-                      initial={{ opacity: 0, x: -20 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: 0.4 + idx * 0.1 }}
-                      className="flex items-center gap-2 text-gray-300"
-                    >
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#FF8C00]" />
-                      {achievement}
-                    </motion.li>
-                  ))}
-                </ul>
-              </div>
-            )}
 
             <SocialLinks
               links={[
@@ -284,7 +252,7 @@ const TeamSection = () => {
   const uniqueRoles = Array.from(
     new Set(teamMembers.flatMap((member) => member.roles))
   )
-    .filter((role) => role !== "Supreme Leader")
+    .filter((role) => role !== "Supreme Leader" && role !== "Üst Lider")
     .sort((a, b) => (a === "President" ? -1 : b === "President" ? 1 : 0));
 
   const handleFilterChange = (newFilter: string) => {
@@ -305,7 +273,7 @@ const TeamSection = () => {
           animate={{ opacity: 1, y: 0 }}
           className="text-center mb-6 md:mb-10"
         >
-          <h1 className="text-center font-zentry text-5xl font-black uppercase text-blue-100 sm:text-5xl md:text-7xl lg:text-8xl">
+          <h1 className="text-center font-anton text-5xl font-black uppercase text-blue-100 sm:text-5xl md:text-7xl lg:text-8xl">
             {t.teamSection.header}
           </h1>
         </motion.div>

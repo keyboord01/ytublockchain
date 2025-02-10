@@ -61,7 +61,7 @@ export const ProjectsCard: React.FC<ProjectsCardProps> = ({
   const cardContent = (
     <>
       <div className="relative z-10 flex size-full flex-col p-4 sm:p-6 md:p-8">
-        <h1 className="projects-title bc-font text-2xl text-white sm:text-3xl md:text-4xl lg:text-5xl">
+        <h1 className="projects-title font-anton text-2xl text-white sm:text-3xl md:text-4xl lg:text-5xl">
           {title}
         </h1>
         <div className="absolute right-2 top-6 z-20 rounded-full p-1.5 backdrop-blur-sm sm:right-3 sm:top-3 sm:p-2 md:right-5 md:top-8 md:p-3">
@@ -172,7 +172,7 @@ export const ProjectsCard: React.FC<ProjectsCardProps> = ({
                   transition={{ duration: 0.4, ease: "easeOut" }}
                   className="flex w-full flex-col p-4 sm:p-6 md:w-1/2 md:p-8"
                 >
-                  <h2 className="projects-title bc-font text-2xl text-white sm:text-3xl md:text-4xl lg:text-5xl">
+                  <h2 className="projects-title font-anton text-2xl text-white sm:text-3xl md:text-4xl lg:text-5xl">
                     {title}
                   </h2>
 

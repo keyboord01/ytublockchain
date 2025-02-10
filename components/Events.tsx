@@ -10,18 +10,13 @@ import { useTranslation } from "@/hooks/use-translation";
 import { classesDataEN, classesDataTR } from "@/data/classesData";
 import { parse, format } from "date-fns";
 
-interface Event {
-  name: string;
-  date: string;
-}
-
 const Events = () => {
   const { language } = useLanguage();
   const t = useTranslation(language);
 
   const classes = language === "tr" ? classesDataTR : classesDataEN;
 
-  const events: Event[] = classes.slice(0, 8).map((cls) => ({
+  const events = classes.slice(0, 8).map((cls) => ({
     name: cls.topic,
     date: format(parse(cls.date, "dd.MM.yyyy", new Date()), "MMMM d, yyyy"),
   }));
@@ -52,10 +47,9 @@ const Events = () => {
           <p className="font-general text-sm uppercase text-[#FF8C00] md:text-[10px]">
             {t.events.header}
           </p>
-          <h1
-            className="text-center font-zentry text-5xl font-black uppercase text-blue-100 sm:text-5xl md:text-7xl lg:text-8xl"
-            dangerouslySetInnerHTML={{ __html: t.events.title }}
-          />
+          <h1 className="text-center font-anton text-5xl font-black uppercase text-blue-100 sm:text-5xl md:text-7xl lg:text-8xl tracking-wider !leading-tight">
+            {t.events.title}
+          </h1>
         </motion.div>
         <motion.div
           viewport={{ once: true }}

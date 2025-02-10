@@ -31,7 +31,7 @@ const ViewAllCards = ({ Projects }: { Projects: number }) => {
       >
         <div className="relative flex size-full flex-col justify-between bg-gradient-to-br from-[#000560] to-[#030642] p-4 transition-all duration-300 sm:p-6 md:p-8">
           <div className="space-y-4 md:space-y-6">
-            <h1 className="projects-title bc-font text-3xl text-white transition-all duration-300 sm:text-6xl md:text-7xl lg:text-[150px]">
+            <h1 className="projects-title font-anton text-3xl text-white transition-all duration-300 sm:text-6xl md:text-4xl tracking-wider !leading-tight">
               {t.viewAllCards.viewAll}
             </h1>
           </div>
@@ -77,7 +77,7 @@ const ViewAllCards = ({ Projects }: { Projects: number }) => {
             >
               <div className="sticky top-0 z-50 flex items-center justify-between bg-zinc-900/80 backdrop-blur-sm p-4 border-b border-white/10">
                 <div></div>
-                <h2 className="text-xl text-center font-zentry text-white sm:text-2xl">
+                <h2 className="text-xl text-center font-anton text-white sm:text-2xl">
                   {t.viewAllCards.All_projects}
                 </h2>
                 <button

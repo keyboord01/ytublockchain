@@ -36,7 +36,6 @@ const Projects: React.FC = () => {
         >
           <EventMap events={eventData} />
         </div>
-
         <div className="grid w-full grid-cols-1 gap-6 md:grid-cols-2 md:gap-8 lg:gap-10">
           {visibleProjects.map((project, index) => (
             <div

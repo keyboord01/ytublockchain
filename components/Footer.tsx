@@ -1,5 +1,5 @@
 "use client";
-import { JSX, useState } from "react";
+import { useState } from "react";
 import { ArrowUp } from "lucide-react";
 import Image from "next/image";
 import {
@@ -13,17 +13,6 @@ import {
 import { useLanguage } from "@/contexts/language-context";
 import { useTranslation } from "@/hooks/use-translation";
 
-interface Link {
-  label: string;
-  href: string;
-  icon?: JSX.Element;
-}
-
-interface Section {
-  title: string;
-  links: Link[];
-}
-
 const Footer = () => {
   const { language } = useLanguage();
   const t = useTranslation(language);
@@ -31,7 +20,7 @@ const Footer = () => {
   const [hoveredItem, setHoveredItem] = useState<number | null>(null);
   const [isButtonHovered, setIsButtonHovered] = useState(false);
 
-  const footerSections: Section[] = [
+  const footerSections = [
     {
       title: t.footer.about,
       links: [
@@ -57,7 +46,7 @@ const Footer = () => {
     },
   ];
 
-  const socialLinks: Link[] = [
+  const socialLinks = [
     {
       label: t.footer.registration,
       href: "https://forms.example.com",
@@ -184,6 +173,7 @@ const Footer = () => {
                     <li key={link.label}>
                       <a
                         href={link.href}
+                        target="_"
                         className="relative text-gray-400 transition-colors hover:text-white"
                       >
                         <span className="relative">
