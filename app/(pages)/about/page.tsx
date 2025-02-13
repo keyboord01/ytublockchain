@@ -17,5 +17,5 @@
 import React from "react";
 
 export const page = () => {
-  return <div>404 lol</div>;
+  return <div>404 ll</div>;
 };
