@@ -16,6 +16,8 @@
 
 import React from "react";
 
-export const page = () => {
+function App() {
   return <div>404 ll</div>;
-};
+}
+
+export default App;
