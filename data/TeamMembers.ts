@@ -15,10 +15,7 @@ export const englishTeamMembers: TeamMember[] = [
     name: "Keemo Soulaibi",
     roles: ["Supreme Leader"],
     image: "/img/team/kemo.png",
-    description: "Leading YTUBlockchain's vision and strategy, Atahan ......",
-    github: "https://github.com/keyboord01",
-    twitter: "https://twitter.com/keyyyy01",
-    linkedin: "https://linkedin.com/in/ahmed-zm",
+    description: "Leading YTUBlockchain's vision and strategy......, C(at)EO",
   },
   {
     id: 2,
@@ -26,10 +23,10 @@ export const englishTeamMembers: TeamMember[] = [
     roles: ["Developer", "President"],
     image: "/img/team/atahan.png",
     description:
-      "He is from Ereğli not Konya. Just a chill developer. He likes to boss around in his free time. You will probably see him with Ahmed.",
-    github: "https://github.com/keyboord01",
-    twitter: "https://twitter.com/keyyyy01",
-    linkedin: "https://linkedin.com/in/ahmed-zm",
+      "He is from Ereğli not Konya. Just a chill developer. He likes to act like he's coding in his free time. You will probably see him with Ahmed.",
+    github: "https://github.com/atahanyild",
+    twitter: "https://twitter.com/atahanyild",
+    linkedin: "https://linkedin.com/in/atahanyild",
   },
   {
     id: 3,
@@ -49,9 +46,9 @@ export const englishTeamMembers: TeamMember[] = [
     image: "/img/team/irem.png",
     description:
       "Pinterest girl. She loves to organize stuff and plans, give her a community so she can influence or vlog them.",
-    github: "https://github.com/keyboord01",
-    twitter: "https://twitter.com/keyyyy01",
-    linkedin: "https://linkedin.com/in/ahmed-zm",
+    github: "https://github.com/irmkoci",
+    twitter: "https://x.com/home",
+    linkedin: "https://www.linkedin.com/in/irem-ko%C3%A7i-4757a0217/",
   },
   {
     id: 5,
@@ -60,9 +57,9 @@ export const englishTeamMembers: TeamMember[] = [
     image: "/img/team/kerem.png",
     description:
       "Fan of content writing and tennis. A Zonguldak boi with a passion for cryptography. Loves watching sitcoms in his free time.",
-    github: "https://github.com/keyboord01",
-    twitter: "https://twitter.com/keyyyy01",
-    linkedin: "https://linkedin.com/in/ahmed-zm",
+    github: "https://github.com/kerem6790",
+    twitter: "https://x.com/kerem6790x",
+    linkedin: "https://www.linkedin.com/in/kerem-gegek-48336a244/",
   },
   {
     id: 6,
@@ -71,9 +68,8 @@ export const englishTeamMembers: TeamMember[] = [
     image: "/img/team/miray.png",
     description:
       "Chill girl. Loves colors, shapes or anything that has to do with art. The only animal she loves is Kemo. Not a morning person.",
-    github: "https://github.com/keyboord01",
-    twitter: "https://twitter.com/keyyyy01",
-    linkedin: "https://linkedin.com/in/ahmed-zm",
+    twitter: "https://x.com/mirayssalar",
+    linkedin: "https://www.linkedin.com/in/miray-salar-b94290290/",
   },
   {
     id: 7,
@@ -82,9 +78,9 @@ export const englishTeamMembers: TeamMember[] = [
     image: "/img/team/zeynep.png",
     description:
       "Marketing & writer girl; she reads Bitcoin’s whitepaper in her free time, is a big cinema lover, and dreams of reading crypto news on her yacht. Can't eat gluten.",
-    github: "https://github.com/keyboord01",
-    twitter: "https://twitter.com/keyyyy01",
-    linkedin: "https://linkedin.com/in/ahmed-zm",
+    twitter: "https://x.com/zese_kacar?s=21 ",
+    linkedin:
+      "https://www.linkedin.com/in/zeynep-sude-kacar-9a6b13255?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
   },
   {
     id: 8,
@@ -93,9 +89,9 @@ export const englishTeamMembers: TeamMember[] = [
     image: "/img/team/bora.png",
     description:
       "We don’t know who he is. I think he is going to an exchange program.",
-    github: "https://github.com/keyboord01",
-    twitter: "https://twitter.com/keyyyy01",
-    linkedin: "https://linkedin.com/in/ahmed-zm",
+    github: "https://github.com/borailci",
+    twitter: "https://twitter.com/kuwiraW",
+    linkedin: "https://linkedin.com/in/bora-ilci",
   },
   {
     id: 9,
@@ -104,9 +100,9 @@ export const englishTeamMembers: TeamMember[] = [
     image: "/img/team/sena.png",
     description:
       "Crafting engaging content that makes blockchain technology accessible and exciting.",
-    github: "https://github.com/keyboord01",
-    twitter: "https://twitter.com/keyyyy01",
-    linkedin: "https://linkedin.com/in/ahmed-zm",
+    github: "https://github.com/Senaseser",
+    twitter: "https://twitter.com/senaeser02",
+    linkedin: "https://www.linkedin.com/in/sena-eser1",
   },
   {
     id: 10,
@@ -115,9 +111,9 @@ export const englishTeamMembers: TeamMember[] = [
     image: "/img/team/kutay.png",
     description:
       "Crafting engaging content that makes blockchain technology accessible and exciting.",
-    github: "https://github.com/keyboord01",
-    twitter: "https://twitter.com/keyyyy01",
-    linkedin: "https://linkedin.com/in/ahmed-zm",
+    github: "https://github.com/KkutaySarii",
+    twitter: "https://x.com/0xkutaysari",
+    linkedin: "https://www.linkedin.com/in/kutay-sarii",
   },
   {
     id: 11,
@@ -125,9 +121,8 @@ export const englishTeamMembers: TeamMember[] = [
     roles: ["Marketing", "Community"],
     image: "/img/team/beyza.png",
     description: "Social media girl with a passion for storytelling.",
-    github: "https://github.com/keyboord01",
-    twitter: "https://twitter.com/keyyyy01",
-    linkedin: "https://linkedin.com/in/ahmed-zm",
+    twitter: "https://x.com/bbeyzanryldrm?s=21",
+    linkedin: "http://linkedin.com/in/beyzanuryildirim",
   },
   {
     id: 12,
@@ -136,9 +131,8 @@ export const englishTeamMembers: TeamMember[] = [
     image: "/img/team/yusuf.png",
     description:
       "The weirdest laugh we have ever heard—just sit and listen to his stories (including those from NY). He’s nailed some big crypto events. Just give him a call.",
-    github: "https://github.com/keyboord01",
-    twitter: "https://twitter.com/keyyyy01",
-    linkedin: "https://linkedin.com/in/ahmed-zm",
+    github: "https://github.com/yusufemiraltinkaynak",
+    linkedin: "https://tr.linkedin.com/in/yeabest",
   },
   {
     id: 13,
@@ -147,9 +141,6 @@ export const englishTeamMembers: TeamMember[] = [
     image: "/img/team/ecem.png",
     description:
       "Gym girl, the healthiest person in this club. Just vibing around Davutpaşa. DM her for fitness advice or partnerships.",
-    github: "https://github.com/keyboord01",
-    twitter: "https://twitter.com/keyyyy01",
-    linkedin: "https://linkedin.com/in/ahmed-zm",
   },
   {
     id: 14,
@@ -200,10 +191,7 @@ export const turkishTeamMembers: TeamMember[] = [
     roles: ["Üst Lider"],
     image: "/img/team/kemo.png",
     description:
-      "YTUBlockchain'in vizyonunu ve stratejisini yöneten, Atahan ......",
-    github: "https://github.com/keyboord01",
-    twitter: "https://twitter.com/keyyyy01",
-    linkedin: "https://linkedin.com/in/ahmed-zm",
+      "YTUBlockchain'in vizyonunu ve stratejisini yöneten......, C(at)EO",
   },
   {
     id: 2,
@@ -211,10 +199,10 @@ export const turkishTeamMembers: TeamMember[] = [
     roles: ["Yazılımcı", "Başkan"],
     image: "/img/team/atahan.png",
     description:
-      "Ereğli'den, Konya'dan değil. Sakin bir yazılımcı. Boş zamanlarında patronluk taslamayı seviyor. Muhtemelen onu Ahmed ile birlikte görüceksiniz .",
-    github: "https://github.com/keyboord01",
-    twitter: "https://twitter.com/keyyyy01",
-    linkedin: "https://linkedin.com/in/ahmed-zm",
+      "Ereğli'den, Konya'dan değil. Sakin bir yazılımcı. boş zamanlarında kodluyor gibi yapmayı sever. Muhtemelen onu Ahmed ile birlikte görüceksiniz .",
+    github: "https://github.com/atahanyild",
+    twitter: "https://twitter.com/atahanyild",
+    linkedin: "https://linkedin.com/in/atahanyild",
   },
   {
     id: 3,
@@ -234,9 +222,9 @@ export const turkishTeamMembers: TeamMember[] = [
     image: "/img/team/irem.png",
     description:
       "Pinterest aşığı. Düzenlemeyi ve plan yapmayı seviyor, ona bir topluluk verin ki onları etkileyebilsin veya vlog çekebilsin.",
-    github: "https://github.com/keyboord01",
-    twitter: "https://twitter.com/keyyyy01",
-    linkedin: "https://linkedin.com/in/ahmed-zm",
+    github: "https://github.com/irmkoci",
+    twitter: "https://x.com/home",
+    linkedin: "https://www.linkedin.com/in/irem-ko%C3%A7i-4757a0217/",
   },
   {
     id: 5,
@@ -245,9 +233,9 @@ export const turkishTeamMembers: TeamMember[] = [
     image: "/img/team/kerem.png",
     description:
       "İçerik yazmaya ve tenis oynamaya bayılıyor. Kriptografi tutkusu olan Zonguldaklı. Boş zamanlarında sitcom izlemeyi seviyor.",
-    github: "https://github.com/keyboord01",
-    twitter: "https://twitter.com/keyyyy01",
-    linkedin: "https://linkedin.com/in/ahmed-zm",
+    github: "https://github.com/kerem6790",
+    twitter: "https://x.com/kerem6790x",
+    linkedin: "https://www.linkedin.com/in/kerem-gegek-48336a244/",
   },
   {
     id: 6,
@@ -256,9 +244,8 @@ export const turkishTeamMembers: TeamMember[] = [
     image: "/img/team/miray.png",
     description:
       "Rahat bir kız. Renkleri, şekilleri ve sanata dair her şeyi seviyor. Sevdiği tek hayvan Kemo. Sabah insanı değil.",
-    github: "https://github.com/keyboord01",
-    twitter: "https://twitter.com/keyyyy01",
-    linkedin: "https://linkedin.com/in/ahmed-zm",
+    twitter: "https://x.com/mirayssalar",
+    linkedin: "https://www.linkedin.com/in/miray-salar-b94290290/",
   },
   {
     id: 7,
@@ -267,9 +254,9 @@ export const turkishTeamMembers: TeamMember[] = [
     image: "/img/team/zeynep.png",
     description:
       "Pazarlama ve yazı işleriyle ilgilenir, boş zamanlarında Bitcoin'in tanıtım yazısını okur, sinemaya düşkündür ve yatında kripto haberleri okuduğunu hayal eder. Gluten tüketemez.",
-    github: "https://github.com/keyboord01",
-    twitter: "https://twitter.com/keyyyy01",
-    linkedin: "https://linkedin.com/in/ahmed-zm",
+    twitter: "https://x.com/zese_kacar?s=21 ",
+    linkedin:
+      "https://www.linkedin.com/in/zeynep-sude-kacar-9a6b13255?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
   },
   {
     id: 8,
@@ -278,9 +265,9 @@ export const turkishTeamMembers: TeamMember[] = [
     image: "/img/team/bora.png",
     description:
       "Kim olduğunu bilmiyoruz. Sanırım bir değişim programına gidecek.",
-    github: "https://github.com/keyboord01",
-    twitter: "https://twitter.com/keyyyy01",
-    linkedin: "https://linkedin.com/in/ahmed-zm",
+    github: "https://github.com/borailci",
+    twitter: "https://twitter.com/kuwiraW",
+    linkedin: "https://linkedin.com/in/bora-ilci",
   },
   {
     id: 9,
@@ -289,9 +276,9 @@ export const turkishTeamMembers: TeamMember[] = [
     image: "/img/team/sena.png",
     description:
       "Blockchain teknolojisini erişilebilir ve heyecan verici hale getiren etkileyici içerikler üretiyor.",
-    github: "https://github.com/keyboord01",
-    twitter: "https://twitter.com/keyyyy01",
-    linkedin: "https://linkedin.com/in/ahmed-zm",
+    github: "https://github.com/Senaseser",
+    twitter: "https://twitter.com/senaeser02",
+    linkedin: "https://www.linkedin.com/in/sena-eser1",
   },
   {
     id: 10,
@@ -300,9 +287,9 @@ export const turkishTeamMembers: TeamMember[] = [
     image: "/img/team/kutay.png",
     description:
       "Blockchain teknolojisini erişilebilir ve heyecan verici hale getiren etkileyici içerikler üretiyor.",
-    github: "https://github.com/keyboord01",
-    twitter: "https://twitter.com/keyyyy01",
-    linkedin: "https://linkedin.com/in/ahmed-zm",
+    github: "https://github.com/KkutaySarii",
+    twitter: "https://x.com/0xkutaysari",
+    linkedin: "https://www.linkedin.com/in/kutay-sarii",
   },
   {
     id: 11,
@@ -310,9 +297,8 @@ export const turkishTeamMembers: TeamMember[] = [
     roles: ["Pazarlama", "Topluluk"],
     image: "/img/team/beyza.png",
     description: "Hikaye anlatmaya tutkusu olan sosyal medya kızı.",
-    github: "https://github.com/keyboord01",
-    twitter: "https://twitter.com/keyyyy01",
-    linkedin: "https://linkedin.com/in/ahmed-zm",
+    twitter: "https://x.com/bbeyzanryldrm?s=21",
+    linkedin: "http://linkedin.com/in/beyzanuryildirim",
   },
   {
     id: 12,
@@ -321,9 +307,8 @@ export const turkishTeamMembers: TeamMember[] = [
     image: "/img/team/yusuf.png",
     description:
       "Bugüne kadar duyduğumuz en garip kahkaha. Oturun ve onun hikayelerini dinleyin (NY hikayeleri de dahil). Büyük kripto etkinliklerine imza attı. Sadece onu bir arayın.",
-    github: "https://github.com/keyboord01",
-    twitter: "https://twitter.com/keyyyy01",
-    linkedin: "https://linkedin.com/in/ahmed-zm",
+    github: "https://github.com/yusufemiraltinkaynak",
+    linkedin: "https://tr.linkedin.com/in/yeabest",
   },
   {
     id: 13,
@@ -332,9 +317,6 @@ export const turkishTeamMembers: TeamMember[] = [
     image: "/img/team/ecem.png",
     description:
       "Spor salonu tutkunu, bu kulübün en sağlıklısı. Davutpaşa’da takılıyor. Fitness tavsiyesi veya işbirlikleri için DM atın.",
-    github: "https://github.com/keyboord01",
-    twitter: "https://twitter.com/keyyyy01",
-    linkedin: "https://linkedin.com/in/ahmed-zm",
   },
   {
     id: 14,

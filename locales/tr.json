@@ -80,7 +80,7 @@
       "ethdam_2023": "ETHDam 2023"
     },
     "awards": {
-      "third_place_overall": "Genel Üçunculuk",
+      "third_place_overall": "Genel Üçüncülük",
       "mina_track": "Mina Kategorisi Birinciliği",
       "node101_track": "node101 Kategorisi Birinciliği",
       "first_place_pythnetwork": "PythNetwork Kategorisi Birinciliği",
@@ -105,7 +105,7 @@
   "events": {
     "header": "Düzenlenen Etkinlikler",
     "title": "etkinliklerimize katılın geleceğinizi şekillendirin",
-    "eventsAndClass": "Etkinlikler ve Sınıflar",
+    "eventsAndClass": "Etkinlikler ve eğitimler",
     "button": "Tüm Programı Görüntüle"
   },
   "schedulePage": {

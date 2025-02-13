@@ -49,7 +49,11 @@ const Projects: React.FC = () => {
                   t.projectsData.descriptions[project.descriptionKey]
                 }
                 projectUrl={project.projectUrl}
-                date={project.date}
+                date={
+                  t.projectsData.dates[
+                    project.date as keyof typeof t.projectsData.dates
+                  ]
+                }
                 awards={project.awards.map(
                   (award) => t.projectsData.awards[award]
                 )}

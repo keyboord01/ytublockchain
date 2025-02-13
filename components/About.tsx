@@ -18,7 +18,7 @@ const ScrollIndicator = ({ progress = 0 }) => {
     <div className="hidden md:flex flex-col items-center gap-3 rounded-full py-1">
       <div className="relative h-32 w-[3px] rounded-full overflow-hidden">
         <div
-          className="absolute bottom-0 w-full bg-black transition-all duration-300 rounded-full"
+          className="absolute bottom-0 w-full bg-zinc-800/20 transition-all duration-300 rounded-full"
           style={{
             height: `${progress}%`,
             transition: "height 0.3s ease-out",
@@ -27,7 +27,7 @@ const ScrollIndicator = ({ progress = 0 }) => {
       </div>
       <div className="rounded-full flex items-center justify-center">
         <ArrowDown
-          className={`w-8 h-8 text-black transition-all duration-500 ${
+          className={`w-8 h-8 text-zinc-800 transition-all duration-500 ${
             progress < 100 ? "animate-bounce" : ""
           }`}
         />
