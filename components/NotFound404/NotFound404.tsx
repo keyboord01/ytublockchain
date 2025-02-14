@@ -18,10 +18,10 @@ const NotFound404 = () => {
         </div>
 
         <div className="absolute top-1/4 left-1/2 -translate-x-1/2 text-center z-10 w-full px-4">
-          <h1 className="text-white font-anton !leading-tight font-bold mb-4 text-8xl md:text-9xl drop-shadow-lg">
+          <h1 className="text-white font-anton tracking-wider !leading-tight font-bold mb-4 text-8xl md:text-9xl drop-shadow-lg">
             404
           </h1>
-          <p className="text-white font-anton !leading-tight text-xl md:text-2xl mb-8 font-medium">
+          <p className="text-white font-anton tracking-wider !leading-tight text-xl md:text-2xl mb-8 font-medium">
             Oops! Page not found
           </p>
           <a
