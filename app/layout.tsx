@@ -9,6 +9,7 @@ import {
 } from "../fonts";
 import "./globals.css";
 import { LanguageProvider } from "@/contexts/language-context";
+import { Analytics } from "@vercel/analytics/react";
 
 export const metadata: Metadata = {
   title: "YTU Blockchain",
@@ -26,7 +27,7 @@ export default function RootLayout({
       className={`${circularWeb.variable} ${general.variable} ${robertMedium.variable} ${robertRegular.variable} ${zentry.variable} ${anton.variable}`}
     >
       <body className="font-general">
-        {" "}
+        <Analytics />
         <LanguageProvider>{children}</LanguageProvider>
       </body>
     </html>
