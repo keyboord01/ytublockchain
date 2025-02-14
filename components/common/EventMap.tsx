@@ -7,6 +7,7 @@ import { X } from "lucide-react";
 import { Feature } from "geojson";
 import { useLanguage } from "@/contexts/language-context";
 import { useTranslation } from "@/hooks/use-translation";
+import Link from "next/link";
 
 const geoUrl = "https://unpkg.com/world-atlas@2/countries-110m.json";
 
@@ -86,14 +87,14 @@ const EventCard: React.FC<{
           ]
         }
       </p>
-      <a
+      <Link
         href={event.link}
         className="inline-block text-sm text-[#FF8C00a1] hover:text-[#FF8C00] hover:underline"
         target="_blank"
         rel="noopener noreferrer"
       >
         {t.eventMap.projectLink}
-      </a>
+      </Link>
       {idx < totalEvents - 1 && <hr className="border-gray-700" />}
     </div>
   );

@@ -12,6 +12,7 @@ import {
   Section,
   Subsection,
 } from "@/data/roadmapData";
+import Link from "next/link";
 
 const RoadmapSection = () => {
   const { language } = useLanguage();
@@ -161,7 +162,7 @@ const RoadmapSection = () => {
             whileHover={{ scale: 1.02 }}
             transition={{ duration: 0.2 }}
           >
-            <a
+            <Link
               href="https://yildizblockchain.notion.site/YTU-Blockchain-Web3-Yol-Haritas-2678282cd53e490fb77111a87880369c"
               target="_blank"
               rel="noopener noreferrer"
@@ -172,7 +173,7 @@ const RoadmapSection = () => {
                 leftIcon={<ExternalLink />}
                 containerClass="flex-row-center gap-2 px-6 py-2 w-full sm:w-auto"
               />
-            </a>
+            </Link>
           </motion.div>
         </motion.div>
       </div>

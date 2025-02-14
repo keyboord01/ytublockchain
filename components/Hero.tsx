@@ -49,7 +49,7 @@ const HeroContent = () => {
           </p>
         </div>
         <div className="flex flex-col items-center justify-center gap-3 sm:flex-row">
-          <a
+          <Link
             target="_blank"
             rel="noopener noreferrer"
             href="https://docs.google.com/forms/d/e/1FAIpQLSebf0dzOSg3335jiYzOOLgX0x5BAzJwUVSZaTUG_2wV3gqsAQ/viewform"
@@ -59,7 +59,7 @@ const HeroContent = () => {
               title={t.hero.joinUs}
               containerClass="!bg-[#FF8C00] flex items-center justify-center gap-1 px-6 py-2"
             />
-          </a>
+          </Link>
           <Link href="/schedule">
             <Button
               id="Upcoming-events"

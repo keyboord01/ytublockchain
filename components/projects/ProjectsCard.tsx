@@ -14,6 +14,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import Button from "../common/Button";
 import { useLanguage } from "@/contexts/language-context";
 import { useTranslation } from "@/hooks/use-translation";
+import Link from "next/link";
 
 interface ProjectsCardProps {
   src: string;
@@ -239,7 +240,7 @@ export const ProjectsCard: React.FC<ProjectsCardProps> = ({
                       transition={{ delay: 0.4 }}
                       className="mt-4 sm:mt-6"
                     >
-                      <a
+                      <Link
                         href={projectUrl}
                         target="_blank"
                         rel="noopener noreferrer"
@@ -251,7 +252,7 @@ export const ProjectsCard: React.FC<ProjectsCardProps> = ({
                             <ExternalLink className="size-4 sm:size-5" />
                           }
                         />
-                      </a>
+                      </Link>
                     </motion.div>
                   )}
                 </motion.div>

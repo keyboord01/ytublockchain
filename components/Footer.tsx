@@ -12,6 +12,7 @@ import {
 } from "react-icons/fa";
 import { useLanguage } from "@/contexts/language-context";
 import { useTranslation } from "@/hooks/use-translation";
+import Link from "next/link";
 
 const Footer = () => {
   const { language } = useLanguage();
@@ -130,7 +131,7 @@ const Footer = () => {
 
               <div className="mt-8 flex flex-wrap justify-center gap-4 lg:justify-start">
                 {socialLinks.map((link, index) => (
-                  <a
+                  <Link
                     key={link.label}
                     href={link.href}
                     target="_"
@@ -153,7 +154,7 @@ const Footer = () => {
                         {link.label}
                       </span>
                     </div>
-                  </a>
+                  </Link>
                 ))}
               </div>
             </div>
@@ -171,7 +172,7 @@ const Footer = () => {
                 <ul className="flex flex-col items-center space-y-4 lg:items-start">
                   {section.links.map((link) => (
                     <li key={link.label}>
-                      <a
+                      <Link
                         href={link.href}
                         target="_"
                         className="relative text-gray-400 transition-colors hover:text-white"
@@ -180,7 +181,7 @@ const Footer = () => {
                           {link.label}
                           <span className="absolute -bottom-1 left-0 h-px w-0 bg-[#FF8C00] transition-all duration-300 hover:w-full" />
                         </span>
-                      </a>
+                      </Link>
                     </li>
                   ))}
                 </ul>
@@ -194,14 +195,14 @@ const Footer = () => {
             Developed with
             <span className="mx-1 inline-block text-[#FF8C00]">❤️</span>
             by
-            <a
+            <Link
               href="https://x.com/keyyyy01"
               target="_"
               rel="noopener noreferrer"
               className="ml-1 text-[#FF8C00] transition-colors hover:text-[#FF8C00]/80"
             >
               @keyyyy01
-            </a>
+            </Link>
           </p>
 
           <button

@@ -9,6 +9,7 @@ import { useLanguage } from "@/contexts/language-context";
 import { useTranslation } from "@/hooks/use-translation";
 import { classesDataEN, classesDataTR } from "@/data/classesData";
 import { parse, format } from "date-fns";
+import Link from "next/link";
 
 const Events = () => {
   const { language } = useLanguage();
@@ -82,7 +83,7 @@ const Events = () => {
               ))}
             </div>
           </div>
-          <a
+          <Link
             href="/schedule"
             target="_"
             className="flex items-center justify-center mt-12"
@@ -91,7 +92,7 @@ const Events = () => {
               id="schedule-btn"
               title={t.events.button}
             />
-          </a>
+          </Link>
         </motion.div>
       </div>
     </div>

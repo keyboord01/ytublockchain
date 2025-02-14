@@ -15,6 +15,7 @@ import Image from "next/image";
 import { useLanguage } from "@/contexts/language-context";
 import { useTranslation } from "@/hooks/use-translation";
 import { classesDataEN, classesDataTR } from "@/data/classesData";
+import Link from "next/link";
 
 export interface Class {
   date: string;
@@ -196,14 +197,14 @@ const ClassRow: React.FC<ClassRowProps> = ({ cls }) => {
                   <Calendar className="size-5 text-[#FF8C00]" />
                 </button>
               ) : (
-                <a
+                <Link
                   href={cls.LumaLink || "#"}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="rounded-full bg-zinc-800 p-2 transition-colors duration-200 hover:bg-zinc-700"
                 >
                   <ChevronRight className="size-5 text-[#FF8C00]" />
-                </a>
+                </Link>
               )}
             </div>
           </div>
