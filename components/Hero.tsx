@@ -6,6 +6,7 @@ import Image from "next/image";
 import Button from "./common/Button";
 import { useLanguage } from "@/contexts/language-context";
 import { useTranslation } from "@/hooks/use-translation";
+import Link from "next/link";
 
 const VideoPlayer = dynamic(() => import("./VideoPlayer"), {
   ssr: false,
@@ -59,14 +60,14 @@ const HeroContent = () => {
               containerClass="!bg-[#FF8C00] flex items-center justify-center gap-1 px-6 py-2"
             />
           </a>
-          <a href="/schedule">
+          <Link href="/schedule">
             <Button
               id="Upcoming-events"
               title={t.hero.events}
               leftIcon={<FaCalendarCheck />}
               containerClass="!bg-[#FF8C00] flex items-center justify-center gap-2 px-6 py-2"
             />
-          </a>
+          </Link>
         </div>
       </div>
     </div>

@@ -2,6 +2,7 @@ import React from "react";
 import CatPic from "./assets/cat";
 import CatHands from "./assets/catHands";
 import Button from "../common/Button";
+import Link from "next/link";
 
 const NotFound404 = () => {
   return (
@@ -24,7 +25,7 @@ const NotFound404 = () => {
           <p className="text-white font-anton tracking-wider !leading-tight text-xl md:text-2xl mb-8 font-medium">
             Oops! Page not found
           </p>
-          <a
+          <Link
             href="/home"
             className="flex items-center justify-center"
           >
@@ -33,7 +34,7 @@ const NotFound404 = () => {
               id="GoBack"
               title="Go Back"
             />
-          </a>
+          </Link>
         </div>
       </div>
     </div>
