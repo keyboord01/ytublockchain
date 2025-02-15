@@ -26,7 +26,7 @@ const NotFound404 = () => {
             Oops! Page not found
           </p>
           <Link
-            href="/home"
+            href="/"
             className="flex items-center justify-center"
           >
             <Button
