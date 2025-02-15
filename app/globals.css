@@ -4,7 +4,7 @@
 
 :root {
   --font-general: "Arial", sans-serif;
-  --font-zentry: "Zentry", serif;
+  --font-anton: "anton", serif;
 }
 
 body {
@@ -23,13 +23,8 @@ html {
     @apply flex justify-center items-center;
   }
 
-  .bc-font b {
-    @apply font-zentry;
-    font-feature-settings: "ss01" on;
-  }
-
   .hero-header {
-    @apply uppercase font-zentry font-black text-5xl sm:text-5xl md:text-7xl lg:text-9xl tracking-wide;
+    @apply uppercase font-anton font-black text-5xl sm:text-5xl md:text-7xl lg:text-8xl tracking-wide;
   }
 
   .subtext {
@@ -45,7 +40,7 @@ html {
   }
 
   .projects-title {
-    @apply uppercase md:text-6xl text-4xl font-zentry font-black;
+    @apply uppercase md:text-6xl text-4xl font-anton font-black;
   }
 }
 

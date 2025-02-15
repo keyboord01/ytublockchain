@@ -4,95 +4,27 @@ import { useState } from "react";
 import { ChevronRight, ExternalLink, BookOpen } from "lucide-react";
 import Button from "@/components/common/Button";
 import { motion, AnimatePresence } from "framer-motion";
-
-interface Subsection {
-  id: string;
-  title: string;
-  subsections?: Subsection[];
-}
-
-interface Section {
-  id: string;
-  title: string;
-  subsections: Subsection[];
-}
+import { useLanguage } from "@/contexts/language-context";
+import { useTranslation } from "@/hooks/use-translation";
+import {
+  englishRoadmapData,
+  turkishRoadmapData,
+  Section,
+  Subsection,
+} from "@/data/roadmapData";
+import Link from "next/link";
 
 const RoadmapSection = () => {
+  const { language } = useLanguage();
+  const t = useTranslation(language);
+
   const [expandedSections, setExpandedSections] = useState<Set<string>>(
     new Set()
   );
   const [hoveredSection, setHoveredSection] = useState<string | null>(null);
 
-  const roadmapData: Section[] = [
-    {
-      id: "0",
-      title: "Guide to the Guide",
-      subsections: [],
-    },
-    {
-      id: "1",
-      title: "What is Blockchain?",
-      subsections: [],
-    },
-    {
-      id: "2",
-      title: "A detailed look at Bitcoin",
-      subsections: [
-        { id: "2.1", title: "Bitcoin History & Decentralization" },
-        { id: "2.2", title: "Distributed Systems" },
-        { id: "2.3", title: "More Hash related content" },
-        { id: "2.4", title: "Digital Signatures and Asymmetric Cryptography" },
-        { id: "2.5", title: "Proof of Work" },
-      ],
-    },
-    {
-      id: "3",
-      title: "Ethereum",
-      subsections: [
-        {
-          id: "3.1",
-          title: "How Does Ethereum Work?",
-          subsections: [
-            { id: "3.1.1", title: "Consensus Mechanisms" },
-            { id: "3.1.2", title: "Nodes, Validators and Mining" },
-            { id: "3.1.3", title: "Ethereum Virtual Machine (EVM)" },
-            { id: "3.1.4", title: "Gas Fees" },
-            { id: "3.1.5", title: "Smart Contracts" },
-            { id: "3.1.6", title: "Merkle Tree" },
-          ],
-        },
-        { id: "3.2", title: "History of Ethereum" },
-        { id: "3.3", title: "Difference Between Bitcoin and Ethereum" },
-      ],
-    },
-    {
-      id: "4",
-      title: "Blockchain Ecosystem",
-      subsections: [
-        { id: "4.1", title: "Decentralized Applications (Dapps)" },
-        { id: "4.2", title: "Wallets" },
-        { id: "4.3", title: "Interacting with Web3" },
-      ],
-    },
-    {
-      id: "5",
-      title: "Blockchain Application Areas and Concepts",
-      subsections: [
-        { id: "5.1", title: "DeFi" },
-        { id: "5.2", title: "Stablecoins" },
-        { id: "5.3", title: "Non-Fungible Token (NFT)" },
-        { id: "5.4", title: "DAO (Decentralized Autonomous Organizations)" },
-        { id: "5.5", title: "Other Blockchain Application Areas" },
-        { id: "5.6", title: "Tokenomics" },
-        { id: "5.7", title: "Oracle" },
-      ],
-    },
-    {
-      id: "6",
-      title: "Advanced Blockchain Concepts",
-      subsections: [],
-    },
-  ];
+  const roadmapData =
+    language === "tr" ? turkishRoadmapData : englishRoadmapData;
 
   const toggleSection = (id: string) => {
     setExpandedSections((prev) => {
@@ -162,7 +94,7 @@ const RoadmapSection = () => {
               animate={{ opacity: isHovered ? 1 : 0 }}
               className="hidden shrink-0 text-xs text-[#FF8C00]/50 sm:block"
             >
-              Available in full guide
+              {t.roadMap.availableInFullGuide}
             </motion.span>
           )}
         </motion.button>
@@ -204,14 +136,13 @@ const RoadmapSection = () => {
           viewport={{ once: true }}
         >
           <p className="font-general text-xs uppercase text-[#FF8C00] sm:text-sm md:text-[10px]">
-            your journey starts here
+            {t.roadMap.header}
           </p>
-          <h2 className="mt-2 font-zentry text-3xl font-black uppercase text-white sm:text-4xl md:text-5xl">
-            our Web3 Roadmap
+          <h2 className="mt-2 font-anton text-3xl font-black uppercase text-white sm:text-4xl md:text-5xl">
+            {t.roadMap.title}
           </h2>
           <p className="mt-3 text-xs text-white/80 sm:mt-4 sm:text-sm">
-            A comprehensive guide to help you navigate the world of blockchain
-            and Web3
+            {t.roadMap.description}
           </p>
         </motion.div>
 
@@ -231,18 +162,18 @@ const RoadmapSection = () => {
             whileHover={{ scale: 1.02 }}
             transition={{ duration: 0.2 }}
           >
-            <a
+            <Link
               href="https://yildizblockchain.notion.site/YTU-Blockchain-Web3-Yol-Haritas-2678282cd53e490fb77111a87880369c"
               target="_blank"
               rel="noopener noreferrer"
               className="w-full sm:w-auto"
             >
               <Button
-                title="view full guide"
+                title={t.roadMap.fullGuideButton}
                 leftIcon={<ExternalLink />}
                 containerClass="flex-row-center gap-2 px-6 py-2 w-full sm:w-auto"
               />
-            </a>
+            </Link>
           </motion.div>
         </motion.div>
       </div>

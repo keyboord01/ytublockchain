@@ -12,6 +12,9 @@ import {
 
 import { motion, AnimatePresence } from "framer-motion";
 import Button from "../common/Button";
+import { useLanguage } from "@/contexts/language-context";
+import { useTranslation } from "@/hooks/use-translation";
+import Link from "next/link";
 
 interface ProjectsCardProps {
   src: string;
@@ -33,6 +36,9 @@ export const ProjectsCard: React.FC<ProjectsCardProps> = ({
   awards = [],
   location,
 }) => {
+  const { language } = useLanguage();
+  const t = useTranslation(language);
+
   const [isExpanded, setIsExpanded] = useState(false);
   const maxDescriptionLength = 80;
 
@@ -56,7 +62,7 @@ export const ProjectsCard: React.FC<ProjectsCardProps> = ({
   const cardContent = (
     <>
       <div className="relative z-10 flex size-full flex-col p-4 sm:p-6 md:p-8">
-        <h1 className="projects-title bc-font text-2xl text-white sm:text-3xl md:text-4xl lg:text-5xl">
+        <h1 className="projects-title font-anton text-2xl text-white sm:text-3xl md:text-4xl lg:text-5xl">
           {title}
         </h1>
         <div className="absolute right-2 top-6 z-20 rounded-full p-1.5 backdrop-blur-sm sm:right-3 sm:top-3 sm:p-2 md:right-5 md:top-8 md:p-3">
@@ -95,20 +101,6 @@ export const ProjectsCard: React.FC<ProjectsCardProps> = ({
           </div>
         </div>
       </div>
-
-      {/* {projectUrl && (
-        <a
-          href={projectUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="absolute right-2 top-2 z-20 rounded-full bg-white/10 p-1.5 backdrop-blur-sm 
-              transition-all duration-300 hover:scale-105 hover:bg-white/20 sm:right-3 sm:top-3 
-              sm:p-2 md:right-5 md:top-5 md:p-3"
-          onClick={(e) => e.stopPropagation()}
-        >
-          <ExternalLink className="size-3 text-white sm:size-4 md:size-5" />
-        </a>
-      )} */}
     </>
   );
 
@@ -181,7 +173,7 @@ export const ProjectsCard: React.FC<ProjectsCardProps> = ({
                   transition={{ duration: 0.4, ease: "easeOut" }}
                   className="flex w-full flex-col p-4 sm:p-6 md:w-1/2 md:p-8"
                 >
-                  <h2 className="projects-title bc-font text-2xl text-white sm:text-3xl md:text-4xl lg:text-5xl">
+                  <h2 className="projects-title font-anton text-2xl text-white sm:text-3xl md:text-4xl lg:text-5xl">
                     {title}
                   </h2>
 
@@ -248,19 +240,19 @@ export const ProjectsCard: React.FC<ProjectsCardProps> = ({
                       transition={{ delay: 0.4 }}
                       className="mt-4 sm:mt-6"
                     >
-                      <a
+                      <Link
                         href={projectUrl}
                         target="_blank"
                         rel="noopener noreferrer"
                       >
                         <Button
-                          title="View Project"
+                          title={t.projects.viewProject}
                           containerClass="px-3 py-1.5 sm:px-4 sm:py-2"
                           rightIcon={
                             <ExternalLink className="size-4 sm:size-5" />
                           }
                         />
-                      </a>
+                      </Link>
                     </motion.div>
                   )}
                 </motion.div>

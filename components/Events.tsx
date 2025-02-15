@@ -5,36 +5,22 @@ import { motion } from "framer-motion";
 import StatisticCard from "./common/StatisticCard";
 import Button from "./common/Button";
 import Image from "next/image";
-
-interface Event {
-  name: string;
-  type: string;
-  date: string;
-}
+import { useLanguage } from "@/contexts/language-context";
+import { useTranslation } from "@/hooks/use-translation";
+import { classesDataEN, classesDataTR } from "@/data/classesData";
+import { parse, format } from "date-fns";
+import Link from "next/link";
 
 const Events = () => {
-  const events: Event[] = [
-    {
-      name: "Web3 Masterclass Series",
-      type: "Educational",
-      date: "March 15-16",
-    },
-    {
-      name: "Blockchain Ideathon 2024",
-      type: "In-Person",
-      date: "April 22-23",
-    },
-    { name: "Smart Contract Workshop", type: "Educational", date: "May 10" },
-    { name: "Industry Leaders Panel", type: "Keynote", date: "June 5" },
-    {
-      name: "Hackathon: Build the Future",
-      type: "In-Person",
-      date: "July 18-20",
-    },
-    { name: "DeFi Deep Dive Course", type: "Educational", date: "August 3" },
-    { name: "Web3 Security Summit", type: "Keynote", date: "September 12" },
-    { name: "Blockchain Career Fair", type: "In-Person", date: "October 8" },
-  ];
+  const { language } = useLanguage();
+  const t = useTranslation(language);
+
+  const classes = language === "tr" ? classesDataTR : classesDataEN;
+
+  const events = classes.slice(0, 8).map((cls) => ({
+    name: cls.topic,
+    date: format(parse(cls.date, "dd.MM.yyyy", new Date()), "MMMM d, yyyy"),
+  }));
 
   return (
     <div
@@ -49,7 +35,6 @@ const Events = () => {
           className="object-cover"
           priority
         />
-
         <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent" />
       </div>
       <div className="absolute inset-0 flex flex-col items-center justify-between">
@@ -61,15 +46,15 @@ const Events = () => {
           transition={{ duration: 0.6 }}
         >
           <p className="font-general text-sm uppercase text-[#FF8C00] md:text-[10px]">
-            events organized
+            {t.events.header}
           </p>
-          <h1 className="text-center font-zentry text-5xl font-black uppercase text-blue-100 sm:text-5xl md:text-7xl lg:text-8xl">
-            join our events <br /> shape your future
+          <h1 className="text-center font-anton text-5xl font-black uppercase text-blue-100 sm:text-5xl md:text-7xl lg:text-8xl tracking-wider !leading-tight">
+            {t.events.title}
           </h1>
         </motion.div>
         <motion.div
           viewport={{ once: true }}
-          className="relative z-10 w-full max-w-6xl px-4"
+          className="relative z-10 w-full max-w-6xl pt-44 px-4"
           initial={{ opacity: 0, y: 0 }}
           whileInView={{ opacity: 1, y: -120 }}
           transition={{ duration: 0.6, delay: 0.2 }}
@@ -80,7 +65,7 @@ const Events = () => {
                 value={40}
                 titleClassName="font-circular-web text-6xl font-bold !text-[#FF8C00]"
                 labelClassName="mt-2 font-general text-sm uppercase !text-[#fff]"
-                label="Events And Classes"
+                label={t.events.eventsAndClass}
                 delay={0.6}
               />
             </div>
@@ -92,23 +77,22 @@ const Events = () => {
                 >
                   <p className="font-circular-web">{event.name}</p>
                   <div className="flex items-center justify-center mb-2 text-xs font-semibold text-[#FF8C00]">
-                    <p>{event.type}</p>
                     <p className="ml-1 font-general">{event.date}</p>
                   </div>
                 </div>
               ))}
             </div>
           </div>
-          <a
+          <Link
             href="/schedule"
             target="_"
             className="flex items-center justify-center mt-12"
           >
             <Button
               id="schedule-btn"
-              title="view full schedule"
+              title={t.events.button}
             />
-          </a>
+          </Link>
         </motion.div>
       </div>
     </div>

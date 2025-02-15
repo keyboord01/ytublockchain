@@ -2,6 +2,8 @@ import { motion } from "framer-motion";
 import { useRef, useState } from "react";
 import { ExternalLink } from "lucide-react";
 import Image from "next/image";
+import { useLanguage } from "@/contexts/language-context";
+import { useTranslation } from "@/hooks/use-translation";
 
 interface Partner {
   name: string;
@@ -12,6 +14,8 @@ interface Partner {
 const PartnersSlider = () => {
   const constraintsRef = useRef<HTMLDivElement>(null);
   const [isDragging, setIsDragging] = useState<boolean>(false);
+  const { language } = useLanguage();
+  const t = useTranslation(language);
 
   const partners: Partner[] = [
     {
@@ -50,7 +54,7 @@ const PartnersSlider = () => {
       <div className="relative py-12">
         <div className="mb-8 text-center">
           <h3 className="mb-2 text-2xl font-bold text-[#000560]">
-            Our Partners
+            {t.partners.title}
           </h3>
           <div className="flex-row-center gap-2 text-sm text-[#4B5563]">
             <svg
@@ -66,7 +70,7 @@ const PartnersSlider = () => {
                 d="M7 11.5V14m0-2.5v-6a1.5 1.5 0 113 0m-3 6a1.5 1.5 0 00-3 0v2a7.5 7.5 0 0015 0v-5a1.5 1.5 0 00-3 0m-6-3V11m0-5.5v-1a1.5 1.5 0 013 0v1m0 0V11m0-5.5a1.5 1.5 0 013 0v3m0 0V11"
               />
             </svg>
-            <span>Drag to explore more partners</span>
+            <span>{t.partners.dragHint}</span>
           </div>
         </div>
 

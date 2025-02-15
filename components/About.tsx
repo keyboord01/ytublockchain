@@ -8,6 +8,8 @@ import { Users, Globe, Trophy, Rocket, ArrowDown } from "lucide-react";
 
 import StatisticCard from "@/components/common/StatisticCard";
 import PartnersSlider from "@/components/common/PartnersSlider";
+import { useLanguage } from "@/contexts/language-context";
+import { useTranslation } from "@/hooks/use-translation";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -16,7 +18,7 @@ const ScrollIndicator = ({ progress = 0 }) => {
     <div className="hidden md:flex flex-col items-center gap-3 rounded-full py-1">
       <div className="relative h-32 w-[3px] rounded-full overflow-hidden">
         <div
-          className="absolute bottom-0 w-full bg-black transition-all duration-300 rounded-full"
+          className="absolute bottom-0 w-full bg-zinc-800/20 transition-all duration-300 rounded-full"
           style={{
             height: `${progress}%`,
             transition: "height 0.3s ease-out",
@@ -25,7 +27,7 @@ const ScrollIndicator = ({ progress = 0 }) => {
       </div>
       <div className="rounded-full flex items-center justify-center">
         <ArrowDown
-          className={`w-8 h-8 text-black transition-all duration-500 ${
+          className={`w-8 h-8 text-zinc-800 transition-all duration-500 ${
             progress < 100 ? "animate-bounce" : ""
           }`}
         />
@@ -36,6 +38,8 @@ const ScrollIndicator = ({ progress = 0 }) => {
 
 const About = () => {
   const [scrollProgress, setScrollProgress] = useState(0);
+  const { language } = useLanguage();
+  const t = useTranslation(language);
 
   useGSAP(() => {
     const mm = gsap.matchMedia();
@@ -72,55 +76,46 @@ const About = () => {
       >
         <div className="relative mb-8 flex flex-col items-center gap-5">
           <div className="relative">
-            <h2 className="text-center font-zentry text-3xl font-black uppercase sm:text-4xl md:text-5xl lg:text-7xl">
-              <span className="text-[#000560]">A thriving community of</span>
-              <br className="hidden md:block" />
-              <span className="text-[#000560]">blockchain enthusiasts</span>
-            </h2>
+            <h2
+              className="text-center font-anton text-3xl font-black uppercase sm:text-4xl md:text-5xl lg:text-7xl tracking-wider !leading-tight"
+              dangerouslySetInnerHTML={{ __html: t.about.heading }}
+            />
             <div className="absolute -z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] blur-3xl bg-gradient-to-r from-[#000560]/10 to-[#FF8C00]/10 opacity-70" />
           </div>
-
           <div className="stats-grid grid grid-cols-1 gap-14 p-6 md:grid-cols-2 lg:grid-cols-4 mt-12">
             <StatisticCard
               icon={Users}
               value={1400}
-              label="Active Members"
-              description="Growing community of developers, designers, and blockchain enthusiasts"
+              label={t.about.stats.members}
+              description={t.about.stats.membersDescription}
               delay={0}
             />
             <StatisticCard
               icon={Globe}
               value={15}
-              label="Countries"
-              description="Global presence with members from across different continents"
+              label={t.about.stats.countries}
+              description={t.about.stats.countriesDescription}
               delay={0.2}
             />
             <StatisticCard
               icon={Trophy}
               value={25}
-              label="Hackathons"
-              description="Competitive events where innovative solutions come to life"
+              label={t.about.stats.hackathons}
+              description={t.about.stats.hackathonsDescription}
               delay={0.4}
             />
             <StatisticCard
               icon={Rocket}
               value={50}
-              label="Projects Built"
-              description="Successful projects launched by our community members"
+              label={t.about.stats.projects}
+              description={t.about.stats.projectsDescription}
               delay={0.6}
             />
           </div>
 
           <div className="subtext translate-y-12 sm:translate-y-0 md:block hidden">
-            <p>
-              Our blockchain club is more than just numbers. We&apos;re a
-              community dedicated
-            </p>
-            <p className="text-gray-500">
-              to learning, building, and innovating together. Whether
-              you&apos;re a beginner or an experienced developer, there&apos;s a
-              place for you here.
-            </p>
+            <p>{t.about.description}</p>
+            <p className="text-gray-500">{t.about.subtext}</p>
           </div>
         </div>
 
@@ -156,15 +151,10 @@ const About = () => {
 
           <div className="absolute inset-0 flex items-center justify-center">
             <div className="font-circular-web text-lg tracking-tighter text-center bg-black/60 backdrop-blur-[1px] shadow-xl rounded-sm py-2 px-2 mx-2">
-              <p className="text-white">
-                Our blockchain club is more than just numbers. We&apos;re a
-                community dedicated
-              </p>
-              <p className="text-gray-400">
-                to learning, building, and innovating together. Whether
-                you&apos;re a beginner or an experienced developer, there&apos;s
-                a place for you here.
-              </p>
+              <p
+                className="text-white"
+                dangerouslySetInnerHTML={{ __html: t.about.mobileText }}
+              />
             </div>
           </div>
         </div>

@@ -14,7 +14,7 @@ const config: Config = {
         general: ["var(--font-general)"],
         "robert-medium": ["var(--font-robert-medium)"],
         "robert-regular": ["var(--font-robert-regular)"],
-        zentry: ["var(--font-zentry)"],
+        anton: ["var(--font-anton)"],
       },
     },
   },
