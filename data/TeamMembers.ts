@@ -15,7 +15,8 @@ export const englishTeamMembers: TeamMember[] = [
     name: "Keemo Soulaibi",
     roles: ["Supreme Leader"],
     image: "/img/team/kemo.png",
-    description: "Leading YTUBlockchain's vision and strategy......, C(at)EO",
+    description:
+      "I, Keemo, have taken over, let's face it, I saved the site. I'm the cat with the plan, and now, I'm calling the shots. You're welcome for the leadership",
   },
   {
     id: 2,
@@ -191,7 +192,7 @@ export const turkishTeamMembers: TeamMember[] = [
     roles: ["Üst Lider"],
     image: "/img/team/kemo.png",
     description:
-      "YTUBlockchain'in vizyonunu ve stratejisini yöneten......, C(at)EO",
+      "Ben Keemo, kabul edelim, siteyi devraldım ve kurtardım. Ben planları olan bir kediyim ve şimdi onları gerçekleştiriyorum. Liderlik için rica ederim.",
   },
   {
     id: 2,
