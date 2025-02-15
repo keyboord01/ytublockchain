@@ -79,7 +79,7 @@ const NavBar = () => {
           </Link>
 
           <div className="hidden md:flex items-center gap-6">
-            <div className="flex items-center space-x-4">
+            <div className="flex items-center space-x-4 mt-2">
               {navItems.map((item) => (
                 <motion.button
                   key={item.name}
