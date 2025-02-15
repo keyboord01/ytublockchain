@@ -362,10 +362,8 @@ const AboutUsSection = () => {
         </div>
       </div>
 
-      {/* Content Sections with Tabs */}
       <div className="relative z-10">
         <div className="max-w-7xl mx-auto px-4 py-16">
-          {/* Navigation Tabs */}
           <div className="flex justify-center mb-16">
             <div className="inline-flex bg-white/5 rounded-full p-1">
               {[
@@ -388,7 +386,6 @@ const AboutUsSection = () => {
             </div>
           </div>
 
-          {/* Active Section Content */}
           <motion.div
             key={activeSection}
             initial={{ opacity: 0, y: 20 }}
@@ -400,7 +397,6 @@ const AboutUsSection = () => {
         </div>
       </div>
 
-      {/* CTA Section remains the same */}
       <section className="py-32 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-t from-[#FF8C00]/20 to-transparent" />
 

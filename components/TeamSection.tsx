@@ -71,7 +71,7 @@ const SocialLinks = ({
   </div>
 );
 
-const MemberCard = ({
+export const MemberCard = ({
   member,
   onClick,
 }: {
@@ -80,6 +80,8 @@ const MemberCard = ({
 }) => {
   const { language } = useLanguage();
   const t = useTranslation(language);
+
+  const [isImageLoaded, setIsImageLoaded] = useState<boolean>(false);
 
   return (
     <motion.div
@@ -94,16 +96,24 @@ const MemberCard = ({
           className="w-48 h-48 rounded-full p-1 bg-[#FF8C00]"
           whileHover={{ scale: 1.05 }}
         >
-          <div className="w-full h-full rounded-full overflow-hidden bg-black p-1">
+          <div className="w-full h-full rounded-full overflow-hidden bg-black p-1 relative">
+            {!isImageLoaded && (
+              <div className="absolute inset-0 z-10 flex items-center justify-center bg-zinc-800/80 animate-pulse">
+                <div className="w-10 h-10 bg-zinc-700 rounded-full" />
+              </div>
+            )}
+
             <Image
               src={member.image}
               alt={member.name}
               className="rounded-full object-cover group-hover:scale-110 transition-transform duration-300"
               width={500}
               height={500}
+              onLoadingComplete={() => setIsImageLoaded(true)}
             />
           </div>
         </motion.div>
+
         <motion.div
           initial={{ opacity: 0 }}
           whileHover={{ opacity: 1 }}
@@ -131,7 +141,7 @@ const MemberCard = ({
   );
 };
 
-const MemberModal = ({
+export const MemberModal = ({
   member,
   onClose,
   position,
@@ -140,6 +150,8 @@ const MemberModal = ({
   onClose: () => void;
   position: { x: number; y: number };
 }) => {
+  const [isModalImageLoaded, setIsModalImageLoaded] = useState<boolean>(false);
+
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -192,12 +204,19 @@ const MemberModal = ({
             transition={{ delay: 0.2 }}
             className="w-40 h-40 rounded-2xl overflow-hidden border-2 border-[#FF8C00] relative group"
           >
+            {!isModalImageLoaded && (
+              <div className="absolute inset-0 z-10 flex items-center justify-center bg-zinc-800/80 animate-pulse">
+                <div className="w-12 h-12 bg-zinc-700 rounded-full" />
+              </div>
+            )}
+
             <Image
               src={member.image}
               alt={member.name}
               className="w-full h-full object-cover transition-transform duration-300"
               width={500}
               height={500}
+              onLoadingComplete={() => setIsModalImageLoaded(true)}
             />
           </motion.div>
 
@@ -213,11 +232,9 @@ const MemberModal = ({
             <p className="text-[#FF8C00] font-medium mb-4">
               {member.roles.filter((role) => role).join(" & ")}
             </p>
-
             <p className="text-gray-300 mb-6 leading-relaxed">
               {member.description}
             </p>
-
             <SocialLinks
               links={[
                 { icon: FaGithub, link: member.github, label: "GitHub" },
