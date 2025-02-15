@@ -10,6 +10,7 @@ import {
 import "./globals.css";
 import { LanguageProvider } from "@/contexts/language-context";
 import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 export const metadata: Metadata = {
   title: "YTU Blockchain",
@@ -28,6 +29,7 @@ export default function RootLayout({
     >
       <body className="font-general">
         <Analytics />
+        <SpeedInsights />
         <LanguageProvider>{children}</LanguageProvider>
       </body>
     </html>
