@@ -152,7 +152,8 @@ export const englishTeamMembers: TeamMember[] = [
       "Gym enthusiast with a passion for crypto. DM him for collaborations or fitness tips.",
     github: "https://github.com/alperen2306",
     twitter: "https://twitter.com/alpakgeyik?s=21",
-    linkedin: "https://github.com/alperen2306",
+    linkedin:
+      "https://www.linkedin.com/in/alp-eren-akgeyik-042750190?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
   },
   {
     id: 15,
@@ -328,7 +329,8 @@ export const turkishTeamMembers: TeamMember[] = [
       "Kriptoya tutkusu olan spor salonu meraklısı. İşbirlikleri veya spor ipuçları için DM atın.",
     github: "https://github.com/alperen2306",
     twitter: "https://twitter.com/alpakgeyik?s=21",
-    linkedin: "https://github.com/alperen2306",
+    linkedin:
+      "https://www.linkedin.com/in/alp-eren-akgeyik-042750190?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
   },
   {
     id: 15,
