@@ -5,7 +5,16 @@ import Hero from "@/components/Hero";
 import NavBar from "@/components/NavBar";
 import Projects from "@/components/Projects";
 import RoadmapSection from "@/components/RoadmapSection";
-function App() {
+import ComingSoon from "@/components/summit/ComingSoon";
+import { headers } from "next/headers";
+
+export default async function Home() {
+  const host = (await headers()).get("host") || "";
+
+  if (host.includes("summit.")) {
+    return <ComingSoon />;
+  }
+
   return (
     <main className="relative min-h-screen w-screen overflow-x-hidden">
       <NavBar />
@@ -18,5 +27,3 @@ function App() {
     </main>
   );
 }
-
-export default App;
