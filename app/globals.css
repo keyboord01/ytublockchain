@@ -102,3 +102,7 @@ html {
 .animate-glitch-sub {
   animation: glitch-sub 0.3s infinite alternate;
 }
+
+.swiper-pagination-bullet-active {
+  background-color: #a0f562 !important;
+}
