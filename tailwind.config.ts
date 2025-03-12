@@ -15,6 +15,7 @@ const config: Config = {
         "robert-medium": ["var(--font-robert-medium)"],
         "robert-regular": ["var(--font-robert-regular)"],
         anton: ["var(--font-anton)"],
+        "days-one": ["var(--font-days-one)", "sans-serif"],
       },
     },
   },
