@@ -84,7 +84,7 @@ const Speakers = () => {
         </Swiper>
       </div>
 
-      <div className="hidden md:grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mb-16">
+      <div className="hidden md:grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-12 md:gap-14 mb-16">
         {speakers.map((speaker) => (
           <div
             key={speaker.id}

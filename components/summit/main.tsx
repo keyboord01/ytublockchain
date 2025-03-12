@@ -4,6 +4,7 @@ import { daysOne } from "@/fonts";
 import About from "./About";
 import Schedule from "./schedule";
 import Speakers from "./speakers";
+import Sponsors from "./sponsors";
 
 const main = () => {
   return (
@@ -14,6 +15,7 @@ const main = () => {
       <About />
       <Schedule />
       <Speakers />
+      <Sponsors />
     </div>
   );
 };
