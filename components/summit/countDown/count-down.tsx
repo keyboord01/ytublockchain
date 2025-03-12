@@ -30,7 +30,7 @@ export default function Countdown() {
 
   return (
     <div className="w-full flex flex-col items-center p-4 gap-3">
-      <div className="w-full grid grid-cols-2 gap-5 sm:gap-4 md:grid-cols-4 md:gap-12 max-w-4xl">
+      <div className="w-full grid grid-cols-4  gap-8 lg:gap-60 max-w-4xl">
         <CountdownDigitBlock
           label="Days"
           timeLeft={days.toString().padStart(2, "0")}
