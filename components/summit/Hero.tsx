@@ -92,7 +92,7 @@ const Hero = () => {
       <button
         className="absolute font-sans bottom-0 px-6 py-2 hover:text-gray-300 flex gap-1 justify-center items-center "
         style={{
-          border: "1px solid transparent", // Ensures the border is visible
+          border: "1px solid transparent",
           borderImage: "linear-gradient(to right, #A0F562, #8512F5) 1",
         }}
       >

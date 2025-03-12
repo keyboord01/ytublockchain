@@ -2,6 +2,7 @@ import React from "react";
 import Hero from "./Hero";
 import { daysOne } from "@/fonts";
 import About from "./About";
+import Schedule from "./schedule";
 
 const main = () => {
   return (
@@ -10,6 +11,7 @@ const main = () => {
     >
       <Hero />
       <About />
+      <Schedule />
     </div>
   );
 };
