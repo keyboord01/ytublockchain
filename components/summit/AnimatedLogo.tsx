@@ -34,7 +34,7 @@ const AnimatedLogo = () => {
         variants={pathVariants}
         d="M22.3914 23.5901L28.9876 6L37.0497 28.354H59.7702L41.4473 42.2795L47.6771 63.9006L28.9876 51.0745"
         stroke="#FFFFFF"
-        strokeWidth="2"
+        strokeWidth="4"
       />
 
       <motion.path
@@ -42,7 +42,7 @@ const AnimatedLogo = () => {
         variants={pathVariants}
         d="M24.9565 41.1801L30.4534 35.3168H7L30.4534 52.1739L12 64.5L15 55"
         stroke="#FFFFFF"
-        strokeWidth="2"
+        strokeWidth="4"
       />
     </motion.svg>
   );

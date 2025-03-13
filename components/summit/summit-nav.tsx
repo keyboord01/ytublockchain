@@ -9,8 +9,9 @@ const Navbar = () => {
 
   return (
     <header className="w-full px-6 py-4 flex items-center justify-between bg-transparent z-30">
-      <div className="flex-shrink-0">
-        <AnimatedLogo />
+      <div className="flex-shrink-0 flex flex-row justify-center items-center gap-2">
+        <AnimatedLogo />{" "}
+        <span className="text-2xl hidden sm:block">yıldız summıt</span>
       </div>
 
       <nav className="hidden md:flex items-center space-x-4 font-sans">
