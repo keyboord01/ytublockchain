@@ -6,20 +6,26 @@ import Schedule from "./schedule";
 import Speakers from "./speakers";
 import Sponsors from "./sponsors";
 import Partners from "./partners";
+import Location from "./location";
 
-const main = () => {
+const Main = () => {
   return (
     <div
-      className={`${daysOne.variable} font-days-one relative flex flex-col items-center justify-center bg-black text-white`}
+      className={`${daysOne.variable} font-days-one bg-black text-white w-full`}
     >
-      <Hero />
-      <About />
-      <Schedule />
-      <Speakers />
-      <Sponsors />
+      <div className="max-w-[1400px] mx-auto">
+        <Hero />
+        <About />
+        <Schedule />
+        <Speakers />
+        <Sponsors />
+      </div>
       <Partners />
+      <div className="max-w-[1400px] mx-auto">
+        <Location />
+      </div>
     </div>
   );
 };
 
-export default main;
+export default Main;
