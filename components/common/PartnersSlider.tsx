@@ -50,7 +50,7 @@ const PartnersSlider = () => {
   const allPartners = [...partners, ...partners, ...partners];
 
   return (
-    <div className="relative w-full">
+    <div className="relative w-full bg-[#c5c5d3]">
       <div className="relative py-12">
         <div className="mb-8 text-center">
           <h3 className="mb-2 text-2xl font-bold text-[#000560]">

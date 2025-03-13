@@ -72,7 +72,7 @@ const About = () => {
       <PartnersSlider />
       <div
         id="about"
-        className="min-h-screen w-screen"
+        className="min-h-screen w-screen bg-[#c5c5d3]"
       >
         <div className="relative mb-8 flex flex-col items-center gap-5">
           <div className="relative">

@@ -10,7 +10,7 @@
 body {
   width: 100dvw;
   overflow-x: hidden;
-  background-color: #c5c5d3;
+  background-color: #000000;
   font-family: var(--font-general), sans-serif;
 }
 
@@ -101,4 +101,8 @@ html {
 
 .animate-glitch-sub {
   animation: glitch-sub 0.3s infinite alternate;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #a0f562 !important;
 }

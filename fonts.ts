@@ -5,6 +5,12 @@ export const circularWeb = localFont({
   variable: "--font-circular-web",
 });
 
+export const daysOne = localFont({
+  src: "./fonts/DaysOne-Regular.ttf",
+  variable: "--font-days-one",
+  display: "swap",
+});
+
 export const general = localFont({
   src: "./fonts/general.woff2",
   variable: "--font-general",
