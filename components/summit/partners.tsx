@@ -1,7 +1,6 @@
 "use client";
-import { motion } from "framer-motion";
-import { useRef, useState } from "react";
 import Image from "next/image";
+import { useRef } from "react";
 
 interface Partner {
   name: string;
@@ -11,7 +10,6 @@ interface Partner {
 
 const Partners = () => {
   const constraintsRef = useRef<HTMLDivElement>(null);
-  const [isDragging, setIsDragging] = useState<boolean>(false);
 
   const partners: Partner[] = [
     {
@@ -56,37 +54,30 @@ const Partners = () => {
   const bgColors = ["#8512F5", "#A0F562", "#562BFF"];
 
   return (
-    <div className="bg-black text-white w-full px-0 py-24">
+    <div className="bg-black text-white w-full px-0 py-24 ">
       <h2 className="text-3xl sm:text-4xl md:text-[52px] text-center mb-8 sm:mb-12 md:mb-16">
         PARTNERS
       </h2>
 
-      <div className="flex-row-center text-sm text-[#4B5563] w-full overflow-visible">
+      <div className="flex-row-center text-sm text-[#4B5563] w-full">
         <div
           ref={constraintsRef}
-          className="relative w-full overflow-hidden"
+          className="relative w-full overflow-x-auto no-scrollbar"
         >
-          <motion.div
-            className="flex w-fit cursor-grab items-center gap-8 px-4"
-            drag="x"
-            dragConstraints={constraintsRef}
-            whileTap={{ cursor: "grabbing" }}
-            onDragStart={() => setIsDragging(true)}
-            onDragEnd={() => setIsDragging(false)}
-          >
+          <div className="flex w-fit items-center gap-8 px-4">
             {allPartners.map((partner, index) => (
               <div
                 key={`${partner.name}-${index}`}
-                className="group relative"
+                className="group relative cursor-pointer"
                 onClick={() => {
-                  if (!isDragging) {
-                    window.open(partner.url, "_blank", "noopener noreferrer");
-                  }
+                  window.open(partner.url, "_blank", "noopener noreferrer");
                 }}
               >
                 <div
                   className="relative flex h-20 w-52 flex-col items-center justify-center p-4 shadow-lg transition-all duration-300 hover:shadow-xl md:h-20 md:w-40"
-                  style={{ backgroundColor: bgColors[index % bgColors.length] }}
+                  style={{
+                    backgroundColor: bgColors[index % bgColors.length],
+                  }}
                 >
                   <div className="flex-row-center relative">
                     <Image
@@ -102,7 +93,7 @@ const Partners = () => {
                 </div>
               </div>
             ))}
-          </motion.div>
+          </div>
         </div>
       </div>
     </div>
