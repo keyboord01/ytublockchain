@@ -7,6 +7,7 @@ import Speakers from "./speakers";
 import Sponsors from "./sponsors";
 import Partners from "./partners";
 import Location from "./location";
+import Footer from "./footer";
 
 const Main = () => {
   return (
@@ -23,6 +24,7 @@ const Main = () => {
       <Partners />
       <div className="max-w-[1400px] mx-auto">
         <Location />
+        <Footer />
       </div>
     </div>
   );
