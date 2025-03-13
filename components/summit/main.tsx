@@ -5,6 +5,7 @@ import About from "./About";
 import Schedule from "./schedule";
 import Speakers from "./speakers";
 import Sponsors from "./sponsors";
+import Partners from "./partners";
 
 const main = () => {
   return (
@@ -16,6 +17,7 @@ const main = () => {
       <Schedule />
       <Speakers />
       <Sponsors />
+      <Partners />
     </div>
   );
 };
