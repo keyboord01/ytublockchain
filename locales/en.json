@@ -151,6 +151,17 @@
     "availableInFullGuide": "Available in full guide",
     "fullGuideButton": "view full guide"
   },
+  "dictionary": {
+    "title": "Blockchain Dictionary",
+    "subtitle": "Discover and understand the terminology of blockchain and cryptocurrency world",
+    "searchPlaceholder": "Search for a term...",
+    "terms": "Terms",
+    "selectTerm": "Select a term to see details",
+    "resource": "Additional Resource",
+    "noResults": "No results found",
+    "viewAll": "View All",
+    "contribute": "Contribute to Dictionary"
+  },
   "footer": {
     "about": "About",
     "team": "Team",
