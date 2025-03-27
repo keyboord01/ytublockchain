@@ -11,7 +11,7 @@ import { headers } from "next/headers";
 export default async function Home() {
   const host = (await headers()).get("host") || "";
 
-  if (host.match("dictionary.")) {
+  if (host.includes("dictionary.")) {
     return <BlockchainDictionary />;
   }
 
