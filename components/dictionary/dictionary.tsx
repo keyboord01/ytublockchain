@@ -13,6 +13,10 @@ const BlockchainDictionary = () => {
   );
   const [activeLetter, setActiveLetter] = useState("A");
   const [searchQuery, setSearchQuery] = useState("");
+  const [searchSuggestions, setSearchSuggestions] = useState<DictionaryEntry[]>(
+    []
+  );
+
   const containerRef = useRef<HTMLDivElement>(null);
   const letterSections = useRef<{ [key: string]: HTMLDivElement }>({});
   const fullDictionaryRef = useRef<HTMLDivElement>(null);
@@ -26,6 +30,26 @@ const BlockchainDictionary = () => {
   }, {} as Record<string, DictionaryEntry[]>);
 
   const letters = Object.keys(groupedTerms).sort();
+
+  const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const query = e.target.value;
+    setSearchQuery(query);
+
+    if (query.length > 0) {
+      const filtered = dictionaryTerms
+        .filter((term) => term.term.toLowerCase().includes(query.toLowerCase()))
+        .slice(0, 5);
+      setSearchSuggestions(filtered);
+    } else {
+      setSearchSuggestions([]);
+    }
+  };
+
+  const handleSuggestionClick = (term: DictionaryEntry) => {
+    setSelectedTerm(term);
+    setSearchQuery("");
+    setSearchSuggestions([]);
+  };
 
   const handleScroll = () => {
     if (!containerRef.current) return;
@@ -106,13 +130,35 @@ const BlockchainDictionary = () => {
         <div className="relative max-w-lg w-full mb-4">
           <input
             type="text"
-            className="w-full p-2 px-4 bg-transparent rounded-full border border-gray-700 text-start outline-none none"
+            className="w-full p-2 px-4 bg-transparent rounded-full border border-gray-700 text-start outline-none"
             value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
+            onChange={handleSearchChange}
             onKeyDown={handleKeyPress}
           />
-        </div>
 
+          {searchSuggestions.length > 0 && (
+            <div className="absolute top-full left-0 right-0 mt-2 bg-[#000000] rounded-xl shadow-lg z-50 border border-gray-700 overflow-hidden">
+              {searchSuggestions.map((term) => (
+                <button
+                  key={term.term}
+                  onClick={() => handleSuggestionClick(term)}
+                  className="w-full px-4 py-3 text-left hover:bg-gray-700/40 transition-colors border-b border-gray-700 last:border-b-0"
+                >
+                  <span className="text-white">{term.term}</span>
+                  <p className="text-gray-400 text-sm mt-1 line-clamp-1">
+                    {term.definition}
+                  </p>
+                </button>
+              ))}
+            </div>
+          )}
+
+          {searchQuery && searchSuggestions.length === 0 && (
+            <div className="absolute top-full left-0 right-0 mt-2 bg-black rounded-xl shadow-lg z-50 p-4 text-gray-400">
+              No results found for `{searchQuery}`
+            </div>
+          )}
+        </div>
         <button
           onClick={handleSurpriseMe}
           className="flex items-center gap-1 text-sm sm:text-base text-gray-400 hover:text-gray-300 border border-gray-700 rounded-full py-2 px-4 mb-4"
