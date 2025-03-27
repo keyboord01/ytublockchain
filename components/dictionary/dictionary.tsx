@@ -62,14 +62,23 @@ const BlockchainDictionary = () => {
   };
 
   const filteredGroupedTerms = Object.fromEntries(
-    Object.entries(groupedTerms).map(([letter, terms]) => [
-      letter,
-      terms.filter((term) =>
-        term.term.toLowerCase().includes(searchQuery.toLowerCase())
-      ),
-    ])
+    Object.entries(groupedTerms).map(([letter, terms]) => [letter, terms])
   );
 
+  const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === "Enter") {
+      const searchTerm = searchQuery.trim().toLowerCase();
+      if (!searchTerm) return;
+
+      const match = dictionaryTerms.find((term) =>
+        term.term.toLowerCase().includes(searchTerm)
+      );
+
+      if (match) {
+        setSelectedTerm(match);
+      }
+    }
+  };
   return (
     <div className="min-h-screen text-white">
       <div className="relative h-screen flex flex-col items-center justify-center text-center p-4">
@@ -100,6 +109,7 @@ const BlockchainDictionary = () => {
             className="w-full p-2 px-4 bg-transparent rounded-full border border-gray-700 text-start outline-none none"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
+            onKeyDown={handleKeyPress}
           />
         </div>
 
