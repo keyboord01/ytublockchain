@@ -10,10 +10,11 @@ import { headers } from "next/headers";
 
 export default async function Home() {
   const host = (await headers()).get("host") || "";
-  console.log(host);
-  if (host === "dictionary.ytublockchain.com") {
+
+  if (host.includes("dictionary.")) {
     return <BlockchainDictionary />;
   }
+
   return (
     <main className="relative min-h-screen w-screen overflow-x-hidden">
       <NavBar />
