@@ -151,6 +151,18 @@
     "availableInFullGuide": "Rehber kapsamında mevcut",
     "fullGuideButton": "Tüm rehberi görüntüle"
   },
+  "dictionary": {
+    "title": "Blockchain Sözlüğü",
+    "subtitle": "Blockchain ve kripto para dünyasındaki terimleri keşfedin ve anlayın",
+    "searchPlaceholder": "Terim ara...",
+    "terms": "Terimler",
+    "selectTerm": "Detayları görmek için bir terim seçin",
+    "resource": "Ekstra Kaynak",
+    "noResults": "Sonuç bulunamadı",
+    "viewAll": "Tümünü Görüntüle",
+    "contribute": "Sözlüğe Katkıda Bulun"
+  },
+
   "footer": {
     "about": "Hakkında",
     "team": "Takım",
