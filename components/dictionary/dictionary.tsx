@@ -3,14 +3,16 @@ import Typewriter from "typewriter-effect";
 
 import { useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { X, ChevronDown } from "lucide-react";
+import { X, ChevronDown, InfoIcon, Globe } from "lucide-react";
 import dictionaryTerms, { DictionaryEntry } from "@/data/dictionaryTerms";
 import GridBackgroundSVG from "./assets/background.svg";
+import { FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
 
 const BlockchainDictionary = () => {
   const [selectedTerm, setSelectedTerm] = useState<DictionaryEntry | null>(
     null
   );
+  const [showInfoModal, setShowInfoModal] = useState(false);
   const [activeLetter, setActiveLetter] = useState("A");
   const [searchQuery, setSearchQuery] = useState("");
   const [searchSuggestions, setSearchSuggestions] = useState<DictionaryEntry[]>(
@@ -85,12 +87,16 @@ const BlockchainDictionary = () => {
     setSelectedTerm(randomTerm);
   };
 
+  const toggleInfoModal = () => {
+    setShowInfoModal(!showInfoModal);
+  };
+
   const filteredGroupedTerms = Object.fromEntries(
     Object.entries(groupedTerms).map(([letter, terms]) => [letter, terms])
   );
 
   return (
-    <div className="min-h-screen text-white">
+    <div className={`min-h-dvh text-white`}>
       <div className="relative h-screen flex flex-col items-center justify-center text-center p-4">
         <div
           className="absolute -z-10 max-w-xl w-full h-1/3 touch-none"
@@ -100,19 +106,25 @@ const BlockchainDictionary = () => {
             backgroundPosition: "center",
           }}
         />
+        <button
+          className="absolute top-4 right-4 text-[#BCBFC2] hover:text-white"
+          title="Info"
+          onClick={toggleInfoModal}
+        >
+          <InfoIcon />
+        </button>
         <h1 className="text-2xl sm:text-3xl md:text-4xl mb-6 flex flex-row">
-          Explore Blockchain{" "}
+          Blockchain dünyasını
           <span className="text-purple-500 pl-1.5">
             <Typewriter
               options={{
-                strings: [" knowledge", " terms", " concepts", " insights"],
+                strings: [" keşfet", " tanı", " anla", " öğren"],
                 autoStart: true,
                 loop: true,
               }}
             />
           </span>
         </h1>
-
         <div className="relative max-w-lg w-full mb-4">
           <input
             type="text"
@@ -148,7 +160,7 @@ const BlockchainDictionary = () => {
           onClick={handleSurpriseMe}
           className="flex items-center gap-1 text-sm sm:text-base text-gray-400 hover:text-gray-300 border border-gray-700 rounded-full py-2 px-4 mb-4"
         >
-          Surprise me!
+          Kendimi Şanslı Hissediyorum
         </button>
 
         <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2">
@@ -165,7 +177,7 @@ const BlockchainDictionary = () => {
             }}
           >
             <ChevronDown className="size-8 mb-1" />
-            <span className="text-sm">All Words</span>
+            <span className="text-sm">tüm kelimeler</span>
           </motion.button>
         </div>
       </div>
@@ -268,8 +280,8 @@ const BlockchainDictionary = () => {
               </p>
 
               {selectedTerm.extraResource && (
-                <div className=" flex flex-row items-center">
-                  <p className="text-gray-400 text-sm">Additional resources:</p>
+                <div className="flex flex-row items-center">
+                  <p className="text-gray-400 text-sm">Ekstra :</p>
                   <div className="flex items-center space-x-2">
                     {(Array.isArray(selectedTerm.extraResource)
                       ? selectedTerm.extraResource
@@ -280,7 +292,7 @@ const BlockchainDictionary = () => {
                         href={link}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-purple-400 hover:text-purple-300 px-2  underline"
+                        className="text-purple-400 hover:text-purple-300 px-2 underline"
                       >
                         {index + 1}
                       </a>
@@ -288,6 +300,97 @@ const BlockchainDictionary = () => {
                   </div>
                 </div>
               )}
+            </motion.div>
+          </motion.div>
+        )}
+
+        {/* Info Modal */}
+        {showInfoModal && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 bg-black/90 flex items-center justify-center p-4"
+            onClick={() => setShowInfoModal(false)}
+          >
+            <motion.div
+              initial={{ scale: 0.95 }}
+              animate={{ scale: 1 }}
+              className="bg-gradient-to-br from-gray-800 to-black rounded-3xl p-6 max-w-lg w-full relative border border-purple-900 shadow-2xl"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <button
+                onClick={() => setShowInfoModal(false)}
+                className="absolute top-4 right-4 text-gray-400 hover:text-white"
+              >
+                <X className="size-5" />
+              </button>
+
+              <h3 className="text-2xl font-bold mb-4 text-white">
+                Blockchain Sözlüğü
+              </h3>
+              <p className="text-gray-300 whitespace-pre-line mb-8">
+                Blockchain Sözlüğü, YTU Blockchain Topluluğu tarafından,
+                blockchain teknolojisinin sırlarını çözmek ve bu yenilikçi alanı
+                herkes için erişilebilir hale getirmek amacıyla hayata
+                geçirildi. Temel kavramlardan güncel gelişmelere kadar uzanan
+                geniş bir yelpazede bilgi sunan bu sözlük, blockchain`in
+                potansiyelini anlamak isteyenler için rehber bir kaynak olmayı
+                amaçlıyor. Türkiye`de blockchain ekosistemini güçlendirmek ve
+                meraklılarına ilham vermek için burada!
+              </p>
+
+              <div className="absolute bottom-6 left-6 flex space-x-4">
+                <a
+                  href="#"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-400 hover:text-white transition-colors"
+                >
+                  <FaInstagram size={20} />
+                </a>
+                <a
+                  href="#"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-400 hover:text-white transition-colors"
+                >
+                  <svg
+                    role="img"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="w-5 h-5"
+                    fill="#9CA3AF"
+                  >
+                    <title>YouTube</title>
+                    <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+                  </svg>
+                </a>
+                <a
+                  href="#"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-400 hover:text-white transition-colors"
+                >
+                  <Globe size={20} />
+                </a>
+                <a
+                  href="#"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-400 hover:text-white transition-colors"
+                >
+                  <FaTwitter size={20} />
+                </a>
+                <a
+                  href="#"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-400 hover:text-white transition-colors"
+                >
+                  <FaLinkedin size={20} />
+                </a>
+              </div>
             </motion.div>
           </motion.div>
         )}

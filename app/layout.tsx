@@ -6,6 +6,7 @@ import {
   robertMedium,
   robertRegular,
   zentry,
+  clashGroteskRegular,
 } from "../fonts";
 import "./globals.css";
 import { LanguageProvider } from "@/contexts/language-context";
@@ -25,9 +26,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${circularWeb.variable} ${general.variable} ${robertMedium.variable} ${robertRegular.variable} ${zentry.variable} ${anton.variable}`}
+      className={`${circularWeb.variable} ${general.variable} ${robertMedium.variable} ${robertRegular.variable} ${zentry.variable} ${anton.variable} ${clashGroteskRegular.variable} ${zentry.variable}`}
     >
-      <body className="font-general">
+      <body className="font-clash">
         <Analytics />
         <SpeedInsights />
         <LanguageProvider>{children}</LanguageProvider>
