@@ -342,7 +342,7 @@ const BlockchainDictionary = () => {
 
               <div className="absolute bottom-6 left-6 flex space-x-4">
                 <a
-                  href="#"
+                  href="https://www.instagram.com/ytu_blockchain"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-400 hover:text-white transition-colors"
@@ -350,7 +350,7 @@ const BlockchainDictionary = () => {
                   <FaInstagram size={20} />
                 </a>
                 <a
-                  href="#"
+                  href="https://www.youtube.com/@YTUBlockchain"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-400 hover:text-white transition-colors"
@@ -367,7 +367,7 @@ const BlockchainDictionary = () => {
                   </svg>
                 </a>
                 <a
-                  href="#"
+                  href="https://www.ytublockchain.com"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-400 hover:text-white transition-colors"
@@ -375,7 +375,7 @@ const BlockchainDictionary = () => {
                   <Globe size={20} />
                 </a>
                 <a
-                  href="#"
+                  href="https://x.com/blockchainytu"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-400 hover:text-white transition-colors"
@@ -383,7 +383,7 @@ const BlockchainDictionary = () => {
                   <FaTwitter size={20} />
                 </a>
                 <a
-                  href="#"
+                  href="https://www.linkedin.com/company/ytu-blockchain/posts/?feedView=all"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-400 hover:text-white transition-colors"
