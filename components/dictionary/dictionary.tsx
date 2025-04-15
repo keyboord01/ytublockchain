@@ -107,7 +107,7 @@ const BlockchainDictionary = () => {
           }}
         />
         <button
-          className="absolute top-4 right-4 text-[#BCBFC2] hover:text-white"
+          className="absolute top-4 right-8 text-[#BCBFC2] hover:text-white"
           title="Info"
           onClick={toggleInfoModal}
         >
@@ -176,7 +176,7 @@ const BlockchainDictionary = () => {
               ease: "easeInOut",
             }}
           >
-            <ChevronDown className="size-8 mb-1" />
+            <ChevronDown className="size-8 mb-8" />
             <span className="text-sm">tüm kelimeler</span>
           </motion.button>
         </div>
