@@ -163,7 +163,7 @@ const BlockchainDictionary = () => {
           Kendimi Şanslı Hissediyorum
         </button>
 
-        <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2">
+        <div className="absolute bottom-20 left-1/2 transform -translate-x-1/2">
           <motion.button
             onClick={handleScrollToFullDictionary}
             className="flex flex-col items-center text-gray-400 hover:text-white"
@@ -176,7 +176,7 @@ const BlockchainDictionary = () => {
               ease: "easeInOut",
             }}
           >
-            <ChevronDown className="size-8 mb-8" />
+            <ChevronDown className="size-8 mb-2" />
             <span className="text-sm">tüm kelimeler</span>
           </motion.button>
         </div>
