@@ -45,6 +45,11 @@ const PartnersSlider = () => {
       logo: "/img/partners/node101.png",
       url: "https://node101.io",
     },
+    {
+      name: "ETHDam",
+      logo: "/img/partners/ETHDam.png",
+      url: "https://www.ethdam.com/",
+    },
   ];
 
   const allPartners = [...partners, ...partners, ...partners];
@@ -116,7 +121,7 @@ const PartnersSlider = () => {
                       alt={`${partner.name} logo`}
                       width={140}
                       height={48}
-                      className="max-h-10 w-auto max-w-[120px] rounded-lg object-contain transition-all duration-300 group-hover:scale-110 md:max-h-12 md:max-w-[140px]"
+                      className="max-h-10 w-auto max-w-[120px] rounded-sm object-contain transition-all duration-300 group-hover:scale-110 md:max-h-12 md:max-w-[140px]"
                       draggable={false}
                       priority
                     />
